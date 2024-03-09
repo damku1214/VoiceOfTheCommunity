@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net462</TargetFramework>
+		<AssemblyName>VoiceOfTheCommunity</AssemblyName>
+		<Description>From the community, for the community!</Description>
+		<Version>0.0.1</Version>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<LangVersion>latest</LangVersion>
+		<RestoreAdditionalProjectSources>
+			https://api.nuget.org/v3/index.json;
+			https://nuget.bepinex.dev/v3/index.json;
+			https://nuget.samboy.dev/v3/index.json
+		</RestoreAdditionalProjectSources>
+		<RootNamespace>VoiceOfTheCommunity</RootNamespace>
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>None</DebugType>
+		<NoWarn>$(NoWarn);CS0436</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<SkulRoot Condition="'$(OS)' == 'Windows_NT' And Exists('$(PROGRAMFILES)\Steam\steamapps\common\Skul\Skul.exe')">$(PROGRAMFILES)\Steam\steamapps\common\Skul</SkulRoot>
+		<SkulRoot Condition="'$(OS)' == 'Windows_NT' And Exists('$(MSBuildProgramFiles32)\Steam\steamapps\common\Skul\Skul.exe')">$(MSBuildProgramFiles32)\Steam\steamapps\common\Skul</SkulRoot>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+		<PackageReference Include="BepInEx.Core" Version="5.*" />
+		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+		<PackageReference Include="UnityEngine.Modules" Version="2020.3.34" IncludeAssets="compile" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Sprites/*.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Sprites\BrokenHeart.AbilityIcon.png" />
+	  <None Remove="Sprites\BrokenHeart.Icon.png" />
+	  <None Remove="Sprites\BrokenHeart.Thumbnail.png" />
+	  <None Remove="Sprites\BrokenHeart_2.AbilityIcon.png" />
+	  <None Remove="Sprites\BrokenHeart_2.Icon.png" />
+	  <None Remove="Sprites\BrokenHeart_2.Thumbnail.png" />
+	  <None Remove="Sprites\RustyChalice.AbilityIcon.png" />
+	  <None Remove="Sprites\RustyChalice.Icon.png" />
+	  <None Remove="Sprites\RustyChalice.Thumbnail.png" />
+	  <None Remove="Sprites\RustyChalice_2.AbilityIcon.png" />
+	  <None Remove="Sprites\RustyChalice_2.Icon.png" />
+	  <None Remove="Sprites\RustyChalice_2.Thumbnail.png" />
+	  <None Remove="Sprites\SmallTwig.AbilityIcon.png" />
+	  <None Remove="Sprites\SmallTwig.Icon.png" />
+	  <None Remove="Sprites\SmallTwig.Thumbnail.png" />
+	  <None Remove="Sprites\SmallTwig_2.AbilityIcon.png" />
+	  <None Remove="Sprites\SmallTwig_2.Icon.png" />
+	  <None Remove="Sprites\SmallTwig_2.Thumbnail.png" />
+	  <None Remove="Sprites\VolcanicShard.AbilityIcon.png" />
+	  <None Remove="Sprites\VolcanicShard.Icon.png" />
+	  <None Remove="Sprites\VolcanicShard.Thumbnail.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Package to easily set everything as public -->
+		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0" />
+
+		<Reference Include="Assembly-CSharp" Publicize="true">
+			<HintPath>$(SkulRoot)/Skul_Data/Managed/Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass" Publicize="true">
+			<HintPath>$(SkulRoot)/Skul_Data/Managed/Assembly-CSharp-firstpass.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Plugins.Singletons" Publicize="true">
+			<HintPath>$(SkulRoot)/Skul_Data/Managed/Plugins.Singletons.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Plugins.Common" Publicize="true">
+			<HintPath>$(SkulRoot)/Skul_Data/Managed/Plugins.Common.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.Addressables" Publicize="true">
+			<HintPath>$(SkulRoot)/Skul_Data/Managed/Unity.Addressables.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+</Project>

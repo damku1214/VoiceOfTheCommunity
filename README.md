@@ -1,0 +1,1 @@
+ # Custom Items from the ideas of the Official Skul Discord for Skul: the Hero Slayer
