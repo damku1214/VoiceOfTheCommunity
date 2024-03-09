@@ -1,7 +1,7 @@
 {
     "name": "VoiceOfTheCommunity",
     "version_number": "0.0.1",
-    "website_url": "",
+    "website_url": "https://github.com/damku1214/VoiceOfTheCommunity",
     "description": "Adds new items from ideas of the community to Skul: the Hero Slayer!",
     "dependencies": []
 }
