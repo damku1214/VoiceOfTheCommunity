@@ -34,3 +34,10 @@ and this is the only way to access the mod. However, at the time of the real rel
 
 Please keep in mind, the mod doesn't gurantee that your game will be 100% fine.
 Use this at your own risk. Here be dragons!
+
+## Contributors
+I would like to give a huge thanks to people who contributed to this mod. This includes:
+IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig' and 'Volcanic Shard'
+Zinier - creator of 'Rusty Chalice'
+
+These are not all the contributors in stock, but all of them that are presented so far. Much more is yet to come!
