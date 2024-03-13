@@ -6,10 +6,12 @@ This project is a variation/fork of MrBacanudo's [Custom Items mod](https://gith
 None of the code belongs to me excluding content related to custom items.
 
 ## Content
-This mod contains:
+So far, this mod contains:
 
+* 2 Rares
 * 3 Uniques
-* 2 Legendaries
+* 2 Omens
+* 4 Legendaries
 
 This is a beta version, so much more is yet to come! Hang in there for a bit!
 
@@ -28,7 +30,7 @@ and this is the only way to access the mod. However, at the time of the real rel
     * The other two must be extracted inside the `2020.3.34` folder (the same folder!)
 3. Edit the new `doorstop_config.ini` file inside the game folder:
     * Change the last line from `dllSearchPathOverride=` to `dllSearchPathOverride=2020.3.34`
-4. Download the mods! Latest one here: https://github.com/MrBacanudo/SkulHardModeMods/releases/latest
+4. Download the mods! Latest one here: https://github.com/damku1214/VoiceOfTheCommunity/releases/latest
 5. Put the mods you want into the `BepInEx/plugins` folder inside your game folder
     * You're allowed to mix or just use what you want!
 
@@ -38,7 +40,7 @@ Use this at your own risk. Here be dragons!
 ## Contributors
 I would like to give a huge thanks to people who contributed to this mod. This includes:
 * IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig' and 'Volcanic Shard'
-* Zinier - creator of 'Rusty Chalice' and 'Bloodsoaked Javelin'
+* Zinier - creator of 'Rusty Chalice' and 'Blood-Soaked Javelin'
 * Haxa - creator of 'Flask of Botulism' and 'Corrupted Symbol'
 * regular anime girl - creator of 'Tainted Finger'
 * Steak - creator of 'Dream Catcher'
