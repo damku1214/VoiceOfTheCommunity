@@ -38,7 +38,7 @@ Use this at your own risk. Here be dragons!
 ## Contributors
 I would like to give a huge thanks to people who contributed to this mod. This includes:
 * IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig' and 'Volcanic Shard'
-* Zinier - creator of 'Rusty Chalice' and 'Bloodsoaked Javelin'
+* Zinier - creator of 'Rusty Chalice' and 'Blood-Soaked Javelin'
 * Haxa - creator of 'Flask of Botulism' and 'Corrupted Symbol'
 * regular anime girl - creator of 'Tainted Finger'
 * Steak - creator of 'Dream Catcher'
