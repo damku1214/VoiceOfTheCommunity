@@ -469,7 +469,7 @@ public class CustomItems
             // KR: 중독 데미지가 발생하는 간격이 더욱 줄어듭니다.\n
             // <color=#F25D1C>물리공격력</color>이 50% 증가합니다.
 
-            item.itemDescription = "The interval between poison damage ticks is further decreased\n"
+            item.itemDescription = "The interval between poison damage ticks is further decreased.\n"
                                            + "Increases <color=#F25D1C>Physical Attack</color> by 50%.";
 
             // EN: Only the mad and cruel would consider using this as a weapon.
