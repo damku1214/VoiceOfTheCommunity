@@ -6,68 +6,56 @@ using GameResources;
 using Services;
 using Singletons;
 using UnityEngine;
-using static Characters.Damage;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
 [Serializable]
-public class RustyChaliceAbility : Ability, ICloneable
+public class FrozenSpearAbility : Ability, ICloneable
 {
-    public RustyChaliceAbilityComponent component { get; set; }
+    public FrozenSpearAbilityComponent component { get; set; }
 
-    public class Instance : AbilityInstance<RustyChaliceAbility>
+    public class Instance : AbilityInstance<FrozenSpearAbility>
     {
-        private MotionTypeBoolArray _attackTypes;
-        private AttackTypeBoolArray _damageTypes;
+        private CharacterStatusKindBoolArray _statusKind;
 
-        public override int iconStacks => ability.component.currentSwapSkillHitCount;
+        public override int iconStacks => ability.component.currentFreezeCount;
 
-        public Instance(Character owner, RustyChaliceAbility ability) : base (owner, ability)
+        public Instance(Character owner, FrozenSpearAbility ability) : base(owner, ability)
         {
-            _attackTypes = new();
-            _attackTypes[MotionType.Swap] = true;
-            _damageTypes = new([true, true, true, true, true]);
+            _statusKind = new();
+            _statusKind[CharacterStatus.Kind.Freeze] = true;
         }
 
         public override void OnAttach()
         {
-            owner.onGiveDamage.Add(0, new GiveDamageDelegate(OnGiveDamage));
+            owner.onGaveStatus += OnGaveStatus;
         }
 
         public override void OnDetach()
         {
-            owner.onGiveDamage.Remove(new GiveDamageDelegate(OnGiveDamage));
+            owner.onGaveStatus -= OnGaveStatus;
         }
 
-        private bool OnGiveDamage(ITarget target, ref Damage damage)
+        private void OnGaveStatus(Character target, CharacterStatus.ApplyInfo applyInfo, bool result)
         {
-            if (damage.@null)
+            if (target == null)
             {
-                return false;
+                return;
             }
-            if (damage.amount < 1.0)
+            if (!_statusKind[applyInfo.kind])
             {
-                return false;
+                return;
             }
-            if (target == null || target.character == null)
+            if (!result)
             {
-                return false;
+                return;
             }
-            if (!_attackTypes[damage.motionType])
-            {
-                return false;
-            }
-            if (!_damageTypes[damage.attackType])
-            {
-                return false;
-            }
-            RustyChaliceAbilityComponent component = ability.component;
-            component.currentSwapSkillHitCount++;
-            if (component.currentSwapSkillHitCount >= 150)
+            FrozenSpearAbilityComponent component = ability.component;
+            component.currentFreezeCount++;
+            if (component.currentFreezeCount >= 200)
             {
                 UpgradeItem();
             }
-            return false;
         }
 
         private void UpgradeItem()
@@ -80,7 +68,7 @@ public class RustyChaliceAbility : Ability, ICloneable
                 {
                     var item = inventory.items[i];
 
-                    if (item == null || !item.name.Equals("Custom-RustyChalice"))
+                    if (item == null || !item.name.Equals("Custom-FrozenSpear"))
                     {
                         continue;
                     }
@@ -101,7 +89,7 @@ public class RustyChaliceAbility : Ability, ICloneable
                 }
                 catch (Exception e)
                 {
-                    Debug.LogWarning("[VoiceOfCommunity - Rusty Chalice] There is no item at item index " + i);
+                    Debug.LogWarning("[VoiceOfCommunity - Frozen Spear] There is no item at item index " + i);
                     Debug.LogWarning(e.Message);
                 }
             }
@@ -115,7 +103,7 @@ public class RustyChaliceAbility : Ability, ICloneable
 
     public object Clone()
     {
-        return new RustyChaliceAbility()
+        return new FrozenSpearAbility()
         {
             _defaultIcon = _defaultIcon,
         };

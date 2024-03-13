@@ -39,12 +39,27 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Sprites\BloodsoakedJavelin.AbilityIcon.png" />
+	  <None Remove="Sprites\BloodsoakedJavelin.Icon.png" />
+	  <None Remove="Sprites\BloodsoakedJavelin.Thumbnail.png" />
 	  <None Remove="Sprites\BrokenHeart.AbilityIcon.png" />
 	  <None Remove="Sprites\BrokenHeart.Icon.png" />
 	  <None Remove="Sprites\BrokenHeart.Thumbnail.png" />
 	  <None Remove="Sprites\BrokenHeart_2.AbilityIcon.png" />
 	  <None Remove="Sprites\BrokenHeart_2.Icon.png" />
 	  <None Remove="Sprites\BrokenHeart_2.Thumbnail.png" />
+	  <None Remove="Sprites\CorruptedSymbol.AbilityIcon.png" />
+	  <None Remove="Sprites\CorruptedSymbol.Icon.png" />
+	  <None Remove="Sprites\CorruptedSymbol.Thumbnail.png" />
+	  <None Remove="Sprites\DreamCatcher.AbilityIcon.png" />
+	  <None Remove="Sprites\DreamCatcher.Icon.png" />
+	  <None Remove="Sprites\DreamCatcher.Thumbnail.png" />
+	  <None Remove="Sprites\FrozenSpear.AbilityIcon.png" />
+	  <None Remove="Sprites\FrozenSpear.Icon.png" />
+	  <None Remove="Sprites\FrozenSpear.Thumbnail.png" />
+	  <None Remove="Sprites\FrozenSpear_2.AbilityIcon.png" />
+	  <None Remove="Sprites\FrozenSpear_2.Icon.png" />
+	  <None Remove="Sprites\FrozenSpear_2.Thumbnail.png" />
 	  <None Remove="Sprites\RustyChalice.AbilityIcon.png" />
 	  <None Remove="Sprites\RustyChalice.Icon.png" />
 	  <None Remove="Sprites\RustyChalice.Thumbnail.png" />
@@ -57,6 +72,15 @@
 	  <None Remove="Sprites\SmallTwig_2.AbilityIcon.png" />
 	  <None Remove="Sprites\SmallTwig_2.Icon.png" />
 	  <None Remove="Sprites\SmallTwig_2.Thumbnail.png" />
+	  <None Remove="Sprites\TaintedFinger.AbilityIcon.png" />
+	  <None Remove="Sprites\TaintedFinger.Icon.png" />
+	  <None Remove="Sprites\TaintedFinger.Thumbnail.png" />
+	  <None Remove="Sprites\TaintedFinger_2.AbilityIcon.png" />
+	  <None Remove="Sprites\TaintedFinger_2.Icon.png" />
+	  <None Remove="Sprites\TaintedFinger_2.Thumbnail.png" />
+	  <None Remove="Sprites\TaintedFinger_3.AbilityIcon.png" />
+	  <None Remove="Sprites\TaintedFinger_3.Icon.png" />
+	  <None Remove="Sprites\TaintedFinger_3.Thumbnail.png" />
 	  <None Remove="Sprites\VolcanicShard.AbilityIcon.png" />
 	  <None Remove="Sprites\VolcanicShard.Icon.png" />
 	  <None Remove="Sprites\VolcanicShard.Thumbnail.png" />

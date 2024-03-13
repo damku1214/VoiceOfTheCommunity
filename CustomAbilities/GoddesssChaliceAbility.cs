@@ -49,13 +49,11 @@ public class GoddesssChaliceAbility : Ability, ICloneable
             owner.stat.AttachValues(_maxStats);
             RefreshStacks();
             owner.playerComponents.inventory.weapon.onSwap += OnSwap;
-            owner.onGiveDamage.Add(0, new GiveDamageDelegate(AmplifySwapDamageWhenMaxStacks));
         }
 
         public override void OnDetach()
         {
             owner.playerComponents.inventory.weapon.onSwap -= OnSwap;
-            owner.onGiveDamage.Remove(new GiveDamageDelegate(AmplifySwapDamageWhenMaxStacks));
             owner.stat.DetachValues(_stats);
             owner.stat.DetachValues(_maxStats);
         }
@@ -96,28 +94,6 @@ public class GoddesssChaliceAbility : Ability, ICloneable
                 _maxStats.values[i].value = ability._maxStackStats.values[i].GetStackedValue(Math.Max(0, _stacks - 3));
             }
             owner.stat.SetNeedUpdate();
-        }
-
-        private bool AmplifySwapDamageWhenMaxStacks(ITarget target, ref Damage damage)
-        {
-            if (_stacks < ability._maxStack)
-            {
-                return false;
-            }
-            if (target == null || target.character == null)
-            {
-                return false;
-            }
-            if (!_attackTypes[damage.motionType])
-            {
-                return false;
-            }
-            if (!_damageTypes[damage.attackType])
-            {
-                return false;
-            }
-            damage.percentMultiplier *= 1.1;
-            return false;
         }
     }
 

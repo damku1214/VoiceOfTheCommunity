@@ -107,6 +107,14 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
 
         private bool OnRevenge(ITarget target, ref Damage damage)
         {
+            if (damage.@null)
+            {
+                return false;
+            }
+            if (damage.amount < 1.0)
+            {
+                return false;
+            }
             _canRevenge = false;
             _revengeTimeRemaining = ability._revengeTimeout;
             owner.onGiveDamage.Remove(new GiveDamageDelegate(this.OnRevenge));
@@ -115,7 +123,6 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
                 return false;
             }
             VaseOfTheFallenAbilityComponent component = this.ability.component;
-            int currentKillCount = component.currentKillCount;
             component.currentKillCount += _lostStacks / 2;
             _isCooldown = true;
             _currentRevengeCooldown = 0;

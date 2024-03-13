@@ -17,24 +17,24 @@ public sealed class SmallTwigEvolveBehavior : MonoBehaviour
 
     private void Awake()
     {
-        player.playerComponents.inventory.weapon.onSwap += RefreshStats;
+        player.playerComponents.inventory.weapon.onSwap += CheckEvolveCondition;
         player.playerComponents.inventory.weapon.onChanged += OnSkullChanged;
-        RefreshStats();
+        CheckEvolveCondition();
     }
 
     private void OnDestroy()
     {
-        player.playerComponents.inventory.weapon.onSwap -= RefreshStats;
+        player.playerComponents.inventory.weapon.onSwap -= CheckEvolveCondition;
         player.playerComponents.inventory.weapon.onChanged -= OnSkullChanged;
-        RefreshStats();
+        CheckEvolveCondition();
     }
 
     private void OnSkullChanged(Weapon old, Weapon @new)
     {
-        RefreshStats();
+        CheckEvolveCondition();
     }
 
-    private void RefreshStats()
+    private void CheckEvolveCondition()
     {
         if (player.playerComponents.inventory.weapon.current.name.Equals("Skul") ||
             player.playerComponents.inventory.weapon.current.name.Equals("HeroSkul")) ChangeItem();

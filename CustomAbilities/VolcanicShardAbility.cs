@@ -16,25 +16,14 @@ public class VolcanicShardAbility : Ability, ICloneable
         private Inventory _inventory;
 
         private MotionTypeBoolArray _attackTypes;
-        private AttackTypeBoolArray _damageTypes;
 
-        public override int iconStacks
-        {
-            get
-            {
-                return BurnInscriptionCount();
-            }
-        }
+        public override int iconStacks => BurnInscriptionCount();
 
         public int BurnInscriptionCount()
         {
             foreach (var inscription in inscriptions)
             {
-                if (inscription == null)
-                {
-                    continue;
-                }
-                if (inscription.name == "Arson" || inscription.name == "방화")
+                if (inscription.key == Inscription.Key.Arson)
                 {
                     return inscription.count;
                 }
@@ -48,14 +37,12 @@ public class VolcanicShardAbility : Ability, ICloneable
             inscriptions = owner.playerComponents.inventory.synergy.inscriptions;
             _attackTypes = new();
             _attackTypes[MotionType.Status] = true;
-            _damageTypes = new([true, true, true, true, true]);
         }
 
         public override void OnAttach()
         {
             RefreshArsonInscriptionCount();
             _inventory.onUpdatedKeywordCounts += RefreshArsonInscriptionCount;
-            _inventory.upgrade.onChanged += RefreshArsonInscriptionCount;
             owner.onGiveDamage.Add(0, new GiveDamageDelegate(AmplifyBurnDamage));
         }
 
@@ -63,7 +50,6 @@ public class VolcanicShardAbility : Ability, ICloneable
         {
             owner.status.durationMultiplier[CharacterStatus.Kind.Burn].Remove(this);
             _inventory.onUpdatedKeywordCounts -= RefreshArsonInscriptionCount;
-            _inventory.upgrade.onChanged -= RefreshArsonInscriptionCount;
             owner.onGiveDamage.Remove(new GiveDamageDelegate(AmplifyBurnDamage));
         }
 
@@ -82,11 +68,7 @@ public class VolcanicShardAbility : Ability, ICloneable
             {
                 return false;
             }
-            if (!_damageTypes[damage.attackType])
-            {
-                return false;
-            }
-            if (target.character.status == null || !target.character.status.IsApplying(CharacterStatus.Kind.Burn))
+            if (!target.character.status.IsApplying(CharacterStatus.Kind.Burn))
             {
                 return false;
             }
