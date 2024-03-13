@@ -6,10 +6,12 @@ This project is a variation/fork of MrBacanudo's [Custom Items mod](https://gith
 None of the code belongs to me excluding content related to custom items.
 
 ## Content
-This mod contains:
+So far, this mod contains:
 
+* 2 Rares
 * 3 Uniques
-* 2 Legendaries
+* 2 Omens
+* 4 Legendaries
 
 This is a beta version, so much more is yet to come! Hang in there for a bit!
 
