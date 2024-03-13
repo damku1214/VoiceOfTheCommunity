@@ -319,8 +319,7 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 1.5),
-                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1.5),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1),
             ]);
 
             var applyBurnWhenAttacked = new ApplyStatusOnGaveDamage();
@@ -375,10 +374,8 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.15),
             ]);
 
-            RustyChaliceAbility ability = new();
-
             item.abilities = [
-                ability,
+                new RustyChaliceAbility(),
             ];
 
             items.Add(item);
@@ -715,12 +712,12 @@ public class CustomItems
         }
         {
             var item = new CustomItemReference();
-            item.name = "BloodsoakedJavelin";
+            item.name = "BloodSoakedJavelin";
             item.rarity = Rarity.Rare;
 
-            // EN: Bloodsoaked Javelin
+            // EN: Blood-Soaked Javelin
             // KR: 피투성이 투창
-            item.itemName = "Bloodsoaked Javelin";
+            item.itemName = "Blood-Soaked Javelin";
 
             // EN: Increases Crit Damage by 25%.\n
             // Critical hits have a 20% chance to apply Bleed to the enemy.
@@ -743,10 +740,8 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.CriticalDamage, 0.25),
             ]);
 
-            BloodsoakedJavelinAbility ability = new();
-
             item.abilities = [
-                ability,
+                new BloodSoakedJavelinAbility(),
             ];
 
             items.Add(item);
@@ -798,10 +793,8 @@ public class CustomItems
 
             applyFreezeWhenSkillAttacked._status = new ApplyInfo(status);
 
-            FrozenSpearAbility ability = new();
-
             item.abilities = [
-                ability,
+                new FrozenSpearAbility(),
                 applyFreezeWhenSkillAttacked,
             ];
 
@@ -859,10 +852,8 @@ public class CustomItems
 
             applyFreezeWhenSkillAttacked._status = new ApplyInfo(status);
 
-            SpearOfTheFrozenMoonAbility ability = new();
-
             item.abilities = [
-                ability,
+                new SpearOfTheFrozenMoonAbility(),
                 applyFreezeWhenSkillAttacked,
             ];
 

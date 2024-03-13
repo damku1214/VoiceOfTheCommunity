@@ -2,6 +2,6 @@
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
-public sealed class BloodsoakedJavelinAbilityComponent : AbilityComponentHack<BloodsoakedJavelinAbility>
+public sealed class BloodSoakedJavelinAbilityComponent : AbilityComponentHack<BloodSoakedJavelinAbility>
 {
 }

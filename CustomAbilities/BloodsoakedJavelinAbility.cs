@@ -5,11 +5,11 @@ using Characters.Abilities;
 namespace VoiceOfTheCommunity.CustomAbilities;
 
 [Serializable]
-public class BloodsoakedJavelinAbility : Ability, ICloneable
+public class BloodSoakedJavelinAbility : Ability, ICloneable
 {
-    public class Instance : AbilityInstance<BloodsoakedJavelinAbility>
+    public class Instance : AbilityInstance<BloodSoakedJavelinAbility>
     {
-        public Instance(Character owner, BloodsoakedJavelinAbility ability) : base(owner, ability)
+        public Instance(Character owner, BloodSoakedJavelinAbility ability) : base(owner, ability)
         {
         }
 
@@ -54,7 +54,7 @@ public class BloodsoakedJavelinAbility : Ability, ICloneable
 
     public object Clone()
     {
-        return new BloodsoakedJavelinAbility()
+        return new BloodSoakedJavelinAbility()
         {
             _defaultIcon = _defaultIcon,
         };
