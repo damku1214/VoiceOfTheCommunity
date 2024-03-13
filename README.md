@@ -28,7 +28,7 @@ and this is the only way to access the mod. However, at the time of the real rel
     * The other two must be extracted inside the `2020.3.34` folder (the same folder!)
 3. Edit the new `doorstop_config.ini` file inside the game folder:
     * Change the last line from `dllSearchPathOverride=` to `dllSearchPathOverride=2020.3.34`
-4. Download the mods! Latest one here: https://github.com/MrBacanudo/SkulHardModeMods/releases/latest
+4. Download the mods! Latest one here: https://github.com/damku1214/VoiceOfTheCommunity/releases/latest
 5. Put the mods you want into the `BepInEx/plugins` folder inside your game folder
     * You're allowed to mix or just use what you want!
 
