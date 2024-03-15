@@ -8,6 +8,8 @@ using UnityEngine.AddressableAssets;
 using static Characters.Damage;
 using static Characters.CharacterStatus;
 using Characters.Abilities.CharacterStat;
+using Characters.Gear;
+using VoiceOfTheCommunity.CustomBehaviors;
 
 namespace CustomItems;
 
@@ -106,7 +108,7 @@ public class CustomItems
             ModifyDamage quintDamage = new();
 
             quintDamage._attackTypes = new();
-            quintDamage._attackTypes[Damage.MotionType.Quintessence] = true;
+            quintDamage._attackTypes[MotionType.Quintessence] = true;
 
             quintDamage._damageTypes = new([true, true, true, true, true]);
 
@@ -161,7 +163,7 @@ public class CustomItems
             ModifyDamage quintDamage = new();
 
             quintDamage._attackTypes = new();
-            quintDamage._attackTypes[Damage.MotionType.Quintessence] = true;
+            quintDamage._attackTypes[MotionType.Quintessence] = true;
 
             quintDamage._damageTypes = new([true, true, true, true, true]);
 
@@ -171,7 +173,7 @@ public class CustomItems
                 quintDamage
             ];
 
-            item.forbiddenDrops = new[] { "BrokenHeart" };
+            item.forbiddenDrops = new[] { "Custom-BrokenHeart" };
 
             items.Add(item);
         }
@@ -236,7 +238,7 @@ public class CustomItems
             // EN: Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n
             // Increases skill cooldown speed and skill casting speed by 30%.\n
             // Increases Crit Rate and Crit Damage by 10%.\n
-            // All effects double and Amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.
+            // All effects double and amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.
 
             // KR: <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 15% 증폭됩니다.\n
             // 스킬 쿨다운 속도 및 스킬 시전 속도가 30% 증가합니다.\n
@@ -246,7 +248,7 @@ public class CustomItems
             item.itemDescription = "Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n"
                                            + "Increases skill cooldown speed and skill casting speed by 30%.\n"
                                            + "Increases Crit Rate and Crit Damage by 10%.\n"
-                                           + "All effects double and Amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.";
+                                           + "All effects double and amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.";
 
             // EN: A really cool looking twig, but for some reason I feel sad...
             // KR: 정말 멋있어 보이는 나뭇가지일 터인데, 왜 볼 때 마다 슬퍼지는 걸까...
@@ -267,8 +269,7 @@ public class CustomItems
 
             ModifyDamage amplifyDamage = new();
 
-            amplifyDamage._attackTypes = new();
-            amplifyDamage._attackTypes[Damage.MotionType.Basic] = true;
+            amplifyDamage._attackTypes = new([true, true, true, true, true, true, true, true, true]);
 
             amplifyDamage._damageTypes = new([true, true, true, true, true]);
 
@@ -282,7 +283,7 @@ public class CustomItems
                 typeof(SmallTwigRevertBehavior),
             ];
 
-            item.forbiddenDrops = new[] { "SmallTwig" };
+            item.forbiddenDrops = new[] { "Custom-SmallTwig" };
 
             items.Add(item);
         }
@@ -447,7 +448,7 @@ public class CustomItems
                 amplifySwapDamage,
             ];
 
-            item.forbiddenDrops = new[] { "RustyChalice" };
+            item.forbiddenDrops = new[] { "Custom-RustyChalice" };
 
             items.Add(item);
         }
@@ -456,7 +457,7 @@ public class CustomItems
             item.name = "FlaskOfBotulism";
             item.rarity = Rarity.Unique;
 
-            item.gearTag = Characters.Gear.Gear.Tag.Omen;
+            item.gearTag = Gear.Tag.Omen;
             item.obtainable = false;
 
             // EN: Omen: Flask of Botulism
@@ -492,7 +493,7 @@ public class CustomItems
             item.name = "CorruptedSymbol";
             item.rarity = Rarity.Unique;
 
-            item.gearTag = Characters.Gear.Gear.Tag.Omen;
+            item.gearTag = Gear.Tag.Omen;
             item.obtainable = false;
 
             // EN: Omen: Corrupted Symbol
@@ -514,7 +515,7 @@ public class CustomItems
 
             StatBonusPerGearTag statBonusPerCarleonItem = new();
 
-            statBonusPerCarleonItem._tag = Characters.Gear.Gear.Tag.Carleon;
+            statBonusPerCarleonItem._tag = Gear.Tag.Carleon;
 
             statBonusPerCarleonItem._statPerGearTag = new Stat.Values(new Stat.Value[] {
                 new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.8),
@@ -555,7 +556,7 @@ public class CustomItems
             ModifyDamage amplifySkillDamage = new();
 
             amplifySkillDamage._attackTypes = new();
-            amplifySkillDamage._attackTypes[Damage.MotionType.Skill] = true;
+            amplifySkillDamage._attackTypes[MotionType.Skill] = true;
 
             amplifySkillDamage._damageTypes = new([true, true, true, true, true]);
 
@@ -600,7 +601,7 @@ public class CustomItems
             ModifyDamage amplifySkillDamage = new();
 
             amplifySkillDamage._attackTypes = new();
-            amplifySkillDamage._attackTypes[Damage.MotionType.Skill] = true;
+            amplifySkillDamage._attackTypes[MotionType.Skill] = true;
 
             amplifySkillDamage._damageTypes = new([true, true, true, true, true]);
 
@@ -614,7 +615,7 @@ public class CustomItems
                 typeof(TaintedFingerEvolveBehavior),
             ];
 
-            item.forbiddenDrops = new[] { "TaintedFinger" };
+            item.forbiddenDrops = new[] { "Custom-TaintedFinger" };
 
             items.Add(item);
         }
@@ -649,7 +650,7 @@ public class CustomItems
             ModifyDamage amplifySkillDamage = new();
 
             amplifySkillDamage._attackTypes = new();
-            amplifySkillDamage._attackTypes[Damage.MotionType.Skill] = true;
+            amplifySkillDamage._attackTypes[MotionType.Skill] = true;
 
             amplifySkillDamage._damageTypes = new([true, true, true, true, true]);
 
@@ -659,7 +660,7 @@ public class CustomItems
                 amplifySkillDamage,
             ];
 
-            item.forbiddenDrops = new[] { "TaintedFinger" };
+            item.forbiddenDrops = new[] { "Custom-TaintedFinger" };
 
             items.Add(item);
         }
@@ -720,13 +721,13 @@ public class CustomItems
             item.itemName = "Blood-Soaked Javelin";
 
             // EN: Increases Crit Damage by 25%.\n
-            // Critical hits have a 20% chance to apply Bleed to the enemy.
+            // Critical hits have a 20% chance to apply Bleed.
 
             // KR: 치명타 데미지가 25% 증가합니다.\n
             // 치명타 시 20% 확률로 적에게 출혈을 부여합니다.
 
             item.itemDescription = "Increases Crit Damage by 25%.\n"
-                                           + "Critical hits have a 20% chance to apply Bleed to the enemy.";
+                                           + "Critical hits have a 20% chance to apply Bleed.";
 
             // EN: A javelin that always hits vital organs, and drains all the blood out of whichever one it hits
             // KR: 적의 심장을 정확히 노려 시체에 피 한방울 남기지 않는 투창
@@ -779,23 +780,23 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.2),
             ]);
 
-            var applyFreezeWhenSkillAttacked = new ApplyStatusOnGaveDamage();
+            var applyStatus = new ApplyStatusOnGaveDamage();
             var status = Kind.Freeze;
-            applyFreezeWhenSkillAttacked._cooldownTime = 0.1f;
-            applyFreezeWhenSkillAttacked._chance = 2;
-            applyFreezeWhenSkillAttacked._attackTypes = new();
-            applyFreezeWhenSkillAttacked._attackTypes[MotionType.Skill] = true;
+            applyStatus._cooldownTime = 0.1f;
+            applyStatus._chance = 2;
+            applyStatus._attackTypes = new();
+            applyStatus._attackTypes[MotionType.Skill] = true;
 
-            applyFreezeWhenSkillAttacked._types = new();
-            applyFreezeWhenSkillAttacked._types[AttackType.Melee] = true;
-            applyFreezeWhenSkillAttacked._types[AttackType.Ranged] = true;
-            applyFreezeWhenSkillAttacked._types[AttackType.Projectile] = true;
+            applyStatus._types = new();
+            applyStatus._types[AttackType.Melee] = true;
+            applyStatus._types[AttackType.Ranged] = true;
+            applyStatus._types[AttackType.Projectile] = true;
 
-            applyFreezeWhenSkillAttacked._status = new ApplyInfo(status);
+            applyStatus._status = new ApplyInfo(status);
 
             item.abilities = [
                 new FrozenSpearAbility(),
-                applyFreezeWhenSkillAttacked,
+                applyStatus,
             ];
 
             items.Add(item);
@@ -838,26 +839,564 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.5),
             ]);
 
-            var applyFreezeWhenSkillAttacked = new ApplyStatusOnGaveDamage();
+            var applyStatus = new ApplyStatusOnGaveDamage();
             var status = Kind.Freeze;
-            applyFreezeWhenSkillAttacked._cooldownTime = 0.1f;
-            applyFreezeWhenSkillAttacked._chance = 5;
-            applyFreezeWhenSkillAttacked._attackTypes = new();
-            applyFreezeWhenSkillAttacked._attackTypes[MotionType.Skill] = true;
+            applyStatus._cooldownTime = 0.1f;
+            applyStatus._chance = 5;
+            applyStatus._attackTypes = new();
+            applyStatus._attackTypes[MotionType.Skill] = true;
 
-            applyFreezeWhenSkillAttacked._types = new();
-            applyFreezeWhenSkillAttacked._types[AttackType.Melee] = true;
-            applyFreezeWhenSkillAttacked._types[AttackType.Ranged] = true;
-            applyFreezeWhenSkillAttacked._types[AttackType.Projectile] = true;
+            applyStatus._types = new();
+            applyStatus._types[AttackType.Melee] = true;
+            applyStatus._types[AttackType.Ranged] = true;
+            applyStatus._types[AttackType.Projectile] = true;
 
-            applyFreezeWhenSkillAttacked._status = new ApplyInfo(status);
+            applyStatus._status = new ApplyInfo(status);
 
             item.abilities = [
                 new SpearOfTheFrozenMoonAbility(),
-                applyFreezeWhenSkillAttacked,
+                applyStatus,
             ];
 
-            item.forbiddenDrops = new[] { "FrozenSpear" };
+            item.forbiddenDrops = new[] { "Custom-FrozenSpear" };
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "CrossNecklace";
+            item.rarity = Rarity.Common;
+
+            // EN: Cross Necklace
+            // KR: 십자 목걸이
+            item.itemName = "Cross Necklace";
+
+            // EN: Recover 5 HP upon entering a map.
+
+            // KR: 맵 입장 시 체력을 5 회복합니다.
+
+            item.itemDescription = "Recover 5 HP upon entering a map.";
+
+            // EN: When all is lost, we turn to hope
+            // KR: 모든 것을 잃었을 때, 희망을 바라볼지니
+            item.itemLore = "Acceptance is the first step towards death.";
+
+            item.prefabKeyword1 = Inscription.Key.Relic;
+            item.prefabKeyword2 = Inscription.Key.Heritage;
+
+            item.abilities = [
+                new CrossNecklaceAbility(),
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "RottenWings";
+            item.rarity = Rarity.Rare;
+
+            // EN: Rotten Wings
+            // KR: 썩은 날개
+            item.itemName = "Rotten Wings";
+
+            // EN: Crit Rate increases by 15% while in midair.\n
+            // Your normal attacks have a 15% chance to inflict Poison.
+
+            // KR: 공중에 있을 시 치명타 확률이 15% 증가합니다.\n
+            // 적에게 기본공격 시 15% 확률로 중독을 부여합니다.
+
+            item.itemDescription = "Crit Rate increases by 15% while in midair.\n"
+                                           + "Your normal attacks have a 15% chance to inflict Poison.";
+
+            // EN: Wings of a zombie wyvern
+            // KR: 좀비 와이번의 썩어 문드러진 날개
+            item.itemLore = "Wings of a zombie wyvern";
+
+            item.prefabKeyword1 = Inscription.Key.Poisoning;
+            item.prefabKeyword2 = Inscription.Key.Soar;
+
+            StatBonusByAirTime bonus = new();
+
+            bonus._timeToMaxStat = 0.01f;
+            bonus._remainTimeOnGround = 0.0f;
+            bonus._maxStat = new Stat.Values(new Stat.Value[] {
+                new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.15),
+            });
+
+            var applyStatus = new ApplyStatusOnGaveDamage();
+            var status = Kind.Poison;
+            applyStatus._cooldownTime = 0.1f;
+            applyStatus._chance = 15;
+            applyStatus._attackTypes = new();
+            applyStatus._attackTypes[MotionType.Basic] = true;
+
+            applyStatus._types = new();
+            applyStatus._types[AttackType.Melee] = true;
+            applyStatus._types[AttackType.Ranged] = true;
+            applyStatus._types[AttackType.Projectile] = true;
+
+            applyStatus._status = new ApplyInfo(status);
+
+            item.abilities = [
+                bonus,
+                applyStatus,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "ShrinkingPotion";
+            item.rarity = Rarity.Rare;
+
+            // EN: Shrinking Potion
+            // KR: 난쟁이 물약
+            item.itemName = "Shrinking Potion";
+
+            // EN: Decreases character size by 20%.\n
+            // Increases Movement Speed by 15%.\n
+            // Incoming damage increases by 10%.
+
+            // KR: 캐릭터 크기가 20% 감소합니다.\n
+            // 이동속도가 15% 증가합니다.\n
+            // 받는 데미지가 10% 증가합니다.
+
+            item.itemDescription = "Decreases character size by 20%.\n"
+                                           + "Increases Movement Speed by 15%.\n"
+                                           + "Incoming damage increases by 10%.";
+
+            // EN: I think it was meant to be used on the enemies...
+            // KR: 왠지 적에게 써야 할 것 같은데...
+            item.itemLore = "I think it was meant to be used on the enemies...";
+
+            item.prefabKeyword1 = Inscription.Key.Mutation;
+            item.prefabKeyword2 = Inscription.Key.Chase;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.Percent, Stat.Kind.CharacterSize, 0.8),
+                new(Stat.Category.PercentPoint, Stat.Kind.MovementSpeed, 0.15),
+                new(Stat.Category.Percent, Stat.Kind.TakingDamage, 1.1),
+            ]);
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "ManaAccelerator";
+            item.rarity = Rarity.Rare;
+
+            // EN: Mana Accelerator
+            // KR: 마나 가속기
+            item.itemName = "Mana Accelerator";
+
+            // EN: Skill casting speed increases by 15% for each Mana Cycle inscription in possession.
+
+            // KR: 보유중인 마나순환 각인 1개당 스킬 시전 속도가 15% 증가합니다.
+
+            item.itemDescription = "Skill casting speed increases by 15% for each Mana Cycle inscription in possession.";
+
+            // EN: In a last ditch effort, mages may turn to this device to overcharge their mana.\nThough the high stress on the mage's mana can often strip them of all magic.
+            // KR: 마나를 극한까지 과부하시키는 마법사들의 최후의 수단\n너무 강한 과부하는 사용자를 불구로 만들 수 있으니 조심해야 한다
+            item.itemLore = "In a last ditch effort, mages may turn to this device to overcharge their mana.";
+
+            item.prefabKeyword1 = Inscription.Key.Manatech;
+            item.prefabKeyword2 = Inscription.Key.Artifact;
+
+            ManaAcceleratorAbility ability = new()
+            {
+                _statPerStack = new Stat.Values(
+                [
+                    new(Stat.Category.PercentPoint, Stat.Kind.SkillAttackSpeed, 0.15),
+                ])
+            };
+
+            item.abilities = [
+                ability,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "GrowingPotion";
+            item.rarity = Rarity.Rare;
+
+            // EN: Growing Potion
+            // KR: 성장 물약
+            item.itemName = "Growing Potion";
+
+            // EN: Increases character size by 20%.\n
+            // Decreases Movement Speed by 15%.\n
+            // Incoming damage decreases by 10%.
+
+            // KR: 캐릭터 크기가 20% 증가합니다.\n
+            // 이동속도가 15% 감소합니다.\n
+            // 받는 데미지가 10% 감소합니다.
+
+            item.itemDescription = "Increases character size by 20%.\n"
+                                           + "Decreases Movement Speed by 15%.\n"
+                                           + "Incoming damage decreases by 10%.";
+
+            // EN: Made from some weird size changing mushrooms deep within The Forest of Harmony
+            // KR: 하모니아 숲 깊숙이 있는 수상한 버섯으로 만들어진 물약
+            item.itemLore = "Made from some weird size changing mushrooms deep within The Forest of Harmony";
+
+            item.prefabKeyword1 = Inscription.Key.Mutation;
+            item.prefabKeyword2 = Inscription.Key.Fortress;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.Percent, Stat.Kind.CharacterSize, 1.2),
+                new(Stat.Category.PercentPoint, Stat.Kind.MovementSpeed, -0.15),
+                new(Stat.Category.Percent, Stat.Kind.TakingDamage, 0.9),
+            ]);
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "BeginnersLance";
+            item.rarity = Rarity.Common;
+
+            // EN: Beginner's Lance
+            // KR: 초보자용 창
+            item.itemName = "Beginner's Lance";
+
+            // EN: Increases <color=#F25D1C>Physical Attack</color> by 20%.\n
+            // Damage dealt to enemies with a dash attack is amplifies by 30%.
+
+            // KR: <color=#F25D1C>물리공격력</color>이 20% 증가합니다.\n
+            // 적에게 대쉬공격으로 입히는 데미지가 30% 증폭됩니다.
+
+            item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 20%.\n"
+                                           + "Damage dealt to enemies with a dash attack is amplifies by 30%.";
+
+            // EN: Perfect! Now all I need is a noble steed...
+            // KR: 완벽해! 이제 좋은 말만 있으면 되는데...
+            item.itemLore = "Perfect! Now all I need is a noble steed...";
+
+            item.prefabKeyword1 = Inscription.Key.Duel;
+            item.prefabKeyword2 = Inscription.Key.Chase;
+
+            ModifyDamage amplifyDashDamage = new();
+
+            amplifyDashDamage._attackTypes = new();
+            amplifyDashDamage._attackTypes[MotionType.Dash] = true;
+
+            amplifyDashDamage._damageTypes = new([true, true, true, true, true]);
+
+            amplifyDashDamage._damagePercent = 1.3f;
+
+            item.abilities = [
+                amplifyDashDamage,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WingedSpear";
+            item.rarity = Rarity.Common;
+
+            // EN: Winged Spear
+            // KR: 날개달린 창
+            item.itemName = "Winged Spear";
+
+            // EN: Increases <color=#F25D1C>Physical Attack</color> by 15%.\n
+            // Increases <color=#1787D8>Magic Attack</color> by 15%.\n
+            // Increases Attack Speed by 15%.\n
+            // Increases skill cooldown speed by 15%.\n
+            // Increases swap cooldown speed by 15%.
+
+            // KR: <color=#F25D1C>물리공격력</color>이 15% 증가합니다.\n
+            // <color=#1787D8>마법공격력</color>이 15% 증가합니다.\n
+            // 공격속도가 15% 증가합니다.\n
+            // 스킬 쿨다운 속도가 15% 증가합니다.\n
+            // 교대 쿨다운 속도가 15% 증가합니다.
+
+            item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 15%.\n"
+                                           + "Increases <color=#1787D8>Magic Attack</color> by 15%.\n"
+                                           + "Increases Attack Speed by 15%.\n"
+                                           + "Increases skill cooldown speed by 15%.\n"
+                                           + "Increases swap cooldown speed by 15%.";
+
+            // EN: A golden spear ornamented with the wings of dawn.
+            // KR: 여명의 날개로 치장된 금색 창
+            item.itemLore = "A golden spear ornamented with the wings of dawn.";
+
+            item.prefabKeyword1 = Inscription.Key.Duel;
+            item.prefabKeyword2 = Inscription.Key.SunAndMoon;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.15),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.15),
+                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.15),
+                new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.15),
+                new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.15),
+            ]);
+
+            item.extraComponents = [
+                typeof(WingedSpearEvolveBehavior),
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WingedSpear_2";
+            item.rarity = Rarity.Unique;
+
+            item.obtainable = false;
+
+            // EN: Winged Sword
+            // KR: 날개달린 검
+            item.itemName = "Winged Sword";
+
+            // EN: Increases <color=#F25D1C>Physical Attack</color> by 55%.\n
+            // Increases Attack Speed by 25%.\n
+            // Increases swap cooldown speed by 25%.
+
+            // KR: <color=#F25D1C>물리공격력</color>이 55% 증가합니다.\n
+            // 공격속도가 25% 증가합니다.\n
+            // 교대 쿨다운 속도가 25% 증가합니다.
+
+            item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 55%.\n"
+                                           + "Increases Attack Speed by 25%.\n"
+                                           + "Increases swap cooldown speed by 25%.";
+
+            // EN: A golden sword ornamented with the wings of dawn.
+            // KR: 여명의 날개로 치장된 금색 검
+            item.itemLore = "A golden sword ornamented with the wings of dawn.";
+
+            item.prefabKeyword1 = Inscription.Key.Duel;
+            item.prefabKeyword2 = Inscription.Key.Arms;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.55),
+                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.25),
+                new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.25),
+            ]);
+
+            item.forbiddenDrops = new[]
+            {
+                "SolarSword",
+                "LunarRing",
+                "ShardOfDarkness",
+                "Custom-WingedSpear"
+            };
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WingedSpear_3";
+            item.rarity = Rarity.Unique;
+
+            item.obtainable = false;
+
+            // EN: Winged Insignia
+            // KR: 날개달린 휘장
+            item.itemName = "Winged Insignia";
+
+            // EN: Increases <color=#1787D8>Magic Attack</color> by 55%.\n
+            // Increases skill cooldown speed by 15%.\n
+            // Increases swap cooldown speed by 15%.
+
+            // KR: <color=#1787D8>마법공격력</color>이 55% 증가합니다.\n
+            // 스킬 쿨다운 속도가 25% 증가합니다.\n
+            // 교대 쿨다운 속도가 25% 증가합니다.
+
+            item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 55%.\n"
+                                           + "Increases skill cooldown speed by 25%.\n"
+                                           + "Increases swap cooldown speed by 25%.";
+
+            // EN: A golden insignia ornamented with the wings of dawn.
+            // KR: 여명의 날개로 치장된 금색 휘장
+            item.itemLore = "A golden spear ornamented with the wings of dawn.";
+
+            item.prefabKeyword1 = Inscription.Key.Duel;
+            item.prefabKeyword2 = Inscription.Key.Artifact;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.55),
+                new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.25),
+                new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.25),
+            ]);
+
+            item.forbiddenDrops = new[]
+            {
+                "SolarSword",
+                "LunarRing",
+                "ShardOfDarkness",
+                "Custom-WingedSpear"
+            };
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WingedSpear_4";
+            item.rarity = Rarity.Unique;
+
+            item.obtainable = false;
+
+            // EN: Wings of Dawn
+            // KR: 여명의 날개
+            item.itemName = "Wings of Dawn";
+
+            // EN: Increases <color=#F25D1C>Physical Attack</color> by 75%.\n
+            // Increases <color=#1787D8>Magic Attack</color> by 75%.\n
+            // Increases Attack Speed by 45%.\n
+            // Increases skill cooldown speed by 45%.\n
+            // Increases swap cooldown speed by 45%.
+
+            // KR: <color=#F25D1C>물리공격력</color>이 75% 증가합니다.\n
+            // <color=#1787D8>마법공격력</color>이 75% 증가합니다.\n
+            // 공격속도가 45% 증가합니다.\n
+            // 스킬 쿨다운 속도가 45% 증가합니다.\n
+            // 교대 쿨다운 속도가 45% 증가합니다.
+
+            item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 75%.\n"
+                                           + "Increases <color=#1787D8>Magic Attack</color> by 75%.\n"
+                                           + "Increases Attack Speed by 45%.\n"
+                                           + "Increases skill cooldown speed by 45%.\n"
+                                           + "Increases swap cooldown speed by 45%.";
+
+            // EN: A divine spear donning the wings of dawn.
+            // KR: 여명의 날개를 흡수한 신성한 창
+            item.itemLore = "A divine spear donning the wings of dawn.";
+
+            item.prefabKeyword1 = Inscription.Key.Duel;
+            item.prefabKeyword2 = Inscription.Key.Duel;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.75),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.75),
+                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.45),
+                new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.45),
+                new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.45),
+            ]);
+
+            item.forbiddenDrops = new[]
+            {
+                "SolarSword",
+                "LunarRing",
+                "ShardOfDarkness",
+                "Custom-WingedSpear"
+            };
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WingedSpear_5";
+            item.rarity = Rarity.Unique;
+
+            item.gearTag = Gear.Tag.Omen;
+            item.obtainable = false;
+
+            // EN: Omen: Last Dawn
+            // KR: 흉조: 최후의 여명
+            item.itemName = "Omen: Last Dawn";
+
+            // EN: Increases <color=#F25D1C>Physical Attack</color> by 110%.\n
+            // Increases <color=#1787D8>Magic Attack</color> by 110%.\n
+            // Increases Attack Speed by 65%.\n
+            // Increases skill cooldown speed by 65%.\n
+            // Increases swap cooldown speed by 65%.
+
+            // KR: <color=#F25D1C>물리공격력</color>이 110% 증가합니다.\n
+            // <color=#1787D8>마법공격력</color>이 110% 증가합니다.\n
+            // 공격속도가 65% 증가합니다.\n
+            // 스킬 쿨다운 속도가 65% 증가합니다.\n
+            // 교대 쿨다운 속도가 65% 증가합니다.
+
+            item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 110%.\n"
+                                           + "Increases <color=#1787D8>Magic Attack</color> by 110%.\n"
+                                           + "Increases Attack Speed by 65%.\n"
+                                           + "Increases skill cooldown speed by 65%.\n"
+                                           + "Increases swap cooldown speed by 65%.";
+
+            // EN: The sky cracks, darkness fills the world within.
+            // KR: 하늘은 갈라져 속세를 어둠에 물들지니.
+            item.itemLore = "The sky cracks, darkness fills the world within.";
+
+            item.prefabKeyword1 = Inscription.Key.Omen;
+            item.prefabKeyword2 = Inscription.Key.Duel;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 1.1),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1.1),
+                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.65),
+                new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.65),
+                new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.65),
+            ]);
+
+            item.forbiddenDrops = new[]
+            {
+                "SolarSword",
+                "LunarRing",
+                "ShardOfDarkness",
+                "Custom-WingedSpear"
+            };
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "Fonias";
+            item.rarity = Rarity.Unique;
+
+            // EN: Fonias
+            // KR: 포니아스
+            item.itemName = "Fonias";
+
+            // EN: Increases Crit Chance by 5%.\n
+            // Increases Crit Damage by 25%.\n
+            // Amplifies damage dealt to enemies by 10%.\n
+            // Amplfies damage dealt to an adventurer or a boss by 5%.
+
+            // KR: 치명타 확률이 5% 증가합니다.\n
+            // 치평타 피해가 25% 증가합니다.\n
+            // 적에게 입히는 데미지가 10% 증폭됩니다.\n
+            // 모험가 혹은 보스에게 입히는 데미지가 5% 증폭됩니다.
+
+            item.itemDescription = "Increases Crit Chance by 5%.\n"
+                                           + "Increases Crit Damage by 25%.\n"
+                                           + "Amplifies damage dealt to enemies by 10%.\n"
+                                           + "Amplfies damage dealt to an adventurer or a boss by 5%.";
+
+            // EN: An ancient scythe imbued with cursed power.\nIt was once wielded by a former demon king.
+            // KR: 전대 마왕중 한명이 사용했다는 저주의 기운을 뿜어내는 고대의 낫
+            item.itemLore = "An ancient scythe imbued with cursed power.\nIt was once wielded by a former demon king.";
+
+            item.prefabKeyword1 = Inscription.Key.Execution;
+            item.prefabKeyword2 = Inscription.Key.Strike;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.05),
+                new(Stat.Category.PercentPoint, Stat.Kind.CriticalDamage, 0.25),
+            ]);
+
+            ModifyDamage amplifyDamage = new();
+
+            amplifyDamage._attackTypes = new([true, true, true, true, true, true, true, true, true]);
+
+            amplifyDamage._damageTypes = new([true, true, true, true, true]);
+
+            amplifyDamage._damagePercent = 1.1f;
+
+            item.abilities = [
+                new FoniasAbility(),
+                amplifyDamage,
+            ];
 
             items.Add(item);
         }

@@ -13,7 +13,7 @@ public sealed class SmallTwigRevertBehavior : MonoBehaviour
     [SerializeField]
     private Item _item = null;
 
-    public Character player = Singleton<Service>.Instance.levelManager.player;
+    private Character player = Singleton<Service>.Instance.levelManager.player;
 
     private void Awake()
     {

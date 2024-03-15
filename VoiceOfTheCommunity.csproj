@@ -39,6 +39,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Sprites\BeginnersLance.AbilityIcon.png" />
+	  <None Remove="Sprites\BeginnersLance.Icon.png" />
+	  <None Remove="Sprites\BeginnersLance.Thumbnail.png" />
 	  <None Remove="Sprites\BloodsoakedJavelin.AbilityIcon.png" />
 	  <None Remove="Sprites\BloodsoakedJavelin.Icon.png" />
 	  <None Remove="Sprites\BloodsoakedJavelin.Thumbnail.png" />
@@ -51,21 +54,39 @@
 	  <None Remove="Sprites\CorruptedSymbol.AbilityIcon.png" />
 	  <None Remove="Sprites\CorruptedSymbol.Icon.png" />
 	  <None Remove="Sprites\CorruptedSymbol.Thumbnail.png" />
+	  <None Remove="Sprites\CrossNecklace.AbilityIcon.png" />
+	  <None Remove="Sprites\CrossNecklace.Icon.png" />
+	  <None Remove="Sprites\CrossNecklace.Thumbnail.png" />
 	  <None Remove="Sprites\DreamCatcher.AbilityIcon.png" />
 	  <None Remove="Sprites\DreamCatcher.Icon.png" />
 	  <None Remove="Sprites\DreamCatcher.Thumbnail.png" />
+	  <None Remove="Sprites\Fonias.AbilityIcon.png" />
+	  <None Remove="Sprites\Fonias.Icon.png" />
+	  <None Remove="Sprites\Fonias.Thumbnail.png" />
 	  <None Remove="Sprites\FrozenSpear.AbilityIcon.png" />
 	  <None Remove="Sprites\FrozenSpear.Icon.png" />
 	  <None Remove="Sprites\FrozenSpear.Thumbnail.png" />
 	  <None Remove="Sprites\FrozenSpear_2.AbilityIcon.png" />
 	  <None Remove="Sprites\FrozenSpear_2.Icon.png" />
 	  <None Remove="Sprites\FrozenSpear_2.Thumbnail.png" />
+	  <None Remove="Sprites\GrowingPotion.AbilityIcon.png" />
+	  <None Remove="Sprites\GrowingPotion.Icon.png" />
+	  <None Remove="Sprites\GrowingPotion.Thumbnail.png" />
+	  <None Remove="Sprites\ManaAccelerator.AbilityIcon.png" />
+	  <None Remove="Sprites\ManaAccelerator.Icon.png" />
+	  <None Remove="Sprites\ManaAccelerator.Thumbnail.png" />
+	  <None Remove="Sprites\RottenWings.AbilityIcon.png" />
+	  <None Remove="Sprites\RottenWings.Icon.png" />
+	  <None Remove="Sprites\RottenWings.Thumbnail.png" />
 	  <None Remove="Sprites\RustyChalice.AbilityIcon.png" />
 	  <None Remove="Sprites\RustyChalice.Icon.png" />
 	  <None Remove="Sprites\RustyChalice.Thumbnail.png" />
 	  <None Remove="Sprites\RustyChalice_2.AbilityIcon.png" />
 	  <None Remove="Sprites\RustyChalice_2.Icon.png" />
 	  <None Remove="Sprites\RustyChalice_2.Thumbnail.png" />
+	  <None Remove="Sprites\ShrinkingPotion.AbilityIcon.png" />
+	  <None Remove="Sprites\ShrinkingPotion.Icon.png" />
+	  <None Remove="Sprites\ShrinkingPotion.Thumbnail.png" />
 	  <None Remove="Sprites\SmallTwig.AbilityIcon.png" />
 	  <None Remove="Sprites\SmallTwig.Icon.png" />
 	  <None Remove="Sprites\SmallTwig.Thumbnail.png" />
@@ -84,6 +105,21 @@
 	  <None Remove="Sprites\VolcanicShard.AbilityIcon.png" />
 	  <None Remove="Sprites\VolcanicShard.Icon.png" />
 	  <None Remove="Sprites\VolcanicShard.Thumbnail.png" />
+	  <None Remove="Sprites\WingedSpear.AbilityIcon.png" />
+	  <None Remove="Sprites\WingedSpear.Icon.png" />
+	  <None Remove="Sprites\WingedSpear.Thumbnail.png" />
+	  <None Remove="Sprites\WingedSpear_2.AbilityIcon.png" />
+	  <None Remove="Sprites\WingedSpear_2.Icon.png" />
+	  <None Remove="Sprites\WingedSpear_2.Thumbnail.png" />
+	  <None Remove="Sprites\WingedSpear_3.AbilityIcon.png" />
+	  <None Remove="Sprites\WingedSpear_3.Icon.png" />
+	  <None Remove="Sprites\WingedSpear_3.Thumbnail.png" />
+	  <None Remove="Sprites\WingedSpear_4.AbilityIcon.png" />
+	  <None Remove="Sprites\WingedSpear_4.Icon.png" />
+	  <None Remove="Sprites\WingedSpear_4.Thumbnail.png" />
+	  <None Remove="Sprites\WingedSpear_5.AbilityIcon.png" />
+	  <None Remove="Sprites\WingedSpear_5.Icon.png" />
+	  <None Remove="Sprites\WingedSpear_5.Thumbnail.png" />
 	</ItemGroup>
 
 	<ItemGroup>

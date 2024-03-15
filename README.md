@@ -8,8 +8,9 @@ None of the code belongs to me excluding content related to custom items.
 ## Content
 So far, this mod contains:
 
-* 2 Rares
-* 3 Uniques
+* 3 Commons
+* 6 Rares
+* 4 Uniques
 * 2 Omens
 * 4 Legendaries
 
@@ -39,10 +40,10 @@ Use this at your own risk. Here be dragons!
 
 ## Contributors
 I would like to give a huge thanks to people who contributed to this mod. This includes:
-* IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig' and 'Volcanic Shard'
-* Zinier - creator of 'Rusty Chalice' and 'Blood-Soaked Javelin'
-* Haxa - creator of 'Flask of Botulism' and 'Corrupted Symbol'
-* regular anime girl - creator of 'Tainted Finger'
-* Steak - creator of 'Dream Catcher'
+* IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', and 'Growing Potion'
+* Zinier - creator of 'Rusty Chalice', 'Blood-Soaked Javelin', 'Cross Necklace', 'Mana Accelerator', and 'Fonias'
+* Haxa - creator of 'Flask of Botulism', 'Corrupted Symbol', and 'Beginner's Lance'
+* regular anime girl - creator of 'Tainted Finger' and 'Rotten Wings'
+* Steak - creator of 'Dream Catcher' and 'Winged Spear'
 
 These are not all the contributors in stock, but all of them that are presented so far. Much more is yet to come!
