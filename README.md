@@ -8,11 +8,11 @@ None of the code belongs to me excluding content related to custom items.
 ## Content
 So far, this mod contains:
 
-* 3 Commons
-* 6 Rares
+* 5 Commons
+* 8 Rares
 * 4 Uniques
-* 2 Omens
-* 4 Legendaries
+* 3 Omens
+* 5 Legendaries
 
 This is a beta version, so much more is yet to come! Hang in there for a bit!
 
@@ -40,10 +40,12 @@ Use this at your own risk. Here be dragons!
 
 ## Contributors
 I would like to give a huge thanks to people who contributed to this mod. This includes:
-* IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', and 'Growing Potion'
-* Zinier - creator of 'Rusty Chalice', 'Blood-Soaked Javelin', 'Cross Necklace', 'Mana Accelerator', and 'Fonias'
-* Haxa - creator of 'Flask of Botulism', 'Corrupted Symbol', and 'Beginner's Lance'
+* IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', 'Growing Potion', and 'Lucky Coin'
+* Zinier - creator of 'Rusty Chalice', 'Blood-Soaked Javelin', 'Cross Necklace', 'Mana Accelerator', 'Fonias', and 'Omen: Accursed Sabre'
+* Haxa - creator of 'Omen: Flask of Botulism', 'Omen: Corrupted Symbol', 'Beginner's Lance', and 'Heavy-Duty Carleon Helmet'
 * regular anime girl - creator of 'Tainted Finger' and 'Rotten Wings'
-* Steak - creator of 'Dream Catcher' and 'Winged Spear'
-
-These are not all the contributors in stock, but all of them that are presented so far. Much more is yet to come!
+* Steak - creator of 'Dream Catcher', 'Winged Spear', and 'Weird Herbs'
+* Vaalfen - creator of 'Frozen Spear'
+* viktor_k - creator of 'Spiky Rapida'
+* WillSP - creator of 'Cursed Hourglass'
+* damku1214 (Yes, it's me!) - creator of 'Withering Fabric'

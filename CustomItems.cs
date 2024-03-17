@@ -11,7 +11,7 @@ using Characters.Abilities.CharacterStat;
 using Characters.Gear;
 using VoiceOfTheCommunity.CustomBehaviors;
 
-namespace CustomItems;
+namespace VoiceOfTheCommunity;
 
 public class CustomItems
 {
@@ -299,17 +299,17 @@ public class CustomItems
             // EN: Increases <color=#1787D8>Magic Attack</color> by 100%.\n
             // Normal attacks and skills have a 20% chance to inflict Burn.\n
             // Amplifies Damage to Burning enemies by 25%.\n
-            // Burn duration increases by 20% for each Arson inscription in possession.
+            // Burn duration decreases by 10% for each Arson inscription in possession.
 
             // KR: <color=#1787D8>마법공격력</color>이 100% 증가합니다.\n
-            // 적 공격 시 20% 확률로 화상을 입힙니다.\n
+            // 적 공격 시 20% 확률로 화상을 부여합니다.\n
             // 적에게 화상으로 입히는 데미지가 25% 증폭됩니다.\n
-            // 가지고 있는 방화 각인에 비례하여 화상의 지속시간이 20%씩 증가합니다.
+            // 가지고 있는 방화 각인에 비례하여 화상의 지속시간이 10%씩 감소합니다.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 100%.\n"
                                            + "Normal attacks and skills have a 20% chance to inflict Burn.\n"
                                            + "Amplifies Damage to Burning enemies by 25%.\n"
-                                           + "Burn duration increases by 20% for each Arson inscription in possession.";
+                                           + "Burn duration decreases by 10% for each Arson inscription in possession.";
 
             // EN: Rumored to be created from the Black Rock Volcano when erupting, this giant blade is the hottest flaming sword.
             // KR: 전설의 흑요석 화산의 폭발에서 만들어졌다고 전해진, 세상에서 가장 뜨거운 칼날
@@ -323,24 +323,24 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1),
             ]);
 
-            var applyBurnWhenAttacked = new ApplyStatusOnGaveDamage();
+            var applyStatus = new ApplyStatusOnGaveDamage();
             var status = Kind.Burn;
-            applyBurnWhenAttacked._cooldownTime = 0.1f;
-            applyBurnWhenAttacked._chance = 20;
-            applyBurnWhenAttacked._attackTypes = new();
-            applyBurnWhenAttacked._attackTypes[MotionType.Basic] = true;
-            applyBurnWhenAttacked._attackTypes[MotionType.Skill] = true;
+            applyStatus._cooldownTime = 0.1f;
+            applyStatus._chance = 20;
+            applyStatus._attackTypes = new();
+            applyStatus._attackTypes[MotionType.Basic] = true;
+            applyStatus._attackTypes[MotionType.Skill] = true;
 
-            applyBurnWhenAttacked._types = new();
-            applyBurnWhenAttacked._types[AttackType.Melee] = true;
-            applyBurnWhenAttacked._types[AttackType.Ranged] = true;
-            applyBurnWhenAttacked._types[AttackType.Projectile] = true;
+            applyStatus._types = new();
+            applyStatus._types[AttackType.Melee] = true;
+            applyStatus._types[AttackType.Ranged] = true;
+            applyStatus._types[AttackType.Projectile] = true;
 
-            applyBurnWhenAttacked._status = new ApplyInfo(status);
+            applyStatus._status = new ApplyInfo(status);
 
             item.abilities = [
                 new VolcanicShardAbility(),
-                applyBurnWhenAttacked,
+                applyStatus,
             ];
 
             items.Add(item);
@@ -513,17 +513,17 @@ public class CustomItems
             item.prefabKeyword1 = Inscription.Key.Omen;
             item.prefabKeyword2 = Inscription.Key.Spoils;
 
-            StatBonusPerGearTag statBonusPerCarleonItem = new();
-
-            statBonusPerCarleonItem._tag = Gear.Tag.Carleon;
-
-            statBonusPerCarleonItem._statPerGearTag = new Stat.Values(new Stat.Value[] {
-                new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.8),
-                new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.8),
-            });
+            CorruptedSymbolAbility ability = new()
+            {
+                _statPerStack = new Stat.Values(
+                [
+                    new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.8),
+                    new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.8),
+                ])
+            };
 
             item.abilities = [
-                statBonusPerCarleonItem
+                ability,
             ];
 
             items.Add(item);
@@ -720,14 +720,14 @@ public class CustomItems
             // KR: 피투성이 투창
             item.itemName = "Blood-Soaked Javelin";
 
-            // EN: Increases Crit Damage by 25%.\n
-            // Critical hits have a 20% chance to apply Bleed.
+            // EN: Increases Crit Damage by 20%.\n
+            // Critical hits have a 5% chance to apply Wound (Cooldown: 0.5 seconds).
 
-            // KR: 치명타 데미지가 25% 증가합니다.\n
-            // 치명타 시 20% 확률로 적에게 출혈을 부여합니다.
+            // KR: 치명타 데미지가 20% 증가합니다.\n
+            // 치명타 시 5% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).
 
-            item.itemDescription = "Increases Crit Damage by 25%.\n"
-                                           + "Critical hits have a 20% chance to apply Bleed.";
+            item.itemDescription = "Increases Crit Damage by 20%.\n"
+                                           + "Critical hits have a 5% chance to apply Wound.";
 
             // EN: A javelin that always hits vital organs, and drains all the blood out of whichever one it hits
             // KR: 적의 심장을 정확히 노려 시체에 피 한방울 남기지 않는 투창
@@ -979,35 +979,47 @@ public class CustomItems
                 new(Stat.Category.Percent, Stat.Kind.TakingDamage, 1.1),
             ]);
 
+            item.extraComponents = [
+                typeof(ShrinkingPotionEvolveBehavior),
+            ];
+
             items.Add(item);
         }
         {
             var item = new CustomItemReference();
-            item.name = "ManaAccelerator";
-            item.rarity = Rarity.Rare;
+            item.name = "ShrinkingPotion_2";
+            item.rarity = Rarity.Unique;
 
-            // EN: Mana Accelerator
-            // KR: 마나 가속기
-            item.itemName = "Mana Accelerator";
+            // EN: Unstable Size Potion
+            // KR: 불안정한 크기 조정 물약
+            item.itemName = "Unstable Size Potion";
 
-            // EN: Skill casting speed increases by 15% for each Mana Cycle inscription in possession.
+            // EN: Alters between the effects of 'Shrinking Potion' and 'Growing Potion' every 10 seconds.
 
-            // KR: 보유중인 마나순환 각인 1개당 스킬 시전 속도가 15% 증가합니다.
+            // KR: 10초 마다 '난쟁이 물약'과 '성장 물약'의 효과를 번갈아가며 적용합니다.
 
-            item.itemDescription = "Skill casting speed increases by 15% for each Mana Cycle inscription in possession.";
+            item.itemDescription = "Alters between the effects of 'Shrinking Potion' and 'Growing Potion' every 10 seconds.";
 
-            // EN: In a last ditch effort, mages may turn to this device to overcharge their mana.\nThough the high stress on the mage's mana can often strip them of all magic.
-            // KR: 마나를 극한까지 과부하시키는 마법사들의 최후의 수단\n너무 강한 과부하는 사용자를 불구로 만들 수 있으니 조심해야 한다
-            item.itemLore = "In a last ditch effort, mages may turn to this device to overcharge their mana.";
+            // EN: Mixing those potions together was a bad idea
+            // KR: 이 물약들을 섞는 것은 좋은 생각이 아니었다.
+            item.itemLore = "Mixing those potions together was a bad idea";
 
-            item.prefabKeyword1 = Inscription.Key.Manatech;
-            item.prefabKeyword2 = Inscription.Key.Artifact;
+            item.prefabKeyword1 = Inscription.Key.Mutation;
+            item.prefabKeyword2 = Inscription.Key.Antique;
 
-            ManaAcceleratorAbility ability = new()
+            UnstableSizePotionAbility ability = new()
             {
-                _statPerStack = new Stat.Values(
+                _timeout = 10,
+                _shrinkingStat = new Stat.Values(
                 [
-                    new(Stat.Category.PercentPoint, Stat.Kind.SkillAttackSpeed, 0.15),
+                    new(Stat.Category.Percent, Stat.Kind.CharacterSize, 0.8),
+                    new(Stat.Category.PercentPoint, Stat.Kind.MovementSpeed, 0.15),
+                    new(Stat.Category.Percent, Stat.Kind.TakingDamage, 1.1),
+                ]),
+                _growingStat = new Stat.Values([
+                    new(Stat.Category.Percent, Stat.Kind.CharacterSize, 1.2),
+                    new(Stat.Category.PercentPoint, Stat.Kind.MovementSpeed, -0.15),
+                    new(Stat.Category.Percent, Stat.Kind.TakingDamage, 0.9),
                 ])
             };
 
@@ -1051,6 +1063,42 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.MovementSpeed, -0.15),
                 new(Stat.Category.Percent, Stat.Kind.TakingDamage, 0.9),
             ]);
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "ManaAccelerator";
+            item.rarity = Rarity.Rare;
+
+            // EN: Mana Accelerator
+            // KR: 마나 가속기
+            item.itemName = "Mana Accelerator";
+
+            // EN: Skill casting speed increases by 15% for each Mana Cycle inscription in possession.
+
+            // KR: 보유중인 마나순환 각인 1개당 스킬 시전 속도가 15% 증가합니다.
+
+            item.itemDescription = "Skill casting speed increases by 15% for each Mana Cycle inscription in possession.";
+
+            // EN: In a last ditch effort, mages may turn to this device to overcharge their mana. Though the high stress on the mage's mana can often strip them of all magic.
+            // KR: 마나를 극한까지 과부하시키는 마법사들의 최후의 수단.\n너무 강한 과부하는 사용자를 불구로 만들 수 있으니 조심해야 한다
+            item.itemLore = "In a last ditch effort, mages may turn to this device to overcharge their mana. Though the high stress on the mage's mana can often strip them of all magic.";
+
+            item.prefabKeyword1 = Inscription.Key.Manatech;
+            item.prefabKeyword2 = Inscription.Key.Artifact;
+
+            ManaAcceleratorAbility ability = new()
+            {
+                _statPerStack = new Stat.Values(
+                [
+                    new(Stat.Category.PercentPoint, Stat.Kind.SkillAttackSpeed, 0.15),
+                ])
+            };
+
+            item.abilities = [
+                ability,
+            ];
 
             items.Add(item);
         }
@@ -1396,6 +1444,328 @@ public class CustomItems
             item.abilities = [
                 new FoniasAbility(),
                 amplifyDamage,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "SpikyRapida";
+            item.rarity = Rarity.Rare;
+
+            // EN: Spiky Rapida
+            // KR: 가시덤불 레이피어
+            item.itemName = "Spiky Rapida";
+
+            // EN: Increases Attack Speed by 20%.\n
+            // Every 3rd normal attack, inflicts Wound to enemies that were hit.
+
+            // KR: 공격속도가 20% 증가합니다.\n
+            // 3회 째 기본공격마다 피격된 적에게 상처를 입힙니다.
+
+            item.itemDescription = "Increases Attack Speed by 20%.\n"
+                                           + "Every 3rd normal attack, inflicts Wound to enemies that were hit.";
+
+            // EN: In ancient times, when there was no English language yet, you would have been called "Victor".....
+            // KR: 태초의 시절, 이곳의 언어도 없던 때에 당신은 "빅토르" 라고 불렸던 것 같다.....
+            item.itemLore = "In ancient times, when there was no English language yet, you would have been called \"Victor\".....";
+
+            item.prefabKeyword1 = Inscription.Key.ExcessiveBleeding;
+            item.prefabKeyword2 = Inscription.Key.Rapidity;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.2),
+            ]);
+
+            item.abilities = [
+                new SpikyRapidaAbility(),
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WeirdHerbs";
+            item.rarity = Rarity.Common;
+
+            // EN: Weird Herbs
+            // KR: 수상한 허브
+            item.itemName = "Weird Herbs";
+
+            // EN: Swapping increases skill cooldown speed by 25% and Crit Rate by 12% for 6 seconds.
+
+            // KR: 교대 시 6초 동안 스킬 쿨다운 속도가 25% 증가하고 치명타 확률이 12% 증가합니다.
+
+            item.itemDescription = "Swapping increases skill cooldown speed by 25% and Crit Rate by 12% for 6 seconds.";
+
+            // EN: Quartz-infused herbs which you can find all over the dark forest.
+            // KR: 어둠의 숲 전역에서 찾을 수 있는 마석과 융합된 허브
+            item.itemLore = "Quartz-infused herbs which you can find all over the dark forest.";
+
+            item.prefabKeyword1 = Inscription.Key.Mutation;
+            item.prefabKeyword2 = Inscription.Key.Misfortune;
+
+            WeirdHerbsAbility ability = new()
+            {
+                _timeout = 6.0f,
+                _stat = new Stat.Values(
+                [
+                    new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.25),
+                    new(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.12),
+                ]),
+            };
+
+            item.abilities = [
+                ability,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "AccursedSabre";
+            item.rarity = Rarity.Unique;
+
+            item.gearTag = Gear.Tag.Omen;
+            item.obtainable = false;
+
+            // EN: Accursed Sabre
+            // KR: 저주받은 단도
+            item.itemName = "Accursed Sabre";
+
+            // EN: Basic attacks and skills have a 10% chance to apply Wound.\n
+            // Every 2nd Bleed inflicts Bleed twice.
+
+            // KR: 적 공격 시 10% 확률로 상처를 부여합니다.\n
+            // 2회 째 출혈마다 출혈을 한번 더 부여합니다.
+
+            item.itemDescription = "Basic attacks and skills have a 20% chance to apply Wound.\n"
+                                           + "Every 2nd Bleed inflicts Bleed twice.";
+
+            // EN: Sabre of the great duelist Sly who left his final memento in the form of never-ending anarchy and bloodshed.
+            // KR: 끝없는 반역과 학살을 낳았던 세계 제일의 결투가 슬라이의 단도
+            item.itemLore = "Sabre of the great duelist Sly who left his final memento in the form of never-ending anarchy and bloodshed.";
+
+            item.prefabKeyword1 = Inscription.Key.Omen;
+            item.prefabKeyword2 = Inscription.Key.ExcessiveBleeding;
+
+            var applyStatus = new ApplyStatusOnGaveDamage();
+            var status = Kind.Wound;
+            applyStatus._cooldownTime = 0.1f;
+            applyStatus._chance = 10;
+            applyStatus._attackTypes = new();
+            applyStatus._attackTypes[MotionType.Basic] = true;
+            applyStatus._attackTypes[MotionType.Skill] = true;
+
+            applyStatus._types = new();
+            applyStatus._types[AttackType.Melee] = true;
+            applyStatus._types[AttackType.Ranged] = true;
+            applyStatus._types[AttackType.Projectile] = true;
+
+            applyStatus._status = new ApplyInfo(status);
+
+            item.abilities = [
+                new AccursedSabreAbility(),
+                applyStatus,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "HeavyDutyCarleonHelmet";
+            item.rarity = Rarity.Rare;
+
+            item.gearTag = Gear.Tag.Carleon;
+
+            // EN: Heavy-Duty Carleon Helmet
+            // KR: 중보병용 칼레온 투구
+            item.itemName = "Heavy-Duty Carleon Helmet";
+
+            // EN: Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n
+            // For every Spoils inscription owned, increase Max HP by 15.
+
+            // KR: <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 30% 증가합니다.\n
+            // 보유하고 있는 '칼레온' 아이템 1개당 최대 체력이 15 증가합니다.
+
+            item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n"
+                                           + "For every Spoils inscription owned, increase Max HP by 15.";
+
+            // EN: Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.
+            // KR: 가장 강한 칼레온의 최전선에 선 병사들만이 쓸 수 있는 투구.\n하지만 큰 의미는 없어보인다.
+            item.itemLore = "Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.";
+
+            item.prefabKeyword1 = Inscription.Key.Antique;
+            item.prefabKeyword2 = Inscription.Key.Spoils;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.3),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.3),
+            ]);
+
+            StatBonusPerGearTag statBonusPerCarleonItem = new();
+
+            statBonusPerCarleonItem._tag = Gear.Tag.Carleon;
+
+            statBonusPerCarleonItem._statPerGearTag = new Stat.Values(new Stat.Value[] {
+                new Stat.Value(Stat.Category.Constant, Stat.Kind.Health, 15),
+            });
+
+            item.abilities = [
+                statBonusPerCarleonItem,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "CursedHourglass";
+            item.rarity = Rarity.Legendary;
+
+            // EN: Cursed Hourglass
+            // KR: 저주받은 모래시계
+            item.itemName = "Cursed Hourglass";
+
+            // EN: Upon entering a map, amplfies damage dealt to enemies by 30% for 30 seconds.\n
+            // When the effect is not active, increases damage received by 30%.
+
+            // KR: 맵 입장 시 30초 동안 적에게 입히는 데미지가 30% 증폭됩니다.\n
+            // 해당 효과가 발동 중이지 않을 때, 받는 데미지가 30% 증가합니다.
+
+            item.itemDescription = "Upon entering a map, amplfies damage dealt to enemies by 30% for 30 seconds.\n"
+                                           + "When the effect is not active, increases damage received by 30%.";
+
+            // EN: To carry such a burden voluntarily... You're either the bravest person I've ever met, or the most foolish.
+            // KR: 이런 짐을 짊어지다니... 넌 아마 이 세상에서 가장 용감하거나 멍청한 사람이겠지.
+            item.itemLore = "To carry such a burden voluntarily...You're either the bravest person I've ever met, or the most foolish.";
+
+            item.prefabKeyword1 = Inscription.Key.ManaCycle;
+            item.prefabKeyword2 = Inscription.Key.Execution;
+
+            CursedHourglassAbility ability = new()
+            {
+                _timeout = 30,
+                _inactiveStat = new Stat.Values(
+                [
+                    new(Stat.Category.Percent, Stat.Kind.TakingDamage, 1.3),
+                ])
+            };
+
+            item.abilities = [
+                ability,
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "LuckyCoin";
+            item.rarity = Rarity.Common;
+
+            // EN: Lucky Coin
+            // KR: 행운의 동전
+            item.itemName = "Lucky Coin";
+
+            // EN: Increases Crit Rate by 5%.\n
+            // Increases Gold gain by 10%.
+
+            // KR: 치명타 확률이 5% 증가합니다.\n
+            // 금화 획득량이 10% 증가합니다.
+
+            item.itemDescription = "Increases Crit Rate by 5%.\n"
+                                           + "Increases Gold gain by 10%.";
+
+            // EN: Oh, must be my lucky day!
+            // KR: 오늘은 운수가 좋은 날인가 보군!
+            item.itemLore = "Oh, must be my lucky day!";
+
+            item.prefabKeyword1 = Inscription.Key.Treasure;
+            item.prefabKeyword2 = Inscription.Key.Misfortune;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.05),
+            ]);
+
+            item.abilities = [
+                new LuckyCoinAbility(),
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "WitheringFabric";
+            item.rarity = Rarity.Rare;
+
+            // EN: Withering Fabric
+            // KR: 날아빠진 천
+            item.itemName = "Withering Fabric";
+
+            // EN: Increases dash cooldown speed by 30%.\n
+            // Decreases dash distance by 30%.
+
+            // KR: 대쉬 쿨다운 속도가 30% 증가합니다.\n
+            // 대쉬 거리가 30% 감소합니다.
+
+            item.itemDescription = "Increases dash cooldown speed by 20%.\n"
+                                           + "Decreases dash distance by 30%.";
+
+            // EN: Where did this even come from..?
+            // KR: 대체 이거 어디서 난거야..?
+            item.itemLore = "Where did this even come from..?";
+
+            item.prefabKeyword1 = Inscription.Key.Mystery;
+            item.prefabKeyword2 = Inscription.Key.Chase;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.DashCooldownSpeed, 0.2),
+                new(Stat.Category.Percent, Stat.Kind.DashDistance, 0.7),
+            ]);
+
+            item.extraComponents = [
+                typeof(WitheringFabricEvolveBehavior),
+            ];
+
+            items.Add(item);
+        }
+        {
+            var item = new CustomItemReference();
+            item.name = "TatteredPlushie";
+            item.rarity = Rarity.Legendary;
+
+            item.obtainable = false;
+
+            // EN: Tattered Plushie
+            // KR: 해진 인형
+            item.itemName = "Tattered Plushie";
+
+            // EN: Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies.\n
+            // Upon killing an enemy, recovers 2% of your Max HP.
+
+            // KR: 5초마다 최대 체력의 10%에 달하는 피해를 입고 영구적으로 적들에게 입히는 데미지가 5% 증폭됩니다.\n
+            // 적을 처치할 때마다 최대 체력의 2%를 회복합니다.
+
+            item.itemDescription = "Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies.\n"
+                                           + "Upon killing an enemy, recovers 2% of your Max HP.";
+
+            // EN: bEsT FrIenDs fOrEveR
+            // KR: 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께
+            item.itemLore = "bEsT FrIenDs fOrEveR";
+
+            item.prefabKeyword1 = Inscription.Key.Mystery;
+            item.prefabKeyword2 = Inscription.Key.Sin;
+
+            TatteredPlushieAbility ability = new()
+            {
+                _timeout = 5.0f,
+            };
+
+            item.abilities = [
+                ability,
             ];
 
             items.Add(item);

@@ -2,7 +2,7 @@ using System;
 using Characters.Abilities;
 using UnityEngine;
 
-namespace CustomItems.CustomAbilities;
+namespace VoiceOfTheCommunity.CustomAbilities;
 
 public abstract class AbilityComponentHack<T> : AbilityComponent<T>, ISerializationCallbackReceiver
     where T : Ability, ICloneable

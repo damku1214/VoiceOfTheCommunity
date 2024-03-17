@@ -19,7 +19,7 @@ public class GoddesssChaliceAbility : Ability, ICloneable
         private MotionTypeBoolArray _attackTypes;
         private AttackTypeBoolArray _damageTypes;
 
-        int _stacks;
+        private int _stacks;
         public override int iconStacks => _stacks;
         public override Sprite icon
         {
@@ -79,7 +79,7 @@ public class GoddesssChaliceAbility : Ability, ICloneable
         private void OnSwap()
         {
             _stacks = Math.Min(_stacks + 1, ability._maxStack);
-            _bonusTimeRemaining = 5.0f;
+            _bonusTimeRemaining = ability._timeout;
             RefreshStacks();
         }
 

@@ -2,7 +2,6 @@
 using Characters;
 using Characters.Gear.Items;
 using Characters.Player;
-using CustomItems;
 using GameResources;
 using Services;
 using Singletons;

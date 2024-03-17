@@ -8,7 +8,7 @@ using GameResources;
 using HarmonyLib;
 using UnityEngine;
 
-namespace CustomItems;
+namespace VoiceOfTheCommunity;
 
 [Serializable]
 public class CustomItemReference : ItemReference

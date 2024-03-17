@@ -10,7 +10,7 @@ using HarmonyLib;
 using Level;
 using UnityEngine;
 
-namespace CustomItems;
+namespace VoiceOfTheCommunity;
 
 [HarmonyPatch]
 public class CustomItemsPatch

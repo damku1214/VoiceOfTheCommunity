@@ -11,9 +11,6 @@ namespace VoiceOfTheCommunity.CustomBehaviors;
 [Serializable]
 public sealed class WingedSpearEvolveBehavior : MonoBehaviour
 {
-    [SerializeField]
-    private Item _item = null;
-
     private Character player = Singleton<Service>.Instance.levelManager.player;
 
     private void Awake()
@@ -31,6 +28,7 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
         var inventory = player.playerComponents.inventory.item;
         ItemReference itemRef = null;
         int positionofOriginialItem = 0;
+        bool hasWingedSpear = false;
 
         for (int i = 0; i < inventory.items.Count; i++)
         {
@@ -46,6 +44,7 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
                 if (item.name.Equals("Custom-WingedSpear"))
                 {
                     positionofOriginialItem = i;
+                    hasWingedSpear = true;
                     break;
                 }
             }
@@ -57,6 +56,10 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
         }
         for (int i = 0; i < inventory.items.Count; i++)
         {
+            if (!hasWingedSpear)
+            {
+                break;
+            }
             try
             {
                 var item = inventory.items[i];
@@ -68,29 +71,29 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
 
                 if (item.name.Equals("SwordOfSun"))
                 {
-                    inventory.items.RemoveAt(positionofOriginialItem);
                     ChangeItem("Custom-WingedSpear_2", item, itemRef);
+                    inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
 
                 if (item.name.Equals("RingOfMoon"))
                 {
-                    inventory.items.RemoveAt(positionofOriginialItem);
                     ChangeItem("Custom-WingedSpear_3", item, itemRef);
+                    inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
 
                 if (item.name.Equals("Custom-WingedSpear") && positionofOriginialItem != i)
                 {
-                    inventory.items.RemoveAt(positionofOriginialItem);
                     ChangeItem("Custom-WingedSpear_4", item, itemRef);
+                    inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
 
                 if (item.name.Equals("ShardOfDarkness"))
                 {
-                    inventory.items.RemoveAt(positionofOriginialItem);
                     ChangeItem("Custom-WingedSpear_5", item, itemRef);
+                    inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
             }
