@@ -9,7 +9,7 @@ None of the code belongs to me excluding content related to custom items.
 So far, this mod contains:
 
 * 5 Commons
-* 8 Rares
+* 9 Rares
 * 4 Uniques
 * 3 Omens
 * 5 Legendaries
