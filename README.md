@@ -6,7 +6,7 @@ This project is a variation/fork of MrBacanudo's [Custom Items mod](https://gith
 None of the code belongs to me excluding content related to custom items.
 
 ## Content
-So far, this mod contains:
+This mod contains:
 
 * 5 Commons
 * 9 Rares
@@ -14,11 +14,11 @@ So far, this mod contains:
 * 3 Omens
 * 5 Legendaries
 
-This is a beta version, so much more is yet to come! Hang in there for a bit!
+## Thunderstore
+The mod is now published on Thunderstore! Go and check it out!
 
-## Manual Installation (The one and only way to do so)
-BE AWARE that this installation method is ripped off directly from [MrBacanudo's SkulHardModeMods](https://github.com/MrBacanudo/SkulHardModeMods/tree/main),
-and this is the only way to access the mod. However, at the time of the real release, or maybe in earlier betas, I will be able to find a way to publish it on Thunderstore.
+## Manual Installation
+BE AWARE that this installation method is ripped off directly from [MrBacanudo's SkulHardModeMods](https://github.com/MrBacanudo/SkulHardModeMods/tree/main).
 
 1. Download the external dependencies
     * BepInEx (Windows x64): https://github.com/BepInEx/BepInEx/releases/download/v5.4.21/BepInEx_x64_5.4.21.0.zip
@@ -40,7 +40,7 @@ Use this at your own risk. Here be dragons!
 
 ## Contributors
 I would like to give a huge thanks to people who contributed to this mod. This includes:
-* IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', 'Growing Potion', and 'Lucky Coin'
+* iBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', 'Growing Potion', and 'Lucky Coin'
 * Zinier - creator of 'Rusty Chalice', 'Blood-Soaked Javelin', 'Cross Necklace', 'Mana Accelerator', 'Fonias', and 'Omen: Accursed Sabre'
 * Haxa - creator of 'Omen: Flask of Botulism', 'Omen: Corrupted Symbol', 'Beginner's Lance', and 'Heavy-Duty Carleon Helmet'
 * regular anime girl - creator of 'Tainted Finger' and 'Rotten Wings'

@@ -990,6 +990,8 @@ public class CustomItems
             item.name = "ShrinkingPotion_2";
             item.rarity = Rarity.Unique;
 
+            item.obtainable = false;
+
             // EN: Unstable Size Potion
             // KR: 불안정한 크기 조정 물약
             item.itemName = "Unstable Size Potion";
@@ -1126,6 +1128,11 @@ public class CustomItems
 
             item.prefabKeyword1 = Inscription.Key.Duel;
             item.prefabKeyword2 = Inscription.Key.Chase;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.2),
+            ]);
 
             ModifyDamage amplifyDashDamage = new();
 

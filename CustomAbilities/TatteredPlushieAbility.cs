@@ -64,7 +64,6 @@ public class TatteredPlushieAbility : Ability, ICloneable
                 return false;
             }
             damage.percentMultiplier *= _damageMultiplier;
-            target.character.status.ApplyUnmoving(owner);
             return false;
         }
 
