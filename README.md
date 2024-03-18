@@ -40,7 +40,7 @@ Use this at your own risk. Here be dragons!
 
 ## Contributors
 I would like to give a huge thanks to people who contributed to this mod. This includes:
-* IBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', 'Growing Potion', and 'Lucky Coin'
+* iBearATK - creator of 'Vase of the Fallen', 'Broken Heart', 'Small Twig', 'Volcanic Shard', 'Shrinking Potion', 'Growing Potion', and 'Lucky Coin'
 * Zinier - creator of 'Rusty Chalice', 'Blood-Soaked Javelin', 'Cross Necklace', 'Mana Accelerator', 'Fonias', and 'Omen: Accursed Sabre'
 * Haxa - creator of 'Omen: Flask of Botulism', 'Omen: Corrupted Symbol', 'Beginner's Lance', and 'Heavy-Duty Carleon Helmet'
 * regular anime girl - creator of 'Tainted Finger' and 'Rotten Wings'
