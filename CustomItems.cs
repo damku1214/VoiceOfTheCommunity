@@ -812,13 +812,13 @@ public class CustomItems
             // KR: 얼어붙은 달의 창
             item.itemName = "Spear of the Frozen Moon";
 
-            // EN: Skills have a 5% chance to inflict Freeze.\n
-            // Increases <color=#1787D8>Magic Attack</color> by 50%.\n
+            // EN: Skills have a 25% chance to inflict Freeze.\n
+            // Increases <color=#1787D8>Magic Attack</color> by 100%.\n
             // Attacking frozen enemies increases the number of hits to remove Freeze by 3.\n
             // Amplifies damage to frozen enemies by 50%.
 
-            // KR: 적에게 스킬로 공격시 5% 확률로 빙결을 부여합니다.\n
-            // <color=#1787D8>마법공격력</color>가 50% 증가합니다.\n
+            // KR: 적에게 스킬로 공격시 25% 확률로 빙결을 부여합니다.\n
+            // <color=#1787D8>마법공격력</color>가 100% 증가합니다.\n
             // 빙결 상태의 적 공격 시 빙결이 해제되는데 필요한 타수가 3 증가합니다.\n
             // 빙결 상태의 적에게 입히는 데미지가 50% 증가합니다.
 
@@ -836,13 +836,13 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.5),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1),
             ]);
 
             var applyStatus = new ApplyStatusOnGaveDamage();
             var status = Kind.Freeze;
             applyStatus._cooldownTime = 0.1f;
-            applyStatus._chance = 5;
+            applyStatus._chance = 25;
             applyStatus._attackTypes = new();
             applyStatus._attackTypes[MotionType.Skill] = true;
 
@@ -1237,8 +1237,8 @@ public class CustomItems
 
             item.forbiddenDrops = new[]
             {
-                "SolarSword",
-                "LunarRing",
+                "SwordOfSun",
+                "RingOfMoon",
                 "ShardOfDarkness",
                 "Custom-WingedSpear"
             };
@@ -1284,8 +1284,8 @@ public class CustomItems
 
             item.forbiddenDrops = new[]
             {
-                "SolarSword",
-                "LunarRing",
+                "SwordOfSun",
+                "RingOfMoon",
                 "ShardOfDarkness",
                 "Custom-WingedSpear"
             };
@@ -1339,8 +1339,8 @@ public class CustomItems
 
             item.forbiddenDrops = new[]
             {
-                "SolarSword",
-                "LunarRing",
+                "SwordOfSun",
+                "RingOfMoon",
                 "ShardOfDarkness",
                 "Custom-WingedSpear"
             };
@@ -1395,8 +1395,8 @@ public class CustomItems
 
             item.forbiddenDrops = new[]
             {
-                "SolarSword",
-                "LunarRing",
+                "SwordOfSun",
+                "RingOfMoon",
                 "ShardOfDarkness",
                 "Custom-WingedSpear"
             };

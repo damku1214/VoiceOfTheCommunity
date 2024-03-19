@@ -49,7 +49,7 @@ public class SpikyRapidaAbility : Ability, ICloneable
 
         private bool OnGiveDamage(ITarget target, ref Damage damage)
         {
-            if (target == null || target.character == null)
+            if (target == null || target.character.status == null)
             {
                 return false;
             }
@@ -61,6 +61,7 @@ public class SpikyRapidaAbility : Ability, ICloneable
             {
                 return false;
             }
+            _canApplyBleed = false;
             target.character.status.ApplyWound(owner);
             return false;
         }

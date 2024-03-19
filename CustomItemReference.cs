@@ -70,7 +70,7 @@ public class CustomItemReference : ItemReference
             item._rarity = rarity;
             item._gearTag = gearTag;
 
-            item._groupItemKeys = forbiddenDrops.Select(name => name).ToArray();
+            item._groupItemKeys = forbiddenDrops.ToArray();
 
             LoadSprites();
             if (icon != null)

@@ -12,7 +12,7 @@ public class BloodSoakedJavelinAbility : Ability, ICloneable
     {
         private bool _isReady = true;
         private float _cooldownRemaining;
-        public override float iconFillAmount => _isReady ? 1 : _cooldownRemaining / ability._timeout;
+        public override float iconFillAmount => _isReady ? 0 : _cooldownRemaining / ability._timeout;
 
         public Instance(Character owner, BloodSoakedJavelinAbility ability) : base(owner, ability)
         {
@@ -34,7 +34,7 @@ public class BloodSoakedJavelinAbility : Ability, ICloneable
             {
                 return;
             }
-            if (target == null || target.character == null)
+            if (target == null || target.character.status == null)
             {
                 return;
             }
@@ -53,6 +53,7 @@ public class BloodSoakedJavelinAbility : Ability, ICloneable
                 return;
             }
             target.character.status.ApplyWound(owner);
+            _cooldownRemaining = ability._timeout;
             _isReady = false;
         }
 
