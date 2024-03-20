@@ -55,7 +55,7 @@ public class RustyChaliceAbility : Ability, ICloneable
             }
             if (target.character.type == Character.Type.Dummy)
             {
-                return;
+                return false;
             }
             if (!_attackTypes[damage.motionType])
             {
