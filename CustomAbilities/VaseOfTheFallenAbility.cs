@@ -66,6 +66,10 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
 
         private void OnKilledEnemy(ITarget target, ref Damage damage)
         {
+            if (target.character.type == Character.Type.Dummy)
+            {
+                return;
+            }
             VaseOfTheFallenAbilityComponent component = this.ability.component;
             int currentKillCount = component.currentKillCount;
             component.currentKillCount = Math.Min(currentKillCount + 1, ability._maxStack);

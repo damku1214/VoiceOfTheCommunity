@@ -58,10 +58,10 @@ public class SpearOfTheFrozenMoonAbility : Ability, ICloneable
         {
             if (AbsoluteZeroInscriptionCount() < 4)
             {
-                return 1 + ItemCount() * 3;
+                return 1 + ItemCount();
             } else
             {
-                return 3 + ItemCount() * 3;
+                return 3 + ItemCount();
             }
         }
 
@@ -109,7 +109,7 @@ public class SpearOfTheFrozenMoonAbility : Ability, ICloneable
             {
                 return false;
             }
-            damage.percentMultiplier *= 1.5;
+            damage.percentMultiplier *= 1.25;
             return false;
         }
     }

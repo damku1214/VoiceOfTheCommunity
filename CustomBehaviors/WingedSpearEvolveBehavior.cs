@@ -1,6 +1,8 @@
 ﻿using System;
 using Characters;
+using Characters.Gear;
 using Characters.Gear.Items;
+using Characters.Gear.Synergy.Inscriptions;
 using GameResources;
 using Services;
 using Singletons;
@@ -71,28 +73,28 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
 
                 if (item.name.Equals("SwordOfSun"))
                 {
-                    ChangeItem("Custom-WingedSpear_2", item, itemRef);
+                    ChangeItem("Custom-WingedSpear_2", item, itemRef, false);
                     inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
 
                 if (item.name.Equals("RingOfMoon"))
                 {
-                    ChangeItem("Custom-WingedSpear_3", item, itemRef);
+                    ChangeItem("Custom-WingedSpear_3", item, itemRef, false);
                     inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
 
                 if (item.name.Equals("Custom-WingedSpear") && positionofOriginialItem != i)
                 {
-                    ChangeItem("Custom-WingedSpear_4", item, itemRef);
+                    ChangeItem("Custom-WingedSpear_4", item, itemRef, false);
                     inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
 
                 if (item.name.Equals("ShardOfDarkness"))
                 {
-                    ChangeItem("Custom-WingedSpear_5", item, itemRef);
+                    ChangeItem("Custom-WingedSpear_5", item, itemRef, true);
                     inventory.items[positionofOriginialItem].RemoveOnInventory();
                     break;
                 }
@@ -105,16 +107,21 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
         }
     }
 
-    private void ChangeItem(string name, Item item, ItemReference itemRef)
+    private void ChangeItem(string name, Item item, ItemReference itemRef, bool isOmen)
     {
         if (GearResource.instance.TryGetItemReferenceByName(name, out itemRef))
         {
             ItemRequest request = itemRef.LoadAsync();
             request.WaitForCompletion();
 
-            if (item.state == Characters.Gear.Gear.State.Equipped)
+            if (item.state == Gear.State.Equipped)
             {
                 Item newItem = Singleton<Service>.Instance.levelManager.DropItem(request, Vector3.zero);
+                if (isOmen)
+                {
+                    newItem.keyword1 = Inscription.Key.Omen;
+                    newItem._gearTag = Gear.Tag.Omen;
+                }
                 item.ChangeOnInventory(newItem);
             }
         }

@@ -98,6 +98,10 @@ public class CursedHourglassAbility : Ability, ICloneable
             {
                 return false;
             }
+            if (target.character.type == Character.Type.Boss && target.character.health.currentHealth == target.character.health.maximumHealth)
+            {
+                StartBuff();
+            }
             if (!_isActive)
             {
                 return false;

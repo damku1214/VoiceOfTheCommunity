@@ -41,7 +41,7 @@ public class CustomItems
             // 피격 후 1초 내로 적 공격 시 감소한 증가치의 절반을 되돌려 받습니다 (쿨타임: 3초).
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 5% per enemy killed (Stacks up to 200% and 1/2 of total charge is lost when hit.)\n"
-                                           + "Attacking an enemy within 1 second of taking from a hit restores half of the charge lost from the hit. (Cooldown: 3 seconds)";
+                                 + "Attacking an enemy within 1 second of taking from a hit restores half of the charge lost from the hit. (Cooldown: 3 seconds)";
 
             // EN: Souls of the Eastern Kingdom's fallen warriors shall aid you in battle.
             // KR: 장렬히 전사했던 동쪽 왕국의 병사들의 혼이 담긴 영물
@@ -88,9 +88,9 @@ public class CustomItems
             // '서큐버스' 정수 소지 시 이 아이템은 '색욕의 심장'으로 변합니다.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 20%.\n"
-                                           + "Increases Quintessence cooldown speed by 30%.\n"
-                                           + "Amplifies Quintessence damage by 15%.\n"
-                                           + "If the Succubus Quintessence is in your possession, this item turns into 'Lustful Heart'.";
+                                 + "Increases Quintessence cooldown speed by 30%.\n"
+                                 + "Amplifies Quintessence damage by 15%.\n"
+                                 + "If the Succubus Quintessence is in your possession, this item turns into 'Lustful Heart'.";
 
             // EN: Some poor being must have their heart torn both metaphorically and literally.
             // KR: 딱한 것, 심장이 은유적으로도 물리적으로도 찢어지다니.
@@ -144,8 +144,8 @@ public class CustomItems
             // 적에게 정수로 입히는 데미지가 30% 증폭됩니다.\n
 
             item.itemDescription = "Amplifies <color=#1787D8>Magic Attack</color> by 20%.\n"
-                                           + "Increases Quintessence cooldown speed by 60%.\n"
-                                           + "Amplifies Quintessence damage by 30%.";
+                                 + "Increases Quintessence cooldown speed by 60%.\n"
+                                 + "Amplifies Quintessence damage by 30%.";
 
             // EN: Given to the greatest Incubus or Succubus directly from the demon prince of lust, Asmodeus.
             // KR: 색욕의 마신 아스모데우스로부터 가장 위대한 인큐버스 혹은 서큐버스에게 하사된 증표
@@ -197,9 +197,9 @@ public class CustomItems
             // "스컬" 혹은 "용사 리틀본" 스컬을 사용 중일 시 이 아이템의 모든 스탯 증가치가 두배가 되며 적에게 입히는 데미지가 20% 증폭됩니다.
 
             item.itemDescription = "Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n"
-                                           + "Increases skill cooldown speed and skill casting speed by 30%.\n"
-                                           + "Increases Crit Rate and Crit Damage by 10%.\n"
-                                           + "All effects double and Amplifies damage dealt to enemies by 20% when \"Skul\" or \"Hero Little Bone\" is your current active skull.";
+                                 + "Increases skill cooldown speed and skill casting speed by 30%.\n"
+                                 + "Increases Crit Rate and Crit Damage by 10%.\n"
+                                 + "All effects double and Amplifies damage dealt to enemies by 20% when \"Skul\" or \"Hero Little Bone\" is your current active skull.";
 
             // EN: A really cool looking twig, but for some reason I feel sad...
             // KR: 정말 멋있어 보이는 나뭇가지일 터인데, 왜 볼 때 마다 슬퍼지는 걸까...
@@ -246,9 +246,9 @@ public class CustomItems
             // '스컬' 혹은 '용사 리틀본' 스컬을 사용 중일 시 이 아이템의 모든 스탯 증가치가 두배가 되며 적에게 입히는 데미지가 20% 증폭됩니다.
 
             item.itemDescription = "Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n"
-                                           + "Increases skill cooldown speed and skill casting speed by 30%.\n"
-                                           + "Increases Crit Rate and Crit Damage by 10%.\n"
-                                           + "All effects double and amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.";
+                                 + "Increases skill cooldown speed and skill casting speed by 30%.\n"
+                                 + "Increases Crit Rate and Crit Damage by 10%.\n"
+                                 + "All effects double and amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.";
 
             // EN: A really cool looking twig, but for some reason I feel sad...
             // KR: 정말 멋있어 보이는 나뭇가지일 터인데, 왜 볼 때 마다 슬퍼지는 걸까...
@@ -307,9 +307,9 @@ public class CustomItems
             // 가지고 있는 방화 각인에 비례하여 화상의 지속시간이 10%씩 감소합니다.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 100%.\n"
-                                           + "Normal attacks and skills have a 20% chance to inflict Burn.\n"
-                                           + "Amplifies Damage to Burning enemies by 25%.\n"
-                                           + "Burn duration decreases by 10% for each Arson inscription in possession.";
+                                 + "Normal attacks and skills have a 20% chance to inflict Burn.\n"
+                                 + "Amplifies Damage to Burning enemies by 25%.\n"
+                                 + "Burn duration decreases by 10% for each Arson inscription in possession.";
 
             // EN: Rumored to be created from the Black Rock Volcano when erupting, this giant blade is the hottest flaming sword.
             // KR: 전설의 흑요석 화산의 폭발에서 만들어졌다고 전해진, 세상에서 가장 뜨거운 칼날
@@ -361,7 +361,7 @@ public class CustomItems
             // 적에게 교대스킬로 데미지를 150번 줄 시 해당 아이템은 '여신의 성배'로 변합니다.
 
             item.itemDescription = "Increases swap cooldown speed by 15%.\n"
-                                           + "Upon hitting enemies with a swap skill 150 times, this item transforms into 'Goddess's Chalice.'";
+                                 + "Upon hitting enemies with a swap skill 150 times, this item transforms into 'Goddess's Chalice.'";
 
             // EN: This thing? I found it at a pawn shop and it seemed interesting
             // KR: 아 이거? 암시장에서 예뻐 보이길래 샀는데, 어때?
@@ -403,9 +403,9 @@ public class CustomItems
             // 공격력 증가치가 최대일 시, 교대 쿨다운 속도가 25% 증가합니다.
 
             item.itemDescription = "Increases swap cooldown speed by 40%.\n"
-                                           + "Damage dealt to enemies through a swap skill is amplified by 35%.\n"
-                                           + "Swapping increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 10% for 6 seconds (maximum 40%).\n"
-                                           + "At maximum stacks, swap cooldown speed is increased by 25%.";
+                                 + "Damage dealt to enemies through a swap skill is amplified by 35%.\n"
+                                 + "Swapping increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 10% for 6 seconds (maximum 40%).\n"
+                                 + "At maximum stacks, swap cooldown speed is increased by 25%.";
 
             // EN: Chalice used by Leonia herself that seems to never run dry
             // KR: 여신 레오니아 본인께서 쓰시던 절대 비워지지 않는 성배
@@ -471,7 +471,7 @@ public class CustomItems
             // <color=#F25D1C>물리공격력</color>이 50% 증가합니다.
 
             item.itemDescription = "The interval between poison damage ticks is further decreased.\n"
-                                           + "Increases <color=#F25D1C>Physical Attack</color> by 50%.";
+                                 + "Increases <color=#F25D1C>Physical Attack</color> by 50%.";
 
             // EN: Only the mad and cruel would consider using this as a weapon.
             // KR: 정말 미치지 않고서야 이걸 무기로 쓰는 일은 없을 것이다.
@@ -544,7 +544,7 @@ public class CustomItems
             // <color=#1787D8>마법공격력</color>이 60% 증가합니다.
 
             item.itemDescription = "Skill damage dealt to enemies is amplified by 30%.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 60%.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 60%.";
 
             // EN: A finger from a god tainted by dark quartz
             // KR: 검은 마석에 의해 침식된 신의 손가락
@@ -588,8 +588,8 @@ public class CustomItems
             // 현재 '레오니아의 은총' 아이템을 소지하고 있으면 해당 아이템은 '침식된 신의 손' 으로 변합니다.
 
             item.itemDescription = "Skill damage dealt to enemies is amplified by 30%.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
-                                           + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
+                                 + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
 
             // EN: Nothing happened. It seems like it needs something else.
             // KR: 아무 일도 일어나지 않았다. 뭔가 더 필요한 것 같다.
@@ -638,7 +638,7 @@ public class CustomItems
             // <color=#1787D8>마법공격력</color>이 100% 증가합니다.
 
             item.itemDescription = "Skill damage dealt to enemies is amplified by 100%.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 100%.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 100%.";
 
             // EN: A corrupt hand from Leonia's supposed god
             // KR: 레오니아로 추정되는 신의 침식된 손
@@ -682,8 +682,8 @@ public class CustomItems
             // 흉조 혹은 레전더리 등급을 가진 아이템을 파괴할 때마다 <color=#1787D8>마법공격력</color>이 8% 증가합니다.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 50%.\n"
-                                           + "<color=#1787D8>Magic damage</color> dealt to enemies under 40% HP is amplified by 25%.\n"
-                                           + "<color=#1787D8>Magic Attack</color> increases by 8% each time a Omen or a Legendary item is destroyed.";
+                                 + "<color=#1787D8>Magic damage</color> dealt to enemies under 40% HP is amplified by 25%.\n"
+                                 + "<color=#1787D8>Magic Attack</color> increases by 8% each time a Omen or a Legendary item is destroyed.";
 
             // EN: Acceptance is the first step towards death.
             // KR: 수용하는 것은 죽음을 향한 첫 걸음이다.
@@ -721,13 +721,13 @@ public class CustomItems
             item.itemName = "Blood-Soaked Javelin";
 
             // EN: Increases Crit Damage by 20%.\n
-            // Critical hits have a 5% chance to apply Wound (Cooldown: 0.5 seconds).
+            // Critical hits have a 10% chance to apply Wound (Cooldown: 0.5 seconds).
 
             // KR: 치명타 데미지가 20% 증가합니다.\n
-            // 치명타 시 5% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).
+            // 치명타 시 10% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).
 
             item.itemDescription = "Increases Crit Damage by 20%.\n"
-                                           + "Critical hits have a 5% chance to apply Wound.";
+                                 + "Critical hits have a 10% chance to apply Wound.";
 
             // EN: A javelin that always hits vital organs, and drains all the blood out of whichever one it hits
             // KR: 적의 심장을 정확히 노려 시체에 피 한방울 남기지 않는 투창
@@ -758,15 +758,15 @@ public class CustomItems
 
             // EN: Skills have a 2% chance to inflict Freeze.\n
             // Increases <color=#1787D8>Magic Attack</color> by 20%.\n
-            // After applying freeze 200 times, this item turns into 'Spear of the Frozen Moon'.
+            // After applying freeze 300 times, this item turns into 'Spear of the Frozen Moon'.
 
             // KR: 적에게 스킬로 공격시 2% 확률로 빙결을 부여합니다.\n
             // <color=#1787D8>마법공격력</color>가 20% 증가합니다.\n
-            // 적에게 빙결을 200번 부여할 시 해당 아이템은 '얼어붙은 달의 창'으로 변합니다.
+            // 적에게 빙결을 300번 부여할 시 해당 아이템은 '얼어붙은 달의 창'으로 변합니다.
 
             item.itemDescription = "Skills have a 2% chance to inflict Freeze.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 20%.\n"
-                                           + "After applying freeze 200 times, this item turns into 'Spear of the Frozen Moon'.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 20%.\n"
+                                 + "After applying freeze 300 times, this item turns into 'Spear of the Frozen Moon'.";
 
             // EN: A sealed weapon waiting the cold time to revealed it's true form.
             // KR: 해방의 혹한을 기다리는 봉인된 무기
@@ -812,20 +812,20 @@ public class CustomItems
             // KR: 얼어붙은 달의 창
             item.itemName = "Spear of the Frozen Moon";
 
-            // EN: Skills have a 25% chance to inflict Freeze.\n
-            // Increases <color=#1787D8>Magic Attack</color> by 100%.\n
-            // Attacking frozen enemies increases the number of hits to remove Freeze by 3.\n
-            // Amplifies damage to frozen enemies by 50%.
+            // EN: Skills have a 15% chance to inflict Freeze.\n
+            // Increases <color=#1787D8>Magic Attack</color> by 60%.\n
+            // Attacking frozen enemies increases the number of hits to remove Freeze by 1.\n
+            // Amplifies damage to frozen enemies by 25%.
 
-            // KR: 적에게 스킬로 공격시 25% 확률로 빙결을 부여합니다.\n
-            // <color=#1787D8>마법공격력</color>가 100% 증가합니다.\n
-            // 빙결 상태의 적 공격 시 빙결이 해제되는데 필요한 타수가 3 증가합니다.\n
-            // 빙결 상태의 적에게 입히는 데미지가 50% 증가합니다.
+            // KR: 적에게 스킬로 공격시 15% 확률로 빙결을 부여합니다.\n
+            // <color=#1787D8>마법공격력</color>가 60% 증가합니다.\n
+            // 빙결 상태의 적 공격 시 빙결이 해제되는데 필요한 타수가 1 증가합니다.\n
+            // 빙결 상태의 적에게 입히는 데미지가 25% 증가합니다.
 
-            item.itemDescription = "Skills have a 5% chance to inflict Freeze.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 50%.\n"
-                                           + "Attacking frozen enemies increases the number of hits to remove Freeze by 3.\n"
-                                           + "Amplifies damage dealt to frozen enemies by 50%.";
+            item.itemDescription = "Skills have a 15% chance to inflict Freeze.\n"
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
+                                 + "Attacking frozen enemies increases the number of hits to remove Freeze by 1.\n"
+                                 + "Amplifies damage dealt to frozen enemies by 25%.";
 
             // EN: When a battlefield turns into a permafrost, the weapon formely wielded by the ice beast Vaalfen appears. 
             // KR: 전장에 눈보라가 휘몰아칠 때, 얼음 괴수 발펜의 창이 나타날지니
@@ -836,13 +836,13 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.6),
             ]);
 
             var applyStatus = new ApplyStatusOnGaveDamage();
             var status = Kind.Freeze;
             applyStatus._cooldownTime = 0.1f;
-            applyStatus._chance = 25;
+            applyStatus._chance = 15;
             applyStatus._attackTypes = new();
             applyStatus._attackTypes[MotionType.Skill] = true;
 
@@ -906,7 +906,7 @@ public class CustomItems
             // 적에게 기본공격 시 15% 확률로 중독을 부여합니다.
 
             item.itemDescription = "Crit Rate increases by 15% while in midair.\n"
-                                           + "Your normal attacks have a 15% chance to inflict Poison.";
+                                 + "Your normal attacks have a 15% chance to inflict Poison.";
 
             // EN: Wings of a zombie wyvern
             // KR: 좀비 와이번의 썩어 문드러진 날개
@@ -962,8 +962,8 @@ public class CustomItems
             // 받는 데미지가 10% 증가합니다.
 
             item.itemDescription = "Decreases character size by 20%.\n"
-                                           + "Increases Movement Speed by 15%.\n"
-                                           + "Incoming damage increases by 10%.";
+                                 + "Increases Movement Speed by 15%.\n"
+                                 + "Incoming damage increases by 10%.";
 
             // EN: I think it was meant to be used on the enemies...
             // KR: 왠지 적에게 써야 할 것 같은데...
@@ -1049,8 +1049,8 @@ public class CustomItems
             // 받는 데미지가 10% 감소합니다.
 
             item.itemDescription = "Increases character size by 20%.\n"
-                                           + "Decreases Movement Speed by 15%.\n"
-                                           + "Incoming damage decreases by 10%.";
+                                 + "Decreases Movement Speed by 15%.\n"
+                                 + "Incoming damage decreases by 10%.";
 
             // EN: Made from some weird size changing mushrooms deep within The Forest of Harmony
             // KR: 하모니아 숲 깊숙이 있는 수상한 버섯으로 만들어진 물약
@@ -1120,7 +1120,7 @@ public class CustomItems
             // 적에게 대쉬공격으로 입히는 데미지가 30% 증폭됩니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 20%.\n"
-                                           + "Damage dealt to enemies with a dash attack is amplifies by 30%.";
+                                 + "Damage dealt to enemies with a dash attack is amplifies by 30%.";
 
             // EN: Perfect! Now all I need is a noble steed...
             // KR: 완벽해! 이제 좋은 말만 있으면 되는데...
@@ -1171,10 +1171,10 @@ public class CustomItems
             // 교대 쿨다운 속도가 15% 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 15%.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 15%.\n"
-                                           + "Increases Attack Speed by 15%.\n"
-                                           + "Increases skill cooldown speed by 15%.\n"
-                                           + "Increases swap cooldown speed by 15%.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 15%.\n"
+                                 + "Increases Attack Speed by 15%.\n"
+                                 + "Increases skill cooldown speed by 15%.\n"
+                                 + "Increases swap cooldown speed by 15%.";
 
             // EN: A golden spear ornamented with the wings of dawn.
             // KR: 여명의 날개로 치장된 금색 창
@@ -1218,8 +1218,8 @@ public class CustomItems
             // 교대 쿨다운 속도가 25% 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 55%.\n"
-                                           + "Increases Attack Speed by 25%.\n"
-                                           + "Increases swap cooldown speed by 25%.";
+                                 + "Increases Attack Speed by 25%.\n"
+                                 + "Increases swap cooldown speed by 25%.";
 
             // EN: A golden sword ornamented with the wings of dawn.
             // KR: 여명의 날개로 치장된 금색 검
@@ -1265,8 +1265,8 @@ public class CustomItems
             // 교대 쿨다운 속도가 25% 증가합니다.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 55%.\n"
-                                           + "Increases skill cooldown speed by 25%.\n"
-                                           + "Increases swap cooldown speed by 25%.";
+                                 + "Increases skill cooldown speed by 25%.\n"
+                                 + "Increases swap cooldown speed by 25%.";
 
             // EN: A golden insignia ornamented with the wings of dawn.
             // KR: 여명의 날개로 치장된 금색 휘장
@@ -1316,10 +1316,10 @@ public class CustomItems
             // 교대 쿨다운 속도가 45% 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 75%.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 75%.\n"
-                                           + "Increases Attack Speed by 45%.\n"
-                                           + "Increases skill cooldown speed by 45%.\n"
-                                           + "Increases swap cooldown speed by 45%.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 75%.\n"
+                                 + "Increases Attack Speed by 45%.\n"
+                                 + "Increases skill cooldown speed by 45%.\n"
+                                 + "Increases swap cooldown speed by 45%.";
 
             // EN: A divine spear donning the wings of dawn.
             // KR: 여명의 날개를 흡수한 신성한 창
@@ -1352,7 +1352,6 @@ public class CustomItems
             item.name = "WingedSpear_5";
             item.rarity = Rarity.Unique;
 
-            item.gearTag = Gear.Tag.Omen;
             item.obtainable = false;
 
             // EN: Omen: Last Dawn
@@ -1372,16 +1371,16 @@ public class CustomItems
             // 교대 쿨다운 속도가 65% 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 110%.\n"
-                                           + "Increases <color=#1787D8>Magic Attack</color> by 110%.\n"
-                                           + "Increases Attack Speed by 65%.\n"
-                                           + "Increases skill cooldown speed by 65%.\n"
-                                           + "Increases swap cooldown speed by 65%.";
+                                 + "Increases <color=#1787D8>Magic Attack</color> by 110%.\n"
+                                 + "Increases Attack Speed by 65%.\n"
+                                 + "Increases skill cooldown speed by 65%.\n"
+                                 + "Increases swap cooldown speed by 65%.";
 
             // EN: The sky cracks, darkness fills the world within.
             // KR: 하늘은 갈라져 속세를 어둠에 물들지니.
             item.itemLore = "The sky cracks, darkness fills the world within.";
 
-            item.prefabKeyword1 = Inscription.Key.Omen;
+            item.prefabKeyword1 = Inscription.Key.None;
             item.prefabKeyword2 = Inscription.Key.Duel;
 
             item.stats = new Stat.Values(
@@ -1423,9 +1422,9 @@ public class CustomItems
             // 모험가 혹은 보스에게 입히는 데미지가 5% 증폭됩니다.
 
             item.itemDescription = "Increases Crit Chance by 5%.\n"
-                                           + "Increases Crit Damage by 25%.\n"
-                                           + "Amplifies damage dealt to enemies by 10%.\n"
-                                           + "Amplfies damage dealt to an adventurer or a boss by 5%.";
+                                 + "Increases Crit Damage by 25%.\n"
+                                 + "Amplifies damage dealt to enemies by 10%.\n"
+                                 + "Amplfies damage dealt to an adventurer or a boss by 5%.";
 
             // EN: An ancient scythe imbued with cursed power.\nIt was once wielded by a former demon king.
             // KR: 전대 마왕중 한명이 사용했다는 저주의 기운을 뿜어내는 고대의 낫
@@ -1471,7 +1470,7 @@ public class CustomItems
             // 3회 째 기본공격마다 피격된 적에게 상처를 입힙니다.
 
             item.itemDescription = "Increases Attack Speed by 20%.\n"
-                                           + "Every 3rd normal attack, inflicts Wound to enemies that were hit.";
+                                 + "Every 3rd normal attack, inflicts Wound to enemies that were hit.";
 
             // EN: In ancient times, when there was no English language yet, you would have been called "Victor".....
             // KR: 태초의 시절, 이곳의 언어도 없던 때에 당신은 "빅토르" 라고 불렸던 것 같다.....
@@ -1548,7 +1547,7 @@ public class CustomItems
             // 2회 째 출혈마다 출혈을 한번 더 부여합니다.
 
             item.itemDescription = "Basic attacks and skills have a 20% chance to apply Wound.\n"
-                                           + "Every 2nd Bleed inflicts Bleed twice.";
+                                 + "Every 2nd Bleed inflicts Bleed twice.";
 
             // EN: Sabre of the great duelist Sly who left his final memento in the form of never-ending anarchy and bloodshed.
             // KR: 끝없는 반역과 학살을 낳았던 세계 제일의 결투가 슬라이의 단도
@@ -1597,7 +1596,7 @@ public class CustomItems
             // 보유하고 있는 '칼레온' 아이템 1개당 최대 체력이 15 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n"
-                                           + "For every Spoils inscription owned, increase Max HP by 15.";
+                                 + "For every Spoils inscription owned, increase Max HP by 15.";
 
             // EN: Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.
             // KR: 가장 강한 칼레온의 최전선에 선 병사들만이 쓸 수 있는 투구.\n하지만 큰 의미는 없어보인다.
@@ -1635,14 +1634,14 @@ public class CustomItems
             // KR: 저주받은 모래시계
             item.itemName = "Cursed Hourglass";
 
-            // EN: Upon entering a map, amplfies damage dealt to enemies by 30% for 30 seconds.\n
+            // EN: Upon entering a map or hitting a boss phase for the first time, amplfies damage dealt to enemies by 30% for 30 seconds.\n
             // When the effect is not active, increases damage received by 30%.
 
-            // KR: 맵 입장 시 30초 동안 적에게 입히는 데미지가 30% 증폭됩니다.\n
+            // KR: 맵 입장 혹은 보스(페이즈 포함) 에게 처음 데미지를 줄 시 30초 동안 적에게 입히는 데미지가 30% 증폭됩니다.\n
             // 해당 효과가 발동 중이지 않을 때, 받는 데미지가 30% 증가합니다.
 
-            item.itemDescription = "Upon entering a map, amplfies damage dealt to enemies by 30% for 30 seconds.\n"
-                                           + "When the effect is not active, increases damage received by 30%.";
+            item.itemDescription = "Upon entering a map or hitting a boss phase for the first time, amplfies damage dealt to enemies by 30% for 30 seconds.\n"
+                                 + "When the effect is not active, increases damage received by 30%.";
 
             // EN: To carry such a burden voluntarily... You're either the bravest person I've ever met, or the most foolish.
             // KR: 이런 짐을 짊어지다니... 넌 아마 이 세상에서 가장 용감하거나 멍청한 사람이겠지.
@@ -1682,7 +1681,7 @@ public class CustomItems
             // 금화 획득량이 10% 증가합니다.
 
             item.itemDescription = "Increases Crit Rate by 5%.\n"
-                                           + "Increases Gold gain by 10%.";
+                                 + "Increases Gold gain by 10%.";
 
             // EN: Oh, must be my lucky day!
             // KR: 오늘은 운수가 좋은 날인가 보군!
@@ -1704,12 +1703,12 @@ public class CustomItems
         }
         {
             var item = new CustomItemReference();
-            item.name = "WitheringFabric";
+            item.name = "TaintedRedScarf";
             item.rarity = Rarity.Rare;
 
-            // EN: Withering Fabric
-            // KR: 날아빠진 천
-            item.itemName = "Withering Fabric";
+            // EN: Tainted Red Scarf
+            // KR: 변색된 붉은 목도리
+            item.itemName = "Tainted Red Scarf";
 
             // EN: Increases dash cooldown speed by 30%.\n
             // Decreases dash distance by 30%.
@@ -1718,11 +1717,11 @@ public class CustomItems
             // 대쉬 거리가 30% 감소합니다.
 
             item.itemDescription = "Increases dash cooldown speed by 20%.\n"
-                                           + "Decreases dash distance by 30%.";
+                                 + "Decreases dash distance by 30%.";
 
-            // EN: Where did this even come from..?
-            // KR: 대체 이거 어디서 난거야..?
-            item.itemLore = "Where did this even come from..?";
+            // EN: A small scarf that was once part of an old doll
+            // KR: 어떤 인형에서 떨어져 나온 작은 목도리
+            item.itemLore = "A small scarf that was once part of an old doll";
 
             item.prefabKeyword1 = Inscription.Key.Mystery;
             item.prefabKeyword2 = Inscription.Key.Chase;
@@ -1757,7 +1756,7 @@ public class CustomItems
             // 적을 처치할 때마다 최대 체력의 2%를 회복합니다.
 
             item.itemDescription = "Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies.\n"
-                                           + "Upon killing an enemy, recovers 2% of your Max HP.";
+                                 + "Upon killing an enemy, recovers 2% of your Max HP.";
 
             // EN: bEsT FrIenDs fOrEveR
             // KR: 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께 영원히 함께

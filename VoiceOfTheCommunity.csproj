@@ -39,18 +39,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Sprites\PrimordialLight.AbilityIcon.png" />
-	  <None Remove="Sprites\PrimordialLight.Icon.png" />
-	  <None Remove="Sprites\PrimordialLight.Thumbnail.png" />
-	  <None Remove="Sprites\TatteredPlushie.AbilityIcon.png" />
-	  <None Remove="Sprites\TatteredPlushie.Icon.png" />
-	  <None Remove="Sprites\TatteredPlushie.Thumbnail.png" />
-	  <None Remove="Sprites\WitheringFabric.AbilityIcon.png" />
-	  <None Remove="Sprites\WitheringFabric.Icon.png" />
-	  <None Remove="Sprites\WitheringFabric.Thumbnail.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<!-- Package to easily set everything as public -->
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.0" />
 
