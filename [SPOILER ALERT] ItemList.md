@@ -16,6 +16,12 @@
 *Inscriptions*:
 - Mutant
 - Misfortune
+
+- **Beginner's Lance**
+*Effect*: Increases Physical Attack by 20%. Damage dealt to enemies with a dash attack is amplified by 30%.
+*Inscriptions*:
+- Mutant
+- Misfortune
  
 **Winged Spear**
 *Effect*: Increases Physical Attack, Magic Attack, and Attack Speed by 15%. Increases skill and swap cooldown speeds by 15%.
@@ -31,7 +37,7 @@
 - Excessive Bleeding
  
 **Frozen Spear**
-*Effect*: Skills have a 2% chance to inflict Freeze. Increases Magic Attack by 20%. After applying freeze 300 times, this item turns into 'Spear of the Frozen Moon'.
+*Effect*: Skills have a 10% chance to inflict Freeze. Increases Magic Attack by 20%. After applying freeze 250 times, this item turns into 'Spear of the Frozen Moon'.
 *Inscriptions*:
 - Absolute Zero
 - Mana Cycle
@@ -47,6 +53,12 @@
 *Inscriptions*:
 - Antique
 - Spoils
+
+**Mana Accelerator**
+*Effect*: Skill casting speed increases by 10% for each Mana Cycle inscription in possession.
+*Inscriptions*:
+- Manatech
+- Artifact
  
 **Shrinking Potion**
 *Effect*: Decreases character size by 20%. Increases Movement Speed by 15%. Incoming damage increases by 10%.
@@ -55,16 +67,28 @@
 - Chase
  
 **Spiky Rapida**
-*Effect*: Increases Attack Speed by 20%.
-*Inscriptions*: Every 3rd normal attack, inflicts Wound to enemies that were hit.
+*Effect*: Increases Attack Speed by 20%. Every 3rd normal attack, inflicts Wound to enemies that were hit.
+*Inscriptions*:
 - Excessive Bleeding
 - Rapidity
+
+**Heavy-Duty Carleon Helmet**
+*Effect*: Increases Physical Attack and Magic Attack by 30%. For every Spoils inscription owned, increase Max HP by 15.
+*Inscriptions*:
+- Antique
+- Spoils
  
 **Tainted Red Scarf**
 *Effect*: Increases dash cooldown speed by 20%. Decreases dash distance by 30%.
 *Inscriptions*:
 - Mystery
 - Chase
+
+**Rotten Wings**
+*Effect*: Crit Rate increases by 15% while in midair. Your normal attacks have a 15% chance to inflict Poison.
+*Inscriptions*:
+- Poisoning
+- Soar
 
 ### Unique
 **Broken Heart**
@@ -84,6 +108,12 @@
 *Inscriptions*:
 - Mutant
 - Mystery
+
+**Unstable Size Potion**
+*Effect*: Alters between the effects of 'Shrinking Potion' and 'Growing Potion' every 10 seconds.
+*Inscriptions*:
+- Mutation
+- Antique
  
 **Vase of the Fallen**
 *Effect*: Increases Physical Attack and Magic Attack by 5% per enemy killed (stacks up to 200% and 1/2 of total charge is lost when hit). Attacking an enemy within 1 second of taking a hit restores half of the charge lost from the hit. (Cooldown: 3 seconds)
@@ -91,14 +121,20 @@
 - Heritage
 - Revenge
  
-**Winged Sword**
+**Solar-Winged Sword**
 *Effect*: Increases Physical Attack by 55%. Increases Attack Speed by 25%. Increases swap cooldown speed by 25%.
+*Inscriptions*:
+- Duel
+- Arms
+
+**Lunar-Winged Insignia**
+*Effect*: Increases Magic Attack by 55%. Increases skill cooldown speed by 25%. Increases swap cooldown speed by 25%.
 *Inscriptions*:
 - Duel
 - Arms
  
 **Wings of Dawn**
-*Effect*: Increases Physical Attack and Magic Attack by 75%. Increases Attack speed, skill cooldown speed, and swap cooldown speed by 45%.
+*Effect*: Increases Physical Attack and Magic Attack by 75%. Increases Attack Speed, skill cooldown speed, and swap cooldown speed by 45%.
 *Inscriptions*:
 - Duel
 - Duel
@@ -114,15 +150,7 @@
 *Effect*: Increases Magic Attack by 50%. Magic damage dealt to enemies under 40% HP is amplified by 25%. Magic Attack increases by 8% each time an Omen or a Legendary item is destroyed.
 *Inscriptions*:
 - Wisdom
-- Execute 
- 
-**Goblet of Everlasting Heat**
-*Effect*: Normal attacks after using a skill causes a slashing attack that deals Physical damage. The slashing attack deals 50% more damage to enemies with 50% HP or lower. The following effects are granted depending on the number of enemies near you:
- - 1 enemy: Amplifies the damage of the slashing attack by 50%.
- - 4 enemies or more: The slashing attack increases in size.
-*Inscriptions*:
-- Masterpiece
-- Mystery
+- Execute
  
 **Goddess's Chalice**
 *Effect*: Increases swap cooldown speed by 40%. Damage dealt to enemies through a swap skill is amplified by 35%. Swapping increases Physical Attack and Magic Attack by 10% for 6 seconds (maximum 40%). At maximum stacks, swap cooldown speed is increased by 25%.
@@ -148,29 +176,29 @@
 - Absolute Zero
 - Mana Cycle
  
-**Starlight Bottle**
-*Effect*: Increase Magic Attack by 55%. Attack Speed by 45%. Turns back into Lake in a Bottle once Lake Spirit Nimue disappears.
-*Inscriptions*:
-- Fairy Tale
-- Mystery
- 
 **Tainted Finger**
 *Effect*: Skill damage dealt to enemies is amplified by 30%. Increases Magic Attack by 60%.
 *Inscriptions*:
 - Artifact
 - Masterpiece
- 
-**Unstable Size Potion**
-*Effect*: Alters between the effects of 'Shrinking Potion' and 'Growing Potion' every 10 seconds.
+
+**Corrupted God's Hand**
+*Effect*: Skill damage dealt to enemies is amplified by 100%. Increases Magic Attack by 100%.
 *Inscriptions*:
-- Mutant
-- Antique
+- Artifact
+- Masterpiece
  
 **Volcanic Shard**
 *Effect*: Increases Magic Attack by 10%. Normal attacks and skills have a 20% chance to inflict Burn. Amplifies damage to Burning enemies by 25%. Burn duration decreases by 10% for each Arson inscription in possession.
 *Inscriptions*:
 - Execute
 - Arson
+
+**Tattered Plushie**
+*Effect*: Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies. Upon killing an enemy, recovers 2% of your Max HP.
+*Inscriptions*:
+- Mystery
+- Sin
 
 ### Omen
 **Omen: Accursed Sabre**
@@ -186,9 +214,16 @@
 - Spoils
  
 **Omen: Flask of Botulism**
-*Effect*: The interval between poison damage ticks is further decreased. Increases Physical Attack by 50%.
+*Effect*: The interval between poison damage ticks is further decreased.
 *Inscriptions*:
 - Omen
 - Poisoning
 
+**Omen: Last Dawn**
+*Effect*: Increases Physical Attack and Magic Attack by 110%. Increases Attack Speed, skill cooldown speed, and swap cooldown speed by 65%.
+*Inscriptions*:
+- Omen
+- Duel
+
 Credit to mozzarellathicc for making this huge list!
+.. And me who edited it ;)

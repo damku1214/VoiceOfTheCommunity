@@ -33,6 +33,8 @@ public class CustomItems
      * Add item list - done
      * Renamed Behavior file name for Tainted Red Scarf - done
      * Resprite Dream Catcher - done
+     * Change description of Beginner's Lance - done
+     * Omen: Last Dawn becomes obtainable in the Dev Menu mod - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -1110,13 +1112,13 @@ public class CustomItems
             item.itemName = "Beginner's Lance";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> by 20%.\n
-            // Damage dealt to enemies with a dash attack is amplifies by 30%.
+            // Damage dealt to enemies with a dash attack is amplified by 30%.
 
             // KR: <color=#F25D1C>물리공격력</color>이 20% 증가합니다.\n
             // 적에게 대쉬공격으로 입히는 데미지가 30% 증폭됩니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 20%.\n"
-                                 + "Damage dealt to enemies with a dash attack is amplifies by 30%.";
+                                 + "Damage dealt to enemies with a dash attack is amplified by 30%.";
 
             // EN: Perfect! Now all I need is a noble steed...
             // KR: 완벽해! 이제 좋은 말만 있으면 되는데...
@@ -1376,7 +1378,7 @@ public class CustomItems
             // KR: 하늘은 갈라져 속세를 어둠에 물들지니.
             item.itemLore = "The sky cracks, darkness fills the world within.";
 
-            item.prefabKeyword1 = Inscription.Key.None;
+            item.prefabKeyword1 = Inscription.Key.Omen;
             item.prefabKeyword2 = Inscription.Key.Duel;
 
             item.stats = new Stat.Values(

@@ -119,7 +119,6 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
                 Item newItem = Singleton<Service>.Instance.levelManager.DropItem(request, Vector3.zero);
                 if (isOmen)
                 {
-                    newItem.keyword1 = Inscription.Key.Omen;
                     newItem._gearTag = Gear.Tag.Omen;
                 }
                 item.ChangeOnInventory(newItem);
