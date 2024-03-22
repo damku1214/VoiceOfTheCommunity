@@ -55,7 +55,7 @@ public class VolcanicShardAbility : Ability, ICloneable
 
         private void RefreshArsonInscriptionCount()
         {
-            owner.status.durationMultiplier[CharacterStatus.Kind.Burn].AddOrUpdate(this, BurnInscriptionCount() * 0.1f * -1);
+            owner.status.durationMultiplier[CharacterStatus.Kind.Burn].AddOrUpdate(this, BurnInscriptionCount() * 0.05f * -1);
         }
 
         private bool AmplifyBurnDamage(ITarget target, ref Damage damage)

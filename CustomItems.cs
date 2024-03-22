@@ -35,6 +35,8 @@ public class CustomItems
      * Resprite Dream Catcher - done
      * Change description of Beginner's Lance - done
      * Omen: Last Dawn becomes obtainable in the Dev Menu mod - done
+     * Volcanic Shard burn duration decrease 10% -> 5% - done
+     * Volcanic Shard magic atk 100% -> 80% - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -311,20 +313,20 @@ public class CustomItems
             // KR: 화산의 일각
             item.itemName = "Volcanic Shard";
 
-            // EN: Increases <color=#1787D8>Magic Attack</color> by 100%.\n
+            // EN: Increases <color=#1787D8>Magic Attack</color> by 80%.\n
             // Normal attacks and skills have a 20% chance to inflict Burn.\n
             // Amplifies damage dealt to Burning enemies by 25%.\n
-            // Burn duration decreases by 10% for each Arson inscription in possession.
+            // Burn duration decreases by 5% for each Arson inscription in possession.
 
-            // KR: <color=#1787D8>마법공격력</color>이 100% 증가합니다.\n
+            // KR: <color=#1787D8>마법공격력</color>이 80% 증가합니다.\n
             // 적 공격 시 20% 확률로 화상을 부여합니다.\n
             // 적에게 화상으로 입히는 데미지가 25% 증폭됩니다.\n
-            // 가지고 있는 방화 각인에 비례하여 화상의 지속시간이 10%씩 감소합니다.
+            // 가지고 있는 방화 각인에 비례하여 화상의 지속시간이 5%씩 감소합니다.
 
-            item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 100%.\n"
+            item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 80%.\n"
                                  + "Normal attacks and skills have a 20% chance to inflict Burn.\n"
                                  + "Amplifies damage dealt to Burning enemies by 25%.\n"
-                                 + "Burn duration decreases by 10% for each Arson inscription in possession.";
+                                 + "Burn duration decreases by 5% for each Arson inscription in possession.";
 
             // EN: Rumored to be created from the Black Rock Volcano when erupting, this giant blade is the hottest flaming sword.
             // KR: 전설의 흑요석 화산의 폭발에서 만들어졌다고 전해진, 세상에서 가장 뜨거운 칼날
@@ -335,7 +337,7 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.8),
             ]);
 
             var applyStatus = new ApplyStatusOnGaveDamage();
