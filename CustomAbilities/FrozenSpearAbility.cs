@@ -56,7 +56,7 @@ public class FrozenSpearAbility : Ability, ICloneable
             }
             FrozenSpearAbilityComponent component = ability.component;
             component.currentFreezeCount++;
-            if (component.currentFreezeCount >= 300)
+            if (component.currentFreezeCount >= 250)
             {
                 UpgradeItem();
             }

@@ -8,7 +8,7 @@ using Singletons;
 using UnityEngine;
 
 [Serializable]
-public sealed class WitheringFabricEvolveBehavior : MonoBehaviour
+public sealed class TaintedRedScarfEvolveBehavior : MonoBehaviour
 {
     [SerializeField]
     private Item _item = null;
