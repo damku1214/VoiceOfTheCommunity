@@ -20,8 +20,9 @@ public class CustomItems
     /**
      * TODO
      * 
-     * Add magic atk boost to Tainted Finger line
+     * Add magic atk boost to Tainted Finger line - done
      * Change Volcanic Shard from amping burn to amping burning enemies
+     * Change name of Tainted Red Scarf in Thunderstore README
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -538,6 +539,11 @@ public class CustomItems
             item.prefabKeyword1 = Inscription.Key.Artifact;
             item.prefabKeyword2 = Inscription.Key.Masterpiece;
 
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.6),
+            ]);
+
             ModifyDamage amplifySkillDamage = new();
 
             amplifySkillDamage._attackTypes = new();
@@ -582,6 +588,11 @@ public class CustomItems
 
             item.prefabKeyword1 = Inscription.Key.Artifact;
             item.prefabKeyword2 = Inscription.Key.Masterpiece;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.6),
+            ]);
 
             ModifyDamage amplifySkillDamage = new();
 
@@ -631,6 +642,11 @@ public class CustomItems
 
             item.prefabKeyword1 = Inscription.Key.Artifact;
             item.prefabKeyword2 = Inscription.Key.Masterpiece;
+
+            item.stats = new Stat.Values(
+            [
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1),
+            ]);
 
             ModifyDamage amplifySkillDamage = new();
 
