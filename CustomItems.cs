@@ -20,23 +20,7 @@ public class CustomItems
     /**
      * TODO
      * 
-     * Remove phys atk from Flask of Botulism - done
-     * Put the CORRECT files for the Heavy-Duty Carleon Helmet - done
-     * Remove amp from Goddess's Chalice - done
-     * Mana Accelerator 15% -> 10% - done
-     * Accursed Sabre 20% -> 10% - done
-     * Frozen Spear 2% -> 10% - done
-     * Frozen Spear evolution 300 -> 250 - done
-     * Resprite Winged Spear line - done
-     * Winged Sword -> Solar-Winged Sword - done
-     * Winged Insignia -> Lunar-Winged Insignia - done
-     * Add item list - done
-     * Renamed Behavior file name for Tainted Red Scarf - done
-     * Resprite Dream Catcher - done
-     * Change description of Beginner's Lance - done
-     * Omen: Last Dawn becomes obtainable in the Dev Menu mod - done
-     * Volcanic Shard burn duration decrease 10% -> 5% - done
-     * Volcanic Shard magic atk 100% -> 80% - done
+     * Change the description of Heavy-Duty Carleon Helmet - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -1590,13 +1574,13 @@ public class CustomItems
             item.itemName = "Heavy-Duty Carleon Helmet";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n
-            // For every Spoils inscription owned, increase Max HP by 15.
+            // For every 'Carleon' item owned, increase Max HP by 15.
 
             // KR: <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 30% 증가합니다.\n
             // 보유하고 있는 '칼레온' 아이템 1개당 최대 체력이 15 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n"
-                                 + "For every Spoils inscription owned, increase Max HP by 15.";
+                                 + "For every 'Carleon' item owned, increase Max HP by 15.";
 
             // EN: Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.
             // KR: 가장 강한 칼레온의 최전선에 선 병사들만이 쓸 수 있는 투구.\n하지만 큰 의미는 없어보인다.
