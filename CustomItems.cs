@@ -21,8 +21,9 @@ public class CustomItems
      * TODO
      * 
      * Add magic atk boost to Tainted Finger line - done
-     * Change Volcanic Shard from amping burn to amping burning enemies
+     * Change Volcanic Shard from amping burn to amping burning enemies - done
      * Change name of Tainted Red Scarf in Thunderstore README
+     * Change description of Heavy-Duty Carleon Helmet - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -1591,13 +1592,13 @@ public class CustomItems
             item.itemName = "Heavy-Duty Carleon Helmet";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n
-            // For every Spoils inscription owned, increase Max HP by 15.
+            // For every 'Carleon' item owned, increase Max HP by 15.
 
             // KR: <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 30% 증가합니다.\n
             // 보유하고 있는 '칼레온' 아이템 1개당 최대 체력이 15 증가합니다.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n"
-                                 + "For every Spoils inscription owned, increase Max HP by 15.";
+                                 + "For every 'Carleon' item owned, increase Max HP by 15.";
 
             // EN: Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.
             // KR: 가장 강한 칼레온의 최전선에 선 병사들만이 쓸 수 있는 투구.\n하지만 큰 의미는 없어보인다.
