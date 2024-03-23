@@ -20,23 +20,8 @@ public class CustomItems
     /**
      * TODO
      * 
-     * Remove phys atk from Flask of Botulism - done
-     * Put the CORRECT files for the Heavy-Duty Carleon Helmet - done
-     * Remove amp from Goddess's Chalice - done
-     * Mana Accelerator 15% -> 10% - done
-     * Accursed Sabre 20% -> 10% - done
-     * Frozen Spear 2% -> 10% - done
-     * Frozen Spear evolution 300 -> 250 - done
-     * Resprite Winged Spear line - done
-     * Winged Sword -> Solar-Winged Sword - done
-     * Winged Insignia -> Lunar-Winged Insignia - done
-     * Add item list - done
-     * Renamed Behavior file name for Tainted Red Scarf - done
-     * Resprite Dream Catcher - done
-     * Change description of Beginner's Lance - done
-     * Omen: Last Dawn becomes obtainable in the Dev Menu mod - done
-     * Volcanic Shard burn duration decrease 10% -> 5% - done
-     * Volcanic Shard magic atk 100% -> 80% - done
+     * Add magic atk boost to Tainted Finger line
+     * Change Volcanic Shard from amping burn to amping burning enemies
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -48,20 +33,20 @@ public class CustomItems
             item.rarity = Rarity.Unique;
 
             // EN: Vase of the Fallen
-            // KR: ¿µÈ¥ÀÌ ´ã±ä µµÀÚ±â
+            // KR: ì˜í˜¼ì´ ë‹´ê¸´ ë„ìê¸°
             item.itemName = "Vase of the Fallen";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 5% per enemy killed (stacks up to 200% and 1/2 of total charge is lost when hit).\n
             // Attacking an enemy within 1 second of taking from a hit restores half of the charge lost from the hit (Cooldown: 3 seconds).
 
-            // KR: Ã³Ä¡ÇÑ ÀûÀÇ ¼ö¿¡ ºñ·ÊÇÏ¿© <color=#F25D1C>¹°¸®°ø°İ·Â</color> ¹× <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 5% Áõ°¡ÇÕ´Ï´Ù (ÃÖ´ë 200% Áõ°¡, ÇÇ°İ½Ã Áõ°¡Ä¡ÀÇ Àı¹İÀÌ »ç¶óÁı´Ï´Ù).\n
-            // ÇÇ°İ ÈÄ 1ÃÊ ³»·Î Àû °ø°İ ½Ã °¨¼ÒÇÑ Áõ°¡Ä¡ÀÇ Àı¹İÀ» µÇµ¹·Á ¹Ş½À´Ï´Ù (ÄğÅ¸ÀÓ: 3ÃÊ).
+            // KR: ì²˜ì¹˜í•œ ì ì˜ ìˆ˜ì— ë¹„ë¡€í•˜ì—¬ <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color> ë° <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 5% ì¦ê°€í•©ë‹ˆë‹¤ (ìµœëŒ€ 200% ì¦ê°€, í”¼ê²©ì‹œ ì¦ê°€ì¹˜ì˜ ì ˆë°˜ì´ ì‚¬ë¼ì§‘ë‹ˆë‹¤).\n
+            // í”¼ê²© í›„ 1ì´ˆ ë‚´ë¡œ ì  ê³µê²© ì‹œ ê°ì†Œí•œ ì¦ê°€ì¹˜ì˜ ì ˆë°˜ì„ ë˜ëŒë ¤ ë°›ìŠµë‹ˆë‹¤ (ì¿¨íƒ€ì„: 3ì´ˆ).
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 5% per enemy killed (stacks up to 200% and 1/2 of total charge is lost when hit.)\n"
                                  + "Attacking an enemy within 1 second of taking from a hit restores half of the charge lost from the hit. (Cooldown: 3 seconds)";
 
             // EN: Souls of the Eastern Kingdom's fallen warriors shall aid you in battle.
-            // KR: Àå·ÄÈ÷ Àü»çÇß´ø µ¿ÂÊ ¿Õ±¹ÀÇ º´»çµéÀÇ È¥ÀÌ ´ã±ä ¿µ¹°
+            // KR: ì¥ë ¬íˆ ì „ì‚¬í–ˆë˜ ë™ìª½ ì™•êµ­ì˜ ë³‘ì‚¬ë“¤ì˜ í˜¼ì´ ë‹´ê¸´ ì˜ë¬¼
             item.itemLore = "Souls of the Eastern Kingdom's fallen warriors shall aid you in battle.";
 
             item.prefabKeyword1 = Inscription.Key.Heritage;
@@ -91,7 +76,7 @@ public class CustomItems
             item.rarity = Rarity.Unique;
 
             // EN: Broken Heart
-            // KR: Âõ¾îÁø ½ÉÀå
+            // KR: ì°¢ì–´ì§„ ì‹¬ì¥
             item.itemName = "Broken Heart";
 
             // EN: Increases <color=#1787D8>Magic Attack</color> by 20%.\n
@@ -99,10 +84,10 @@ public class CustomItems
             // Amplifies Quintessence damage by 15%.\n
             // If the 'Succubus' Quintessence is in your possession, this item turns into 'Lustful Heart'.
 
-            // KR: <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 20% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Á¤¼ö Äğ´Ù¿î ¼Óµµ°¡ 30% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô Á¤¼ö·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 15% ÁõÆøµË´Ï´Ù.\n
-            // '¼­Å¥¹ö½º' Á¤¼ö ¼ÒÁö ½Ã ÀÌ ¾ÆÀÌÅÛÀº '»ö¿åÀÇ ½ÉÀå'À¸·Î º¯ÇÕ´Ï´Ù.
+            // KR: <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 20% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì •ìˆ˜ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 30% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ ì •ìˆ˜ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 15% ì¦í­ë©ë‹ˆë‹¤.\n
+            // 'ì„œíë²„ìŠ¤' ì •ìˆ˜ ì†Œì§€ ì‹œ ì´ ì•„ì´í…œì€ 'ìƒ‰ìš•ì˜ ì‹¬ì¥'ìœ¼ë¡œ ë³€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 20%.\n"
                                  + "Increases Quintessence cooldown speed by 30%.\n"
@@ -110,7 +95,7 @@ public class CustomItems
                                  + "If the Succubus Quintessence is in your possession, this item turns into 'Lustful Heart'.";
 
             // EN: Some poor being must have their heart torn both metaphorically and literally.
-            // KR: µüÇÑ °Í, ½ÉÀåÀÌ ÀºÀ¯ÀûÀ¸·Îµµ ¹°¸®ÀûÀ¸·Îµµ Âõ¾îÁö´Ù´Ï.
+            // KR: ë”±í•œ ê²ƒ, ì‹¬ì¥ì´ ì€ìœ ì ìœ¼ë¡œë„ ë¬¼ë¦¬ì ìœ¼ë¡œë„ ì°¢ì–´ì§€ë‹¤ë‹ˆ.
             item.itemLore = "Some poor being must have their heart torn both metaphorically and literally.";
 
             item.prefabKeyword1 = Inscription.Key.Heritage;
@@ -149,23 +134,23 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Lustful Heart
-            // KR: »ö¿åÀÇ ½ÉÀå
+            // KR: ìƒ‰ìš•ì˜ ì‹¬ì¥
             item.itemName = "Lustful Heart";
 
             // EN: Amplifies <color=#1787D8>Magic Attack</color> by 20%.\n
             // Increases Quintessence cooldown speed by 60%.\n
             // Amplifies Quintessence damage by 30%.\n
 
-            // KR: <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 20% ÁõÆøµË´Ï´Ù.\n
-            // Á¤¼ö Äğ´Ù¿î ¼Óµµ°¡ 60% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô Á¤¼ö·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 30% ÁõÆøµË´Ï´Ù.\n
+            // KR: <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 20% ì¦í­ë©ë‹ˆë‹¤.\n
+            // ì •ìˆ˜ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 60% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ ì •ìˆ˜ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 30% ì¦í­ë©ë‹ˆë‹¤.\n
 
             item.itemDescription = "Amplifies <color=#1787D8>Magic Attack</color> by 20%.\n"
                                  + "Increases Quintessence cooldown speed by 60%.\n"
                                  + "Amplifies Quintessence damage by 30%.";
 
             // EN: Given to the greatest Incubus or Succubus directly from the demon prince of lust, Asmodeus.
-            // KR: »ö¿åÀÇ ¸¶½Å ¾Æ½º¸ğµ¥¿ì½º·ÎºÎÅÍ °¡Àå À§´ëÇÑ ÀÎÅ¥¹ö½º È¤Àº ¼­Å¥¹ö½º¿¡°Ô ÇÏ»çµÈ ÁõÇ¥
+            // KR: ìƒ‰ìš•ì˜ ë§ˆì‹  ì•„ìŠ¤ëª¨ë°ìš°ìŠ¤ë¡œë¶€í„° ê°€ì¥ ìœ„ëŒ€í•œ ì¸íë²„ìŠ¤ í˜¹ì€ ì„œíë²„ìŠ¤ì—ê²Œ í•˜ì‚¬ëœ ì¦í‘œ
             item.itemLore = "Given to the greatest Incubus or Succubus directly from the demon prince of lust, Asmodeus.";
 
             item.prefabKeyword1 = Inscription.Key.Heritage;
@@ -200,7 +185,7 @@ public class CustomItems
             item.rarity = Rarity.Legendary;
 
             // EN: Small Twig
-            // KR: ÀÛÀº ³ª¹µ°¡Áö
+            // KR: ì‘ì€ ë‚˜ë­‡ê°€ì§€
             item.itemName = "Small Twig";
 
             // EN: Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n
@@ -208,10 +193,10 @@ public class CustomItems
             // Increases Crit Rate and Crit Damage by 10%.\n
             // All effects double and Amplifies damage dealt to enemies by 20% when "Skul" or "Hero Little Bone" is your current active skull.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color> ¹× <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 15% ÁõÆøµË´Ï´Ù.\n
-            // ½ºÅ³ Äğ´Ù¿î ¼Óµµ ¹× ½ºÅ³ ½ÃÀü ¼Óµµ°¡ 30% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Ä¡¸íÅ¸ È®·ü ¹× Ä¡¸íÅ¸ ÇÇÇØ°¡ 10% Áõ°¡ÇÕ´Ï´Ù.\n
-            // "½ºÄÃ" È¤Àº "¿ë»ç ¸®Æ²º»" ½ºÄÃÀ» »ç¿ë ÁßÀÏ ½Ã ÀÌ ¾ÆÀÌÅÛÀÇ ¸ğµç ½ºÅÈ Áõ°¡Ä¡°¡ µÎ¹è°¡ µÇ¸ç Àû¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 20% ÁõÆøµË´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color> ë° <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 15% ì¦í­ë©ë‹ˆë‹¤.\n
+            // ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ ë° ìŠ¤í‚¬ ì‹œì „ ì†ë„ê°€ 30% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì¹˜ëª…íƒ€ í™•ë¥  ë° ì¹˜ëª…íƒ€ í”¼í•´ê°€ 10% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // "ìŠ¤ì»¬" í˜¹ì€ "ìš©ì‚¬ ë¦¬í‹€ë³¸" ìŠ¤ì»¬ì„ ì‚¬ìš© ì¤‘ì¼ ì‹œ ì´ ì•„ì´í…œì˜ ëª¨ë“  ìŠ¤íƒ¯ ì¦ê°€ì¹˜ê°€ ë‘ë°°ê°€ ë˜ë©° ì ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 20% ì¦í­ë©ë‹ˆë‹¤.
 
             item.itemDescription = "Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n"
                                  + "Increases skill cooldown speed and skill casting speed by 30%.\n"
@@ -219,7 +204,7 @@ public class CustomItems
                                  + "All effects double and Amplifies damage dealt to enemies by 20% when \"Skul\" or \"Hero Little Bone\" is your current active skull.";
 
             // EN: A really cool looking twig, but for some reason I feel sad...
-            // KR: Á¤¸» ¸ÚÀÖ¾î º¸ÀÌ´Â ³ª¹µ°¡ÁöÀÏ ÅÍÀÎµ¥, ¿Ö º¼ ¶§ ¸¶´Ù ½½ÆÛÁö´Â °É±î...
+            // KR: ì •ë§ ë©‹ìˆì–´ ë³´ì´ëŠ” ë‚˜ë­‡ê°€ì§€ì¼ í„°ì¸ë°, ì™œ ë³¼ ë•Œ ë§ˆë‹¤ ìŠ¬í¼ì§€ëŠ” ê±¸ê¹Œ...
             item.itemLore = "A really cool looking twig, but for some reason I feel sad...";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -249,7 +234,7 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Small Twig
-            // KR: ÀÛÀº ³ª¹µ°¡Áö
+            // KR: ì‘ì€ ë‚˜ë­‡ê°€ì§€
             item.itemName = "Small Twig";
 
             // EN: Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n
@@ -257,10 +242,10 @@ public class CustomItems
             // Increases Crit Rate and Crit Damage by 10%.\n
             // All effects double and amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color> ¹× <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 15% ÁõÆøµË´Ï´Ù.\n
-            // ½ºÅ³ Äğ´Ù¿î ¼Óµµ ¹× ½ºÅ³ ½ÃÀü ¼Óµµ°¡ 30% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Ä¡¸íÅ¸ È®·ü ¹× Ä¡¸íÅ¸ ÇÇÇØ°¡ 10% Áõ°¡ÇÕ´Ï´Ù.\n
-            // '½ºÄÃ' È¤Àº '¿ë»ç ¸®Æ²º»' ½ºÄÃÀ» »ç¿ë ÁßÀÏ ½Ã ÀÌ ¾ÆÀÌÅÛÀÇ ¸ğµç ½ºÅÈ Áõ°¡Ä¡°¡ µÎ¹è°¡ µÇ¸ç Àû¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 20% ÁõÆøµË´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color> ë° <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 15% ì¦í­ë©ë‹ˆë‹¤.\n
+            // ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ ë° ìŠ¤í‚¬ ì‹œì „ ì†ë„ê°€ 30% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì¹˜ëª…íƒ€ í™•ë¥  ë° ì¹˜ëª…íƒ€ í”¼í•´ê°€ 10% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // 'ìŠ¤ì»¬' í˜¹ì€ 'ìš©ì‚¬ ë¦¬í‹€ë³¸' ìŠ¤ì»¬ì„ ì‚¬ìš© ì¤‘ì¼ ì‹œ ì´ ì•„ì´í…œì˜ ëª¨ë“  ìŠ¤íƒ¯ ì¦ê°€ì¹˜ê°€ ë‘ë°°ê°€ ë˜ë©° ì ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 20% ì¦í­ë©ë‹ˆë‹¤.
 
             item.itemDescription = "Amplifies <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15%.\n"
                                  + "Increases skill cooldown speed and skill casting speed by 30%.\n"
@@ -268,7 +253,7 @@ public class CustomItems
                                  + "All effects double and amplifies damage dealt to enemies by 20% when 'Skul' or 'Hero Little Bone' is your current active skull.";
 
             // EN: A really cool looking twig, but for some reason I feel sad...
-            // KR: Á¤¸» ¸ÚÀÖ¾î º¸ÀÌ´Â ³ª¹µ°¡ÁöÀÏ ÅÍÀÎµ¥, ¿Ö º¼ ¶§ ¸¶´Ù ½½ÆÛÁö´Â °É±î...
+            // KR: ì •ë§ ë©‹ìˆì–´ ë³´ì´ëŠ” ë‚˜ë­‡ê°€ì§€ì¼ í„°ì¸ë°, ì™œ ë³¼ ë•Œ ë§ˆë‹¤ ìŠ¬í¼ì§€ëŠ” ê±¸ê¹Œ...
             item.itemLore = "A really cool looking twig, but for some reason I feel sad...";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -310,7 +295,7 @@ public class CustomItems
             item.rarity = Rarity.Legendary;
 
             // EN: Volcanic Shard
-            // KR: È­»êÀÇ ÀÏ°¢
+            // KR: í™”ì‚°ì˜ ì¼ê°
             item.itemName = "Volcanic Shard";
 
             // EN: Increases <color=#1787D8>Magic Attack</color> by 80%.\n
@@ -318,10 +303,10 @@ public class CustomItems
             // Amplifies damage dealt to Burning enemies by 25%.\n
             // Burn duration decreases by 5% for each Arson inscription in possession.
 
-            // KR: <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 80% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû °ø°İ ½Ã 20% È®·ü·Î È­»óÀ» ºÎ¿©ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô È­»óÀ¸·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 25% ÁõÆøµË´Ï´Ù.\n
-            // °¡Áö°í ÀÖ´Â ¹æÈ­ °¢ÀÎ¿¡ ºñ·ÊÇÏ¿© È­»óÀÇ Áö¼Ó½Ã°£ÀÌ 5%¾¿ °¨¼ÒÇÕ´Ï´Ù.
+            // KR: <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 80% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì  ê³µê²© ì‹œ 20% í™•ë¥ ë¡œ í™”ìƒì„ ë¶€ì—¬í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ í™”ìƒìœ¼ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 25% ì¦í­ë©ë‹ˆë‹¤.\n
+            // ê°€ì§€ê³  ìˆëŠ” ë°©í™” ê°ì¸ì— ë¹„ë¡€í•˜ì—¬ í™”ìƒì˜ ì§€ì†ì‹œê°„ì´ 5%ì”© ê°ì†Œí•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 80%.\n"
                                  + "Normal attacks and skills have a 20% chance to inflict Burn.\n"
@@ -329,7 +314,7 @@ public class CustomItems
                                  + "Burn duration decreases by 5% for each Arson inscription in possession.";
 
             // EN: Rumored to be created from the Black Rock Volcano when erupting, this giant blade is the hottest flaming sword.
-            // KR: Àü¼³ÀÇ Èæ¿ä¼® È­»êÀÇ Æø¹ß¿¡¼­ ¸¸µé¾îÁ³´Ù°í ÀüÇØÁø, ¼¼»ó¿¡¼­ °¡Àå ¶ß°Å¿î Ä®³¯
+            // KR: ì „ì„¤ì˜ í‘ìš”ì„ í™”ì‚°ì˜ í­ë°œì—ì„œ ë§Œë“¤ì–´ì¡Œë‹¤ê³  ì „í•´ì§„, ì„¸ìƒì—ì„œ ê°€ì¥ ëœ¨ê±°ìš´ ì¹¼ë‚ 
             item.itemLore = "Rumored to be created from the Black Rock Volcano when erupting, this giant blade is the hottest flaming sword.";
 
             item.prefabKeyword1 = Inscription.Key.Execution;
@@ -368,20 +353,20 @@ public class CustomItems
             item.rarity = Rarity.Unique;
 
             // EN: Rusty Chalice
-            // KR: ³ì½¼ ¼º¹è
+            // KR: ë…¹ìŠ¨ ì„±ë°°
             item.itemName = "Rusty Chalice";
 
             // EN: Increases swap cooldown speed by 15%.\n
             // Upon hitting enemies with a swap skill 150 times, this item transforms into 'Goddess's Chalice.'
 
-            // KR: ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 15% Áõ°¡Ãd´Ï´Ù.\n
-            // Àû¿¡°Ô ±³´ë½ºÅ³·Î µ¥¹ÌÁö¸¦ 150¹ø ÁÙ ½Ã ÇØ´ç ¾ÆÀÌÅÛÀº '¿©½ÅÀÇ ¼º¹è'·Î º¯ÇÕ´Ï´Ù.
+            // KR: êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 15% ì¦ê°€dë‹ˆë‹¤.\n
+            // ì ì—ê²Œ êµëŒ€ìŠ¤í‚¬ë¡œ ë°ë¯¸ì§€ë¥¼ 150ë²ˆ ì¤„ ì‹œ í•´ë‹¹ ì•„ì´í…œì€ 'ì—¬ì‹ ì˜ ì„±ë°°'ë¡œ ë³€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases swap cooldown speed by 15%.\n"
                                  + "Upon hitting enemies with a swap skill 150 times, this item transforms into 'Goddess's Chalice.'";
 
             // EN: This thing? I found it at a pawn shop and it seemed interesting
-            // KR: ¾Æ ÀÌ°Å? ¾Ï½ÃÀå¿¡¼­ ¿¹»µ º¸ÀÌ±æ·¡ »ò´Âµ¥, ¾î¶§?
+            // KR: ì•„ ì´ê±°? ì•”ì‹œì¥ì—ì„œ ì˜ˆë» ë³´ì´ê¸¸ë˜ ìƒ€ëŠ”ë°, ì–´ë•Œ?
             item.itemLore = "This thing? I found it at a pawn shop and it seemed interesting";
 
             item.prefabKeyword1 = Inscription.Key.Mutation;
@@ -406,23 +391,23 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Goddess's Chalice
-            // KR: ¿©½ÅÀÇ ¼º¹è
+            // KR: ì—¬ì‹ ì˜ ì„±ë°°
             item.itemName = "Goddess's Chalice";
 
             // EN: Increases swap cooldown speed by 40%.\n
             // Swapping increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 10% for 6 seconds (maximum 40%).\n
             // At maximum stacks, swap cooldown speed is increased by 25%.
 
-            // KR: ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 40% Áõ°¡Ãd´Ï´Ù.\n
-            // ±³´ë ½Ã 6ÃÊ µ¿¾È <color=#F25D1C>¹°¸®°ø°İ·Â</color> ¹× <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 15% Áõ°¡ÇÕ´Ï´Ù (ÃÖ´ë 60%).\n
-            // °ø°İ·Â Áõ°¡Ä¡°¡ ÃÖ´ëÀÏ ½Ã, ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 25% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 40% ì¦ê°€dë‹ˆë‹¤.\n
+            // êµëŒ€ ì‹œ 6ì´ˆ ë™ì•ˆ <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color> ë° <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 15% ì¦ê°€í•©ë‹ˆë‹¤ (ìµœëŒ€ 60%).\n
+            // ê³µê²©ë ¥ ì¦ê°€ì¹˜ê°€ ìµœëŒ€ì¼ ì‹œ, êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases swap cooldown speed by 40%.\n"
                                  + "Swapping increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 10% for 6 seconds (maximum 40%).\n"
                                  + "At maximum stacks, swap cooldown speed is increased by 25%.";
 
             // EN: Chalice used by Leonia herself that seems to never run dry
-            // KR: ¿©½Å ·¹¿À´Ï¾Æ º»ÀÎ²²¼­ ¾²½Ã´ø Àı´ë ºñ¿öÁöÁö ¾Ê´Â ¼º¹è
+            // KR: ì—¬ì‹  ë ˆì˜¤ë‹ˆì•„ ë³¸ì¸ê»˜ì„œ ì“°ì‹œë˜ ì ˆëŒ€ ë¹„ì›Œì§€ì§€ ì•ŠëŠ” ì„±ë°°
             item.itemLore = "Chalice used by Leonia herself that seems to never run dry";
 
             item.prefabKeyword1 = Inscription.Key.Mutation;
@@ -465,17 +450,17 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Omen: Flask of Botulism
-            // KR: ÈäÁ¶: ¿ªº´ÀÇ ÇÃ¶ó½ºÅ©
+            // KR: í‰ì¡°: ì—­ë³‘ì˜ í”Œë¼ìŠ¤í¬
             item.itemName = "Omen: Flask of Botulism";
 
             // EN: The interval between poison damage ticks is further decreased.
 
-            // KR: Áßµ¶ µ¥¹ÌÁö°¡ ¹ß»ıÇÏ´Â °£°İÀÌ ´õ¿í ÁÙ¾îµì´Ï´Ù.
+            // KR: ì¤‘ë… ë°ë¯¸ì§€ê°€ ë°œìƒí•˜ëŠ” ê°„ê²©ì´ ë”ìš± ì¤„ì–´ë“­ë‹ˆë‹¤.
 
             item.itemDescription = "The interval between poison damage ticks is further decreased.";
 
             // EN: Only the mad and cruel would consider using this as a weapon.
-            // KR: Á¤¸» ¹ÌÄ¡Áö ¾Ê°í¼­¾ß ÀÌ°É ¹«±â·Î ¾²´Â ÀÏÀº ¾øÀ» °ÍÀÌ´Ù.
+            // KR: ì •ë§ ë¯¸ì¹˜ì§€ ì•Šê³ ì„œì•¼ ì´ê±¸ ë¬´ê¸°ë¡œ ì“°ëŠ” ì¼ì€ ì—†ì„ ê²ƒì´ë‹¤.
             item.itemLore = "Only the mad and cruel would consider using this as a weapon.";
 
             item.prefabKeyword1 = Inscription.Key.Omen;
@@ -497,17 +482,17 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Omen: Corrupted Symbol
-            // KR: ÈäÁ¶: ¿À¿°µÈ »óÂ¡
+            // KR: í‰ì¡°: ì˜¤ì—¼ëœ ìƒì§•
             item.itemName = "Omen: Corrupted Symbol";
 
             // EN: For every Spoils inscription owned, increase <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 80%.
 
-            // KR: º¸À¯ÇÏ°í ÀÖ´Â 'Ä®·¹¿Â' ¾ÆÀÌÅÛ 1°³´ç <color=#F25D1C>¹°¸®°ø°İ·Â</color> ¹× <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 80% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ë³´ìœ í•˜ê³  ìˆëŠ” 'ì¹¼ë ˆì˜¨' ì•„ì´í…œ 1ê°œë‹¹ <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color> ë° <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 80% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "For every Spoils inscription owned, increase <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 80%.";
 
             // EN: Where's your god now?
-            // KR: ÀÚ, ÀÌÁ¦ ³× ½ÅÀº ¾îµøÁö?
+            // KR: ì, ì´ì œ ë„¤ ì‹ ì€ ì–´ë”¨ì§€?
             item.itemLore = "Where's your god now?";
 
             item.prefabKeyword1 = Inscription.Key.Omen;
@@ -534,20 +519,20 @@ public class CustomItems
             item.rarity = Rarity.Legendary;
 
             // EN: Tainted Finger
-            // KR: Ä§½ÄµÈ ¼Õ°¡¶ô
+            // KR: ì¹¨ì‹ëœ ì†ê°€ë½
             item.itemName = "Tainted Finger";
 
             // EN: Skill damage dealt to enemies is amplified by 30%.\n
             // Increases <color=#1787D8>Magic Attack</color> by 60%.
 
-            // KR: Àû¿¡°Ô ½ºÅ³·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 30% ÁõÆøµË´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 60% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ì ì—ê²Œ ìŠ¤í‚¬ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 30% ì¦í­ë©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 60% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Skill damage dealt to enemies is amplified by 30%.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 60%.";
 
             // EN: A finger from a god tainted by dark quartz
-            // KR: °ËÀº ¸¶¼®¿¡ ÀÇÇØ Ä§½ÄµÈ ½ÅÀÇ ¼Õ°¡¶ô
+            // KR: ê²€ì€ ë§ˆì„ì— ì˜í•´ ì¹¨ì‹ëœ ì‹ ì˜ ì†ê°€ë½
             item.itemLore = "A finger from a god tainted by dark quartz";
 
             item.prefabKeyword1 = Inscription.Key.Artifact;
@@ -576,23 +561,23 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Tainted Finger
-            // KR: Ä§½ÄµÈ ¼Õ°¡¶ô
+            // KR: ì¹¨ì‹ëœ ì†ê°€ë½
             item.itemName = "Tainted Finger";
 
             // EN: Skill damage dealt to enemies is amplified by 30%.\n
             // Increases <color=#1787D8>Magic Attack</color> by 60%.\n
             // If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.
 
-            // KR: Àû¿¡°Ô ½ºÅ³·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 30% ÁõÆøµË´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 60% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ÇöÀç '·¹¿À´Ï¾ÆÀÇ ÀºÃÑ' ¾ÆÀÌÅÛÀ» ¼ÒÁöÇÏ°í ÀÖÀ¸¸é ÇØ´ç ¾ÆÀÌÅÛÀº 'Ä§½ÄµÈ ½ÅÀÇ ¼Õ' À¸·Î º¯ÇÕ´Ï´Ù.
+            // KR: ì ì—ê²Œ ìŠ¤í‚¬ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 30% ì¦í­ë©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 60% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // í˜„ì¬ 'ë ˆì˜¤ë‹ˆì•„ì˜ ì€ì´' ì•„ì´í…œì„ ì†Œì§€í•˜ê³  ìˆìœ¼ë©´ í•´ë‹¹ ì•„ì´í…œì€ 'ì¹¨ì‹ëœ ì‹ ì˜ ì†' ìœ¼ë¡œ ë³€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Skill damage dealt to enemies is amplified by 30%.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
                                  + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
 
             // EN: Nothing happened. It seems like it needs something else.
-            // KR: ¾Æ¹« ÀÏµµ ÀÏ¾î³ªÁö ¾Ê¾Ò´Ù. ¹º°¡ ´õ ÇÊ¿äÇÑ °Í °°´Ù.
+            // KR: ì•„ë¬´ ì¼ë„ ì¼ì–´ë‚˜ì§€ ì•Šì•˜ë‹¤. ë­”ê°€ ë” í•„ìš”í•œ ê²ƒ ê°™ë‹¤.
             item.itemLore = "Nothing happened. It seems like it needs something else.";
 
             item.prefabKeyword1 = Inscription.Key.Artifact;
@@ -627,21 +612,21 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Corrupted God's Hand
-            // KR: Ä§½ÄµÈ ½ÅÀÇ ¼Õ
+            // KR: ì¹¨ì‹ëœ ì‹ ì˜ ì†
             item.itemName = "Corrupted God's Hand";
 
             // EN: Skill damage dealt to enemies is amplified by 100%.\n
             // Increases <color=#1787D8>Magic Attack</color> by 100%.\n
             // Max HP decreases by 30% for all enemies.
 
-            // KR: Àû¿¡°Ô ½ºÅ³·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 100% ÁõÆøµË´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 100% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ì ì—ê²Œ ìŠ¤í‚¬ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 100% ì¦í­ë©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 100% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Skill damage dealt to enemies is amplified by 100%.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 100%.";
 
             // EN: A corrupt hand from Leonia's supposed god
-            // KR: ·¹¿À´Ï¾Æ·Î ÃßÁ¤µÇ´Â ½ÅÀÇ Ä§½ÄµÈ ¼Õ
+            // KR: ë ˆì˜¤ë‹ˆì•„ë¡œ ì¶”ì •ë˜ëŠ” ì‹ ì˜ ì¹¨ì‹ëœ ì†
             item.itemLore = "A corrupt hand from Leonia's supposed god";
 
             item.prefabKeyword1 = Inscription.Key.Artifact;
@@ -670,23 +655,23 @@ public class CustomItems
             item.rarity = Rarity.Legendary;
 
             // EN: Dream Catcher
-            // KR: µå¸²Ä³Ã³
+            // KR: ë“œë¦¼ìºì²˜
             item.itemName = "Dream Catcher";
 
             // EN: Increases <color=#1787D8>Magic Attack</color> by 50%.\n
             // <color=#1787D8>Magic damage</color> dealt to enemies under 40% HP is amplified by 25%.\n
             // <color=#1787D8>Magic Attack</color> increases by 8% each time an Omen or a Legendary item is destroyed.
 
-            // KR: <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 50% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ÇöÀç Ã¼·ÂÀÌ 40% ÀÌÇÏÀÎ Àû¿¡°Ô ÀÔÈ÷´Â <color=#1787D8>¸¶¹ıµ¥¹ÌÁö</color>°¡ 25% ÁõÆøµË´Ï´Ù.\n
-            // ÈäÁ¶ È¤Àº ·¹Àü´õ¸® µî±ŞÀ» °¡Áø ¾ÆÀÌÅÛÀ» ÆÄ±«ÇÒ ¶§¸¶´Ù <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 8% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 50% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // í˜„ì¬ ì²´ë ¥ì´ 40% ì´í•˜ì¸ ì ì—ê²Œ ì…íˆëŠ” <color=#1787D8>ë§ˆë²•ë°ë¯¸ì§€</color>ê°€ 25% ì¦í­ë©ë‹ˆë‹¤.\n
+            // í‰ì¡° í˜¹ì€ ë ˆì „ë”ë¦¬ ë“±ê¸‰ì„ ê°€ì§„ ì•„ì´í…œì„ íŒŒê´´í•  ë•Œë§ˆë‹¤ <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 8% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 50%.\n"
                                  + "<color=#1787D8>Magic damage</color> dealt to enemies under 40% HP is amplified by 25%.\n"
                                  + "<color=#1787D8>Magic Attack</color> increases by 8% each time an Omen or a Legendary item is destroyed.";
 
             // EN: Acceptance is the first step towards death.
-            // KR: ¼ö¿ëÇÏ´Â °ÍÀº Á×À½À» ÇâÇÑ Ã¹ °ÉÀ½ÀÌ´Ù.
+            // KR: ìˆ˜ìš©í•˜ëŠ” ê²ƒì€ ì£½ìŒì„ í–¥í•œ ì²« ê±¸ìŒì´ë‹¤.
             item.itemLore = "Acceptance is the first step towards death.";
 
             item.prefabKeyword1 = Inscription.Key.Wisdom;
@@ -717,20 +702,20 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Blood-Soaked Javelin
-            // KR: ÇÇÅõ¼ºÀÌ ÅõÃ¢
+            // KR: í”¼íˆ¬ì„±ì´ íˆ¬ì°½
             item.itemName = "Blood-Soaked Javelin";
 
             // EN: Increases Crit Damage by 20%.\n
             // Critical hits have a 10% chance to apply Wound (Cooldown: 0.5 seconds).
 
-            // KR: Ä¡¸íÅ¸ µ¥¹ÌÁö°¡ 20% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Ä¡¸íÅ¸ ½Ã 10% È®·ü·Î Àû¿¡°Ô »óÃ³¸¦ ºÎ¿©ÇÕ´Ï´Ù (ÄğÅ¸ÀÓ: 0.5ÃÊ).
+            // KR: ì¹˜ëª…íƒ€ ë°ë¯¸ì§€ê°€ 20% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì¹˜ëª…íƒ€ ì‹œ 10% í™•ë¥ ë¡œ ì ì—ê²Œ ìƒì²˜ë¥¼ ë¶€ì—¬í•©ë‹ˆë‹¤ (ì¿¨íƒ€ì„: 0.5ì´ˆ).
 
             item.itemDescription = "Increases Crit Damage by 20%.\n"
                                  + "Critical hits have a 10% chance to apply Wound.";
 
             // EN: A javelin that always hits vital organs, and drains all the blood out of whichever one it hits
-            // KR: ÀûÀÇ ½ÉÀåÀ» Á¤È®È÷ ³ë·Á ½ÃÃ¼¿¡ ÇÇ ÇÑ¹æ¿ï ³²±âÁö ¾Ê´Â ÅõÃ¢
+            // KR: ì ì˜ ì‹¬ì¥ì„ ì •í™•íˆ ë…¸ë ¤ ì‹œì²´ì— í”¼ í•œë°©ìš¸ ë‚¨ê¸°ì§€ ì•ŠëŠ” íˆ¬ì°½
             item.itemLore = "A javelin that always hits vital organs, and drains all the blood out of whichever one it hits";
 
             item.prefabKeyword1 = Inscription.Key.Misfortune;
@@ -753,23 +738,23 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Frozen Spear
-            // KR: ¾óÀ½ÀÇ Ã¢
+            // KR: ì–¼ìŒì˜ ì°½
             item.itemName = "Frozen Spear";
 
             // EN: Skills have a 10% chance to inflict Freeze.\n
             // Increases <color=#1787D8>Magic Attack</color> by 20%.\n
             // After applying freeze 250 times, this item turns into 'Spear of the Frozen Moon'.
 
-            // KR: Àû¿¡°Ô ½ºÅ³·Î °ø°İ½Ã 10% È®·ü·Î ºù°áÀ» ºÎ¿©ÇÕ´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>°¡ 20% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô ºù°áÀ» 250¹ø ºÎ¿©ÇÒ ½Ã ÇØ´ç ¾ÆÀÌÅÛÀº '¾ó¾îºÙÀº ´ŞÀÇ Ã¢'À¸·Î º¯ÇÕ´Ï´Ù.
+            // KR: ì ì—ê²Œ ìŠ¤í‚¬ë¡œ ê³µê²©ì‹œ 10% í™•ë¥ ë¡œ ë¹™ê²°ì„ ë¶€ì—¬í•©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ê°€ 20% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ ë¹™ê²°ì„ 250ë²ˆ ë¶€ì—¬í•  ì‹œ í•´ë‹¹ ì•„ì´í…œì€ 'ì–¼ì–´ë¶™ì€ ë‹¬ì˜ ì°½'ìœ¼ë¡œ ë³€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Skills have a 10% chance to inflict Freeze.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 20%.\n"
                                  + "After applying freeze 250 times, this item turns into 'Spear of the Frozen Moon'.";
 
             // EN: A sealed weapon waiting the cold time to revealed it's true form.
-            // KR: ÇØ¹æÀÇ È¤ÇÑÀ» ±â´Ù¸®´Â ºÀÀÎµÈ ¹«±â
+            // KR: í•´ë°©ì˜ í˜¹í•œì„ ê¸°ë‹¤ë¦¬ëŠ” ë´‰ì¸ëœ ë¬´ê¸°
             item.itemLore = "A sealed weapon waiting the cold time to revealed it's true form.";
 
             item.prefabKeyword1 = Inscription.Key.AbsoluteZero;
@@ -809,7 +794,7 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Spear of the Frozen Moon
-            // KR: ¾ó¾îºÙÀº ´ŞÀÇ Ã¢
+            // KR: ì–¼ì–´ë¶™ì€ ë‹¬ì˜ ì°½
             item.itemName = "Spear of the Frozen Moon";
 
             // EN: Skills have a 15% chance to inflict Freeze.\n
@@ -817,10 +802,10 @@ public class CustomItems
             // Attacking frozen enemies increases the number of hits to remove Freeze by 1.\n
             // Amplifies damage to frozen enemies by 25%.
 
-            // KR: Àû¿¡°Ô ½ºÅ³·Î °ø°İ½Ã 15% È®·ü·Î ºù°áÀ» ºÎ¿©ÇÕ´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>°¡ 60% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ºù°á »óÅÂÀÇ Àû °ø°İ ½Ã ºù°áÀÌ ÇØÁ¦µÇ´Âµ¥ ÇÊ¿äÇÑ Å¸¼ö°¡ 1 Áõ°¡ÇÕ´Ï´Ù.\n
-            // ºù°á »óÅÂÀÇ Àû¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 25% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ì ì—ê²Œ ìŠ¤í‚¬ë¡œ ê³µê²©ì‹œ 15% í™•ë¥ ë¡œ ë¹™ê²°ì„ ë¶€ì—¬í•©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ê°€ 60% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ë¹™ê²° ìƒíƒœì˜ ì  ê³µê²© ì‹œ ë¹™ê²°ì´ í•´ì œë˜ëŠ”ë° í•„ìš”í•œ íƒ€ìˆ˜ê°€ 1 ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ë¹™ê²° ìƒíƒœì˜ ì ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Skills have a 15% chance to inflict Freeze.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
@@ -828,7 +813,7 @@ public class CustomItems
                                  + "Amplifies damage dealt to frozen enemies by 25%.";
 
             // EN: When a battlefield turns into a permafrost, the weapon formely wielded by the ice beast Vaalfen appears. 
-            // KR: ÀüÀå¿¡ ´«º¸¶ó°¡ ÈÖ¸ô¾ÆÄ¥ ¶§, ¾óÀ½ ±«¼ö ¹ßÆæÀÇ Ã¢ÀÌ ³ªÅ¸³¯Áö´Ï
+            // KR: ì „ì¥ì— ëˆˆë³´ë¼ê°€ íœ˜ëª°ì•„ì¹  ë•Œ, ì–¼ìŒ ê´´ìˆ˜ ë°œíœì˜ ì°½ì´ ë‚˜íƒ€ë‚ ì§€ë‹ˆ
             item.itemLore = "When a battlefield turns into a permafrost, the weapon formely wielded by the ice beast Vaalfen appears. ";
 
             item.prefabKeyword1 = Inscription.Key.AbsoluteZero;
@@ -868,17 +853,17 @@ public class CustomItems
             item.rarity = Rarity.Common;
 
             // EN: Cross Necklace
-            // KR: ½ÊÀÚ ¸ñ°ÉÀÌ
+            // KR: ì‹­ì ëª©ê±¸ì´
             item.itemName = "Cross Necklace";
 
             // EN: Recover 5 HP upon entering a map.
 
-            // KR: ¸Ê ÀÔÀå ½Ã Ã¼·ÂÀ» 5 È¸º¹ÇÕ´Ï´Ù.
+            // KR: ë§µ ì…ì¥ ì‹œ ì²´ë ¥ì„ 5 íšŒë³µí•©ë‹ˆë‹¤.
 
             item.itemDescription = "Recover 5 HP upon entering a map.";
 
             // EN: When all is lost, we turn to hope
-            // KR: ¸ğµç °ÍÀ» ÀÒ¾úÀ» ¶§, Èñ¸ÁÀ» ¹Ù¶óº¼Áö´Ï
+            // KR: ëª¨ë“  ê²ƒì„ ìƒì—ˆì„ ë•Œ, í¬ë§ì„ ë°”ë¼ë³¼ì§€ë‹ˆ
             item.itemLore = "Acceptance is the first step towards death.";
 
             item.prefabKeyword1 = Inscription.Key.Relic;
@@ -896,20 +881,20 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Rotten Wings
-            // KR: ½âÀº ³¯°³
+            // KR: ì©ì€ ë‚ ê°œ
             item.itemName = "Rotten Wings";
 
             // EN: Crit Rate increases by 15% while in midair.\n
             // Your normal attacks have a 15% chance to inflict Poison.
 
-            // KR: °øÁß¿¡ ÀÖÀ» ½Ã Ä¡¸íÅ¸ È®·üÀÌ 15% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô ±âº»°ø°İ ½Ã 15% È®·ü·Î Áßµ¶À» ºÎ¿©ÇÕ´Ï´Ù.
+            // KR: ê³µì¤‘ì— ìˆì„ ì‹œ ì¹˜ëª…íƒ€ í™•ë¥ ì´ 15% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ ê¸°ë³¸ê³µê²© ì‹œ 15% í™•ë¥ ë¡œ ì¤‘ë…ì„ ë¶€ì—¬í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Crit Rate increases by 15% while in midair.\n"
                                  + "Your normal attacks have a 15% chance to inflict Poison.";
 
             // EN: Wings of a zombie wyvern
-            // KR: Á»ºñ ¿ÍÀÌ¹øÀÇ ½â¾î ¹®µå·¯Áø ³¯°³
+            // KR: ì¢€ë¹„ ì™€ì´ë²ˆì˜ ì©ì–´ ë¬¸ë“œëŸ¬ì§„ ë‚ ê°œ
             item.itemLore = "Wings of a zombie wyvern";
 
             item.prefabKeyword1 = Inscription.Key.Poisoning;
@@ -950,23 +935,23 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Shrinking Potion
-            // KR: ³­ÀïÀÌ ¹°¾à
+            // KR: ë‚œìŸì´ ë¬¼ì•½
             item.itemName = "Shrinking Potion";
 
             // EN: Decreases character size by 20%.\n
             // Increases Movement Speed by 15%.\n
             // Incoming damage increases by 10%.
 
-            // KR: Ä³¸¯ÅÍ Å©±â°¡ 20% °¨¼ÒÇÕ´Ï´Ù.\n
-            // ÀÌµ¿¼Óµµ°¡ 15% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ¹Ş´Â µ¥¹ÌÁö°¡ 10% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ìºë¦­í„° í¬ê¸°ê°€ 20% ê°ì†Œí•©ë‹ˆë‹¤.\n
+            // ì´ë™ì†ë„ê°€ 15% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ë°›ëŠ” ë°ë¯¸ì§€ê°€ 10% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Decreases character size by 20%.\n"
                                  + "Increases Movement Speed by 15%.\n"
                                  + "Incoming damage increases by 10%.";
 
             // EN: I think it was meant to be used on the enemies...
-            // KR: ¿ØÁö Àû¿¡°Ô ½á¾ß ÇÒ °Í °°Àºµ¥...
+            // KR: ì™ ì§€ ì ì—ê²Œ ì¨ì•¼ í•  ê²ƒ ê°™ì€ë°...
             item.itemLore = "I think it was meant to be used on the enemies...";
 
             item.prefabKeyword1 = Inscription.Key.Mutation;
@@ -993,17 +978,17 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Unstable Size Potion
-            // KR: ºÒ¾ÈÁ¤ÇÑ Å©±â Á¶Á¤ ¹°¾à
+            // KR: ë¶ˆì•ˆì •í•œ í¬ê¸° ì¡°ì • ë¬¼ì•½
             item.itemName = "Unstable Size Potion";
 
             // EN: Alters between the effects of 'Shrinking Potion' and 'Growing Potion' every 10 seconds.
 
-            // KR: 10ÃÊ ¸¶´Ù '³­ÀïÀÌ ¹°¾à'°ú '¼ºÀå ¹°¾à'ÀÇ È¿°ú¸¦ ¹ø°¥¾Æ°¡¸ç Àû¿ëÇÕ´Ï´Ù.
+            // KR: 10ì´ˆ ë§ˆë‹¤ 'ë‚œìŸì´ ë¬¼ì•½'ê³¼ 'ì„±ì¥ ë¬¼ì•½'ì˜ íš¨ê³¼ë¥¼ ë²ˆê°ˆì•„ê°€ë©° ì ìš©í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Alters between the effects of 'Shrinking Potion' and 'Growing Potion' every 10 seconds.";
 
             // EN: Mixing those potions together was a bad idea
-            // KR: ÀÌ ¹°¾àµéÀ» ¼¯´Â °ÍÀº ÁÁÀº »ı°¢ÀÌ ¾Æ´Ï¾ú´Ù.
+            // KR: ì´ ë¬¼ì•½ë“¤ì„ ì„ëŠ” ê²ƒì€ ì¢‹ì€ ìƒê°ì´ ì•„ë‹ˆì—ˆë‹¤.
             item.itemLore = "Mixing those potions together was a bad idea";
 
             item.prefabKeyword1 = Inscription.Key.Mutation;
@@ -1037,23 +1022,23 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Growing Potion
-            // KR: ¼ºÀå ¹°¾à
+            // KR: ì„±ì¥ ë¬¼ì•½
             item.itemName = "Growing Potion";
 
             // EN: Increases character size by 20%.\n
             // Decreases Movement Speed by 15%.\n
             // Incoming damage decreases by 10%.
 
-            // KR: Ä³¸¯ÅÍ Å©±â°¡ 20% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ÀÌµ¿¼Óµµ°¡ 15% °¨¼ÒÇÕ´Ï´Ù.\n
-            // ¹Ş´Â µ¥¹ÌÁö°¡ 10% °¨¼ÒÇÕ´Ï´Ù.
+            // KR: ìºë¦­í„° í¬ê¸°ê°€ 20% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì´ë™ì†ë„ê°€ 15% ê°ì†Œí•©ë‹ˆë‹¤.\n
+            // ë°›ëŠ” ë°ë¯¸ì§€ê°€ 10% ê°ì†Œí•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases character size by 20%.\n"
                                  + "Decreases Movement Speed by 15%.\n"
                                  + "Incoming damage decreases by 10%.";
 
             // EN: Made from some weird size changing mushrooms deep within The Forest of Harmony
-            // KR: ÇÏ¸ğ´Ï¾Æ ½£ ±í¼÷ÀÌ ÀÖ´Â ¼ö»óÇÑ ¹ö¼¸À¸·Î ¸¸µé¾îÁø ¹°¾à
+            // KR: í•˜ëª¨ë‹ˆì•„ ìˆ² ê¹Šìˆ™ì´ ìˆëŠ” ìˆ˜ìƒí•œ ë²„ì„¯ìœ¼ë¡œ ë§Œë“¤ì–´ì§„ ë¬¼ì•½
             item.itemLore = "Made from some weird size changing mushrooms deep within The Forest of Harmony";
 
             item.prefabKeyword1 = Inscription.Key.Mutation;
@@ -1074,17 +1059,17 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Mana Accelerator
-            // KR: ¸¶³ª °¡¼Ó±â
+            // KR: ë§ˆë‚˜ ê°€ì†ê¸°
             item.itemName = "Mana Accelerator";
 
             // EN: Skill casting speed increases by 10% for each Mana Cycle inscription in possession.
 
-            // KR: º¸À¯ÁßÀÎ ¸¶³ª¼øÈ¯ °¢ÀÎ 1°³´ç ½ºÅ³ ½ÃÀü ¼Óµµ°¡ 10% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ë³´ìœ ì¤‘ì¸ ë§ˆë‚˜ìˆœí™˜ ê°ì¸ 1ê°œë‹¹ ìŠ¤í‚¬ ì‹œì „ ì†ë„ê°€ 10% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Skill casting speed increases by 10% for each Mana Cycle inscription in possession.";
 
             // EN: In a last ditch effort, mages may turn to this device to overcharge their mana. Though the high stress on the mage's mana can often strip them of all magic.
-            // KR: ¸¶³ª¸¦ ±ØÇÑ±îÁö °úºÎÇÏ½ÃÅ°´Â ¸¶¹ı»çµéÀÇ ÃÖÈÄÀÇ ¼ö´Ü.\n³Ê¹« °­ÇÑ °úºÎÇÏ´Â »ç¿ëÀÚ¸¦ ºÒ±¸·Î ¸¸µé ¼ö ÀÖÀ¸´Ï Á¶½ÉÇØ¾ß ÇÑ´Ù
+            // KR: ë§ˆë‚˜ë¥¼ ê·¹í•œê¹Œì§€ ê³¼ë¶€í•˜ì‹œí‚¤ëŠ” ë§ˆë²•ì‚¬ë“¤ì˜ ìµœí›„ì˜ ìˆ˜ë‹¨.\në„ˆë¬´ ê°•í•œ ê³¼ë¶€í•˜ëŠ” ì‚¬ìš©ìë¥¼ ë¶ˆêµ¬ë¡œ ë§Œë“¤ ìˆ˜ ìˆìœ¼ë‹ˆ ì¡°ì‹¬í•´ì•¼ í•œë‹¤
             item.itemLore = "In a last ditch effort, mages may turn to this device to overcharge their mana. Though the high stress on the mage's mana can often strip them of all magic.";
 
             item.prefabKeyword1 = Inscription.Key.Manatech;
@@ -1110,20 +1095,20 @@ public class CustomItems
             item.rarity = Rarity.Common;
 
             // EN: Beginner's Lance
-            // KR: ÃÊº¸ÀÚ¿ë Ã¢
+            // KR: ì´ˆë³´ììš© ì°½
             item.itemName = "Beginner's Lance";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> by 20%.\n
             // Damage dealt to enemies with a dash attack is amplified by 30%.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color>ÀÌ 20% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô ´ë½¬°ø°İÀ¸·Î ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 30% ÁõÆøµË´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color>ì´ 20% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ ëŒ€ì‰¬ê³µê²©ìœ¼ë¡œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 30% ì¦í­ë©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 20%.\n"
                                  + "Damage dealt to enemies with a dash attack is amplified by 30%.";
 
             // EN: Perfect! Now all I need is a noble steed...
-            // KR: ¿Ïº®ÇØ! ÀÌÁ¦ ÁÁÀº ¸»¸¸ ÀÖÀ¸¸é µÇ´Âµ¥...
+            // KR: ì™„ë²½í•´! ì´ì œ ì¢‹ì€ ë§ë§Œ ìˆìœ¼ë©´ ë˜ëŠ”ë°...
             item.itemLore = "Perfect! Now all I need is a noble steed...";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -1155,7 +1140,7 @@ public class CustomItems
             item.rarity = Rarity.Common;
 
             // EN: Winged Spear
-            // KR: ³¯°³´Ş¸° Ã¢
+            // KR: ë‚ ê°œë‹¬ë¦° ì°½
             item.itemName = "Winged Spear";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> by 15%.\n
@@ -1164,11 +1149,11 @@ public class CustomItems
             // Increases skill cooldown speed by 15%.\n
             // Increases swap cooldown speed by 15%.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color>ÀÌ 15% Áõ°¡ÇÕ´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 15% Áõ°¡ÇÕ´Ï´Ù.\n
-            // °ø°İ¼Óµµ°¡ 15% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ½ºÅ³ Äğ´Ù¿î ¼Óµµ°¡ 15% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 15% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color>ì´ 15% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 15% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ê³µê²©ì†ë„ê°€ 15% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 15% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 15% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 15%.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 15%.\n"
@@ -1177,7 +1162,7 @@ public class CustomItems
                                  + "Increases swap cooldown speed by 15%.";
 
             // EN: A golden spear ornamented with the wings of dawn.
-            // KR: ¿©¸íÀÇ ³¯°³·Î Ä¡ÀåµÈ ±İ»ö Ã¢
+            // KR: ì—¬ëª…ì˜ ë‚ ê°œë¡œ ì¹˜ì¥ëœ ê¸ˆìƒ‰ ì°½
             item.itemLore = "A golden spear ornamented with the wings of dawn.";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -1206,23 +1191,23 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Solar-Winged Sword
-            // KR: ÇŞºû ³¯°³´Ş¸° °Ë
+            // KR: í–‡ë¹› ë‚ ê°œë‹¬ë¦° ê²€
             item.itemName = "Solar-Winged Sword";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> by 55%.\n
             // Increases Attack Speed by 25%.\n
             // Increases swap cooldown speed by 25%.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color>ÀÌ 55% Áõ°¡ÇÕ´Ï´Ù.\n
-            // °ø°İ¼Óµµ°¡ 25% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 25% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color>ì´ 55% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ê³µê²©ì†ë„ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 55%.\n"
                                  + "Increases Attack Speed by 25%.\n"
                                  + "Increases swap cooldown speed by 25%.";
 
             // EN: A golden sword ornamented with the wings of dawn.
-            // KR: ¿©¸íÀÇ ³¯°³·Î Ä¡ÀåµÈ ±İ»ö °Ë
+            // KR: ì—¬ëª…ì˜ ë‚ ê°œë¡œ ì¹˜ì¥ëœ ê¸ˆìƒ‰ ê²€
             item.itemLore = "A golden sword ornamented with the wings of dawn.";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -1253,23 +1238,23 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Lunar-Winged Insignia
-            // KR: ´Şºû ³¯°³´Ş¸° ÈÖÀå
+            // KR: ë‹¬ë¹› ë‚ ê°œë‹¬ë¦° íœ˜ì¥
             item.itemName = "Lunar-Winged Insignia";
 
             // EN: Increases <color=#1787D8>Magic Attack</color> by 55%.\n
             // Increases skill cooldown speed by 15%.\n
             // Increases swap cooldown speed by 15%.
 
-            // KR: <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 55% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ½ºÅ³ Äğ´Ù¿î ¼Óµµ°¡ 25% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 25% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 55% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#1787D8>Magic Attack</color> by 55%.\n"
                                  + "Increases skill cooldown speed by 25%.\n"
                                  + "Increases swap cooldown speed by 25%.";
 
             // EN: A golden insignia ornamented with the wings of dawn.
-            // KR: ¿©¸íÀÇ ³¯°³·Î Ä¡ÀåµÈ ±İ»ö ÈÖÀå
+            // KR: ì—¬ëª…ì˜ ë‚ ê°œë¡œ ì¹˜ì¥ëœ ê¸ˆìƒ‰ íœ˜ì¥
             item.itemLore = "A golden insignia ornamented with the wings of dawn.";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -1300,7 +1285,7 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Wings of Dawn
-            // KR: ¿©¸íÀÇ ³¯°³
+            // KR: ì—¬ëª…ì˜ ë‚ ê°œ
             item.itemName = "Wings of Dawn";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> by 75%.\n
@@ -1309,11 +1294,11 @@ public class CustomItems
             // Increases skill cooldown speed by 45%.\n
             // Increases swap cooldown speed by 45%.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color>ÀÌ 75% Áõ°¡ÇÕ´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 75% Áõ°¡ÇÕ´Ï´Ù.\n
-            // °ø°İ¼Óµµ°¡ 45% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ½ºÅ³ Äğ´Ù¿î ¼Óµµ°¡ 45% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 45% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color>ì´ 75% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 75% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ê³µê²©ì†ë„ê°€ 45% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 45% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 45% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 75%.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 75%.\n"
@@ -1322,7 +1307,7 @@ public class CustomItems
                                  + "Increases swap cooldown speed by 45%.";
 
             // EN: A divine spear donning the wings of dawn.
-            // KR: ¿©¸íÀÇ ³¯°³¸¦ Èí¼öÇÑ ½Å¼ºÇÑ Ã¢
+            // KR: ì—¬ëª…ì˜ ë‚ ê°œë¥¼ í¡ìˆ˜í•œ ì‹ ì„±í•œ ì°½
             item.itemLore = "A divine spear donning the wings of dawn.";
 
             item.prefabKeyword1 = Inscription.Key.Duel;
@@ -1355,7 +1340,7 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Omen: Last Dawn
-            // KR: ÈäÁ¶: ÃÖÈÄÀÇ ¿©¸í
+            // KR: í‰ì¡°: ìµœí›„ì˜ ì—¬ëª…
             item.itemName = "Omen: Last Dawn";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> by 110%.\n
@@ -1364,11 +1349,11 @@ public class CustomItems
             // Increases skill cooldown speed by 65%.\n
             // Increases swap cooldown speed by 65%.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color>ÀÌ 110% Áõ°¡ÇÕ´Ï´Ù.\n
-            // <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 110% Áõ°¡ÇÕ´Ï´Ù.\n
-            // °ø°İ¼Óµµ°¡ 65% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ½ºÅ³ Äğ´Ù¿î ¼Óµµ°¡ 65% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ±³´ë Äğ´Ù¿î ¼Óµµ°¡ 65% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color>ì´ 110% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 110% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ê³µê²©ì†ë„ê°€ 65% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 65% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // êµëŒ€ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 65% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> by 110%.\n"
                                  + "Increases <color=#1787D8>Magic Attack</color> by 110%.\n"
@@ -1377,7 +1362,7 @@ public class CustomItems
                                  + "Increases swap cooldown speed by 65%.";
 
             // EN: The sky cracks, darkness fills the world within.
-            // KR: ÇÏ´ÃÀº °¥¶óÁ® ¼Ó¼¼¸¦ ¾îµÒ¿¡ ¹°µéÁö´Ï.
+            // KR: í•˜ëŠ˜ì€ ê°ˆë¼ì ¸ ì†ì„¸ë¥¼ ì–´ë‘ ì— ë¬¼ë“¤ì§€ë‹ˆ.
             item.itemLore = "The sky cracks, darkness fills the world within.";
 
             item.prefabKeyword1 = Inscription.Key.Omen;
@@ -1408,7 +1393,7 @@ public class CustomItems
             item.rarity = Rarity.Unique;
 
             // EN: Fonias
-            // KR: Æ÷´Ï¾Æ½º
+            // KR: í¬ë‹ˆì•„ìŠ¤
             item.itemName = "Fonias";
 
             // EN: Increases Crit Chance by 5%.\n
@@ -1416,10 +1401,10 @@ public class CustomItems
             // Amplifies damage dealt to enemies by 10%.\n
             // Amplfies damage dealt to an adventurer or a boss by 5%.
 
-            // KR: Ä¡¸íÅ¸ È®·üÀÌ 5% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Ä¡ÆòÅ¸ ÇÇÇØ°¡ 25% Áõ°¡ÇÕ´Ï´Ù.\n
-            // Àû¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 10% ÁõÆøµË´Ï´Ù.\n
-            // ¸ğÇè°¡ È¤Àº º¸½º¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 5% ÁõÆøµË´Ï´Ù.
+            // KR: ì¹˜ëª…íƒ€ í™•ë¥ ì´ 5% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì¹˜í‰íƒ€ í”¼í•´ê°€ 25% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ì ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 10% ì¦í­ë©ë‹ˆë‹¤.\n
+            // ëª¨í—˜ê°€ í˜¹ì€ ë³´ìŠ¤ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 5% ì¦í­ë©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases Crit Chance by 5%.\n"
                                  + "Increases Crit Damage by 25%.\n"
@@ -1427,7 +1412,7 @@ public class CustomItems
                                  + "Amplfies damage dealt to an adventurer or a boss by 5%.";
 
             // EN: An ancient scythe imbued with cursed power.\nIt was once wielded by a former demon king.
-            // KR: Àü´ë ¸¶¿ÕÁß ÇÑ¸íÀÌ »ç¿ëÇß´Ù´Â ÀúÁÖÀÇ ±â¿îÀ» »Õ¾î³»´Â °í´ëÀÇ ³´
+            // KR: ì „ëŒ€ ë§ˆì™•ì¤‘ í•œëª…ì´ ì‚¬ìš©í–ˆë‹¤ëŠ” ì €ì£¼ì˜ ê¸°ìš´ì„ ë¿œì–´ë‚´ëŠ” ê³ ëŒ€ì˜ ë‚«
             item.itemLore = "An ancient scythe imbued with cursed power.\nIt was once wielded by a former demon king.";
 
             item.prefabKeyword1 = Inscription.Key.Execution;
@@ -1460,20 +1445,20 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Spiky Rapida
-            // KR: °¡½Ã´ıºÒ ·¹ÀÌÇÇ¾î
+            // KR: ê°€ì‹œë¤ë¶ˆ ë ˆì´í”¼ì–´
             item.itemName = "Spiky Rapida";
 
             // EN: Increases Attack Speed by 20%.\n
             // Every 3rd normal attack, inflicts Wound to enemies that were hit.
 
-            // KR: °ø°İ¼Óµµ°¡ 20% Áõ°¡ÇÕ´Ï´Ù.\n
-            // 3È¸ Â° ±âº»°ø°İ¸¶´Ù ÇÇ°İµÈ Àû¿¡°Ô »óÃ³¸¦ ÀÔÈü´Ï´Ù.
+            // KR: ê³µê²©ì†ë„ê°€ 20% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // 3íšŒ ì§¸ ê¸°ë³¸ê³µê²©ë§ˆë‹¤ í”¼ê²©ëœ ì ì—ê²Œ ìƒì²˜ë¥¼ ì…í™ë‹ˆë‹¤.
 
             item.itemDescription = "Increases Attack Speed by 20%.\n"
                                  + "Every 3rd normal attack, inflicts Wound to enemies that were hit.";
 
             // EN: In ancient times, when there was no English language yet, you would have been called "Victor".....
-            // KR: ÅÂÃÊÀÇ ½ÃÀı, ÀÌ°÷ÀÇ ¾ğ¾îµµ ¾ø´ø ¶§¿¡ ´ç½ÅÀº "ºòÅä¸£" ¶ó°í ºÒ·È´ø °Í °°´Ù.....
+            // KR: íƒœì´ˆì˜ ì‹œì ˆ, ì´ê³³ì˜ ì–¸ì–´ë„ ì—†ë˜ ë•Œì— ë‹¹ì‹ ì€ "ë¹…í† ë¥´" ë¼ê³  ë¶ˆë ¸ë˜ ê²ƒ ê°™ë‹¤.....
             item.itemLore = "In ancient times, when there was no English language yet, you would have been called \"Victor\".....";
 
             item.prefabKeyword1 = Inscription.Key.ExcessiveBleeding;
@@ -1496,17 +1481,17 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Weird Herbs
-            // KR: ¼ö»óÇÑ Çãºê
+            // KR: ìˆ˜ìƒí•œ í—ˆë¸Œ
             item.itemName = "Weird Herbs";
 
             // EN: Swapping increases skill cooldown speed by 25% and Crit Rate by 12% for 6 seconds.
 
-            // KR: ±³´ë ½Ã 6ÃÊ µ¿¾È ½ºÅ³ Äğ´Ù¿î ¼Óµµ°¡ 25% Áõ°¡ÇÏ°í Ä¡¸íÅ¸ È®·üÀÌ 12% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: êµëŒ€ ì‹œ 6ì´ˆ ë™ì•ˆ ìŠ¤í‚¬ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 25% ì¦ê°€í•˜ê³  ì¹˜ëª…íƒ€ í™•ë¥ ì´ 12% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Swapping increases skill cooldown speed by 25% and Crit Rate by 12% for 6 seconds.";
 
             // EN: Quartz-infused herbs which you can find all over the dark forest.
-            // KR: ¾îµÒÀÇ ½£ Àü¿ª¿¡¼­ Ã£À» ¼ö ÀÖ´Â ¸¶¼®°ú À¶ÇÕµÈ Çãºê
+            // KR: ì–´ë‘ ì˜ ìˆ² ì „ì—­ì—ì„œ ì°¾ì„ ìˆ˜ ìˆëŠ” ë§ˆì„ê³¼ ìœµí•©ëœ í—ˆë¸Œ
             item.itemLore = "Quartz-infused herbs which you can find all over the dark forest.";
 
             item.prefabKeyword1 = Inscription.Key.Mutation;
@@ -1537,20 +1522,20 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Omen: Accursed Sabre
-            // KR: ÀúÁÖ¹ŞÀº ´Üµµ
+            // KR: ì €ì£¼ë°›ì€ ë‹¨ë„
             item.itemName = "Omen: Accursed Sabre";
 
             // EN: Basic attacks and skills have a 10% chance to apply Wound.\n
             // Every 2nd Bleed inflicts Bleed twice.
 
-            // KR: Àû °ø°İ ½Ã 10% È®·ü·Î »óÃ³¸¦ ºÎ¿©ÇÕ´Ï´Ù.\n
-            // 2È¸ Â° ÃâÇ÷¸¶´Ù ÃâÇ÷À» ÇÑ¹ø ´õ ºÎ¿©ÇÕ´Ï´Ù.
+            // KR: ì  ê³µê²© ì‹œ 10% í™•ë¥ ë¡œ ìƒì²˜ë¥¼ ë¶€ì—¬í•©ë‹ˆë‹¤.\n
+            // 2íšŒ ì§¸ ì¶œí˜ˆë§ˆë‹¤ ì¶œí˜ˆì„ í•œë²ˆ ë” ë¶€ì—¬í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Basic attacks and skills have a 10% chance to apply Wound.\n"
                                  + "Every 2nd Bleed inflicts Bleed twice.";
 
             // EN: Sabre of the great duelist Sly who left his final memento in the form of never-ending anarchy and bloodshed.
-            // KR: ³¡¾ø´Â ¹İ¿ª°ú ÇĞ»ìÀ» ³º¾Ò´ø ¼¼°è Á¦ÀÏÀÇ °áÅõ°¡ ½½¶óÀÌÀÇ ´Üµµ
+            // KR: ëì—†ëŠ” ë°˜ì—­ê³¼ í•™ì‚´ì„ ë‚³ì•˜ë˜ ì„¸ê³„ ì œì¼ì˜ ê²°íˆ¬ê°€ ìŠ¬ë¼ì´ì˜ ë‹¨ë„
             item.itemLore = "Sabre of the great duelist Sly who left his final memento in the form of never-ending anarchy and bloodshed.";
 
             item.prefabKeyword1 = Inscription.Key.Omen;
@@ -1586,20 +1571,20 @@ public class CustomItems
             item.gearTag = Gear.Tag.Carleon;
 
             // EN: Heavy-Duty Carleon Helmet
-            // KR: Áßº¸º´¿ë Ä®·¹¿Â Åõ±¸
+            // KR: ì¤‘ë³´ë³‘ìš© ì¹¼ë ˆì˜¨ íˆ¬êµ¬
             item.itemName = "Heavy-Duty Carleon Helmet";
 
             // EN: Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n
             // For every Spoils inscription owned, increase Max HP by 15.
 
-            // KR: <color=#F25D1C>¹°¸®°ø°İ·Â</color> ¹× <color=#1787D8>¸¶¹ı°ø°İ·Â</color>ÀÌ 30% Áõ°¡ÇÕ´Ï´Ù.\n
-            // º¸À¯ÇÏ°í ÀÖ´Â 'Ä®·¹¿Â' ¾ÆÀÌÅÛ 1°³´ç ÃÖ´ë Ã¼·ÂÀÌ 15 Áõ°¡ÇÕ´Ï´Ù.
+            // KR: <color=#F25D1C>ë¬¼ë¦¬ê³µê²©ë ¥</color> ë° <color=#1787D8>ë§ˆë²•ê³µê²©ë ¥</color>ì´ 30% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ë³´ìœ í•˜ê³  ìˆëŠ” 'ì¹¼ë ˆì˜¨' ì•„ì´í…œ 1ê°œë‹¹ ìµœëŒ€ ì²´ë ¥ì´ 15 ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30%.\n"
                                  + "For every Spoils inscription owned, increase Max HP by 15.";
 
             // EN: Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.
-            // KR: °¡Àå °­ÇÑ Ä®·¹¿ÂÀÇ ÃÖÀü¼±¿¡ ¼± º´»çµé¸¸ÀÌ ¾µ ¼ö ÀÖ´Â Åõ±¸.\nÇÏÁö¸¸ Å« ÀÇ¹Ì´Â ¾ø¾îº¸ÀÎ´Ù.
+            // KR: ê°€ì¥ ê°•í•œ ì¹¼ë ˆì˜¨ì˜ ìµœì „ì„ ì— ì„  ë³‘ì‚¬ë“¤ë§Œì´ ì“¸ ìˆ˜ ìˆëŠ” íˆ¬êµ¬.\ní•˜ì§€ë§Œ í° ì˜ë¯¸ëŠ” ì—†ì–´ë³´ì¸ë‹¤.
             item.itemLore = "Only the strongest of Carleon's front line soldiers can wear this.\nThat... isn't saying very much, but still.";
 
             item.prefabKeyword1 = Inscription.Key.Antique;
@@ -1631,20 +1616,20 @@ public class CustomItems
             item.rarity = Rarity.Legendary;
 
             // EN: Cursed Hourglass
-            // KR: ÀúÁÖ¹ŞÀº ¸ğ·¡½Ã°è
+            // KR: ì €ì£¼ë°›ì€ ëª¨ë˜ì‹œê³„
             item.itemName = "Cursed Hourglass";
 
             // EN: Upon entering a map or hitting a boss phase for the first time, amplifies damage dealt to enemies by 30% for 30 seconds.\n
             // When the effect is not active, increases damage received by 30%.
 
-            // KR: ¸Ê ÀÔÀå È¤Àº º¸½º(ÆäÀÌÁî Æ÷ÇÔ) ¿¡°Ô Ã³À½ µ¥¹ÌÁö¸¦ ÁÙ ½Ã 30ÃÊ µ¿¾È Àû¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 30% ÁõÆøµË´Ï´Ù.\n
-            // ÇØ´ç È¿°ú°¡ ¹ßµ¿ ÁßÀÌÁö ¾ÊÀ» ¶§, ¹Ş´Â µ¥¹ÌÁö°¡ 30% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ë§µ ì…ì¥ í˜¹ì€ ë³´ìŠ¤(í˜ì´ì¦ˆ í¬í•¨) ì—ê²Œ ì²˜ìŒ ë°ë¯¸ì§€ë¥¼ ì¤„ ì‹œ 30ì´ˆ ë™ì•ˆ ì ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 30% ì¦í­ë©ë‹ˆë‹¤.\n
+            // í•´ë‹¹ íš¨ê³¼ê°€ ë°œë™ ì¤‘ì´ì§€ ì•Šì„ ë•Œ, ë°›ëŠ” ë°ë¯¸ì§€ê°€ 30% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Upon entering a map or hitting a boss phase for the first time, amplifies damage dealt to enemies by 30% for 30 seconds.\n"
                                  + "When the effect is not active, increases damage received by 30%.";
 
             // EN: To carry such a burden voluntarily... You're either the bravest person I've ever met, or the most foolish.
-            // KR: ÀÌ·± ÁüÀ» Áû¾îÁö´Ù´Ï... ³Í ¾Æ¸¶ ÀÌ ¼¼»ó¿¡¼­ °¡Àå ¿ë°¨ÇÏ°Å³ª ¸ÛÃ»ÇÑ »ç¶÷ÀÌ°ÚÁö.
+            // KR: ì´ëŸ° ì§ì„ ì§Šì–´ì§€ë‹¤ë‹ˆ... ë„Œ ì•„ë§ˆ ì´ ì„¸ìƒì—ì„œ ê°€ì¥ ìš©ê°í•˜ê±°ë‚˜ ë©ì²­í•œ ì‚¬ëŒì´ê² ì§€.
             item.itemLore = "To carry such a burden voluntarily... You're either the bravest person I've ever met, or the most foolish.";
 
             item.prefabKeyword1 = Inscription.Key.ManaCycle;
@@ -1671,20 +1656,20 @@ public class CustomItems
             item.rarity = Rarity.Common;
 
             // EN: Lucky Coin
-            // KR: Çà¿îÀÇ µ¿Àü
+            // KR: í–‰ìš´ì˜ ë™ì „
             item.itemName = "Lucky Coin";
 
             // EN: Increases Crit Rate by 5%.\n
             // Increases Gold gain by 10%.
 
-            // KR: Ä¡¸íÅ¸ È®·üÀÌ 5% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ±İÈ­ È¹µæ·®ÀÌ 10% Áõ°¡ÇÕ´Ï´Ù.
+            // KR: ì¹˜ëª…íƒ€ í™•ë¥ ì´ 5% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ê¸ˆí™” íšë“ëŸ‰ì´ 10% ì¦ê°€í•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases Crit Rate by 5%.\n"
                                  + "Increases Gold gain by 10%.";
 
             // EN: Oh, must be my lucky day!
-            // KR: ¿À´ÃÀº ¿î¼ö°¡ ÁÁÀº ³¯ÀÎ°¡ º¸±º!
+            // KR: ì˜¤ëŠ˜ì€ ìš´ìˆ˜ê°€ ì¢‹ì€ ë‚ ì¸ê°€ ë³´êµ°!
             item.itemLore = "Oh, must be my lucky day!";
 
             item.prefabKeyword1 = Inscription.Key.Treasure;
@@ -1707,20 +1692,20 @@ public class CustomItems
             item.rarity = Rarity.Rare;
 
             // EN: Tainted Red Scarf
-            // KR: º¯»öµÈ ºÓÀº ¸ñµµ¸®
+            // KR: ë³€ìƒ‰ëœ ë¶‰ì€ ëª©ë„ë¦¬
             item.itemName = "Tainted Red Scarf";
 
             // EN: Increases dash cooldown speed by 30%.\n
             // Decreases dash distance by 30%.
 
-            // KR: ´ë½¬ Äğ´Ù¿î ¼Óµµ°¡ 30% Áõ°¡ÇÕ´Ï´Ù.\n
-            // ´ë½¬ °Å¸®°¡ 30% °¨¼ÒÇÕ´Ï´Ù.
+            // KR: ëŒ€ì‰¬ ì¿¨ë‹¤ìš´ ì†ë„ê°€ 30% ì¦ê°€í•©ë‹ˆë‹¤.\n
+            // ëŒ€ì‰¬ ê±°ë¦¬ê°€ 30% ê°ì†Œí•©ë‹ˆë‹¤.
 
             item.itemDescription = "Increases dash cooldown speed by 20%.\n"
                                  + "Decreases dash distance by 30%.";
 
             // EN: A small scarf that was once part of an old doll
-            // KR: ¾î¶² ÀÎÇü¿¡¼­ ¶³¾îÁ® ³ª¿Â ÀÛÀº ¸ñµµ¸®
+            // KR: ì–´ë–¤ ì¸í˜•ì—ì„œ ë–¨ì–´ì ¸ ë‚˜ì˜¨ ì‘ì€ ëª©ë„ë¦¬
             item.itemLore = "A small scarf that was once part of an old doll";
 
             item.prefabKeyword1 = Inscription.Key.Mystery;
@@ -1746,20 +1731,20 @@ public class CustomItems
             item.obtainable = false;
 
             // EN: Tattered Plushie
-            // KR: ÇØÁø ÀÎÇü
+            // KR: í•´ì§„ ì¸í˜•
             item.itemName = "Tattered Plushie";
 
             // EN: Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies.\n
             // Upon killing an enemy, recovers 2% of your Max HP.
 
-            // KR: 5ÃÊ¸¶´Ù ÃÖ´ë Ã¼·ÂÀÇ 10%¿¡ ´ŞÇÏ´Â ÇÇÇØ¸¦ ÀÔ°í ¿µ±¸ÀûÀ¸·Î Àûµé¿¡°Ô ÀÔÈ÷´Â µ¥¹ÌÁö°¡ 5% ÁõÆøµË´Ï´Ù.\n
-            // ÀûÀ» Ã³Ä¡ÇÒ ¶§¸¶´Ù ÃÖ´ë Ã¼·ÂÀÇ 2%¸¦ È¸º¹ÇÕ´Ï´Ù.
+            // KR: 5ì´ˆë§ˆë‹¤ ìµœëŒ€ ì²´ë ¥ì˜ 10%ì— ë‹¬í•˜ëŠ” í”¼í•´ë¥¼ ì…ê³  ì˜êµ¬ì ìœ¼ë¡œ ì ë“¤ì—ê²Œ ì…íˆëŠ” ë°ë¯¸ì§€ê°€ 5% ì¦í­ë©ë‹ˆë‹¤.\n
+            // ì ì„ ì²˜ì¹˜í•  ë•Œë§ˆë‹¤ ìµœëŒ€ ì²´ë ¥ì˜ 2%ë¥¼ íšŒë³µí•©ë‹ˆë‹¤.
 
             item.itemDescription = "Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies.\n"
                                  + "Upon killing an enemy, recovers 2% of your Max HP.";
 
             // EN: bEsT FrIenDs fOrEveR
-            // KR: ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²² ¿µ¿øÈ÷ ÇÔ²²
+            // KR: ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜ ì˜ì›íˆ í•¨ê»˜
             item.itemLore = "bEsT FrIenDs fOrEveR";
 
             item.prefabKeyword1 = Inscription.Key.Mystery;
