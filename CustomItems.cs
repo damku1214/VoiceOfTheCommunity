@@ -24,6 +24,8 @@ public class CustomItems
      * Change Volcanic Shard from amping burn to amping burning enemies - done
      * Change name of Tainted Red Scarf in Thunderstore README
      * Change description of Heavy-Duty Carleon Helmet - done
+     * Block Growing Potion spawning with Unstable Size Potion - done
+     * Fix Shrinking Potion not disappearing on evolution with full inventory
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -1030,6 +1032,11 @@ public class CustomItems
             item.abilities = [
                 ability,
             ];
+
+            item.forbiddenDrops = new[] {
+                "Custom-ShrinkingPotion",
+                "Custom-GrowingPotion",
+            };
 
             items.Add(item);
         }
