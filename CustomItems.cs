@@ -363,7 +363,7 @@ public class CustomItems
             // EN: Increases swap cooldown speed by 15%.\n
             // Upon hitting enemies with a swap skill 150 times, this item transforms into 'Goddess's Chalice.'
 
-            // KR: 교대 쿨다운 속도가 15% 증가홥니다.\n
+            // KR: 교대 쿨다운 속도가 15% 증가합니다.\n
             // 적에게 교대스킬로 데미지를 150번 줄 시 해당 아이템은 '여신의 성배'로 변합니다.
 
             item.itemDescription = "Increases swap cooldown speed by 15%.\n"
@@ -402,7 +402,7 @@ public class CustomItems
             // Swapping increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 10% for 6 seconds (maximum 40%).\n
             // At maximum stacks, swap cooldown speed is increased by 25%.
 
-            // KR: 교대 쿨다운 속도가 40% 증가홥니다.\n
+            // KR: 교대 쿨다운 속도가 40% 증가합니다.\n
             // 교대 시 6초 동안 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 15% 증가합니다 (최대 60%).\n
             // 공격력 증가치가 최대일 시, 교대 쿨다운 속도가 25% 증가합니다.
 
