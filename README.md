@@ -48,4 +48,4 @@ I would like to give a huge thanks to people who contributed to this mod. This i
 * Vaalfen - creator of 'Frozen Spear'
 * viktor_k - creator of 'Spiky Rapida'
 * WillSP - creator of 'Cursed Hourglass'
-* damku1214 (Yes, it's me!) - creator of 'Withering Fabric'
+* damku1214 (Yes, it's me!) - creator of 'Tainted Red Scarf'
