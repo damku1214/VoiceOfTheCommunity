@@ -15,8 +15,6 @@ public class VolcanicShardAbility : Ability, ICloneable
         private EnumArray<Inscription.Key, Inscription> inscriptions;
         private Inventory _inventory;
 
-        private MotionTypeBoolArray _attackTypes;
-
         public override int iconStacks => BurnInscriptionCount();
 
         public int BurnInscriptionCount()
@@ -35,8 +33,6 @@ public class VolcanicShardAbility : Ability, ICloneable
         {
             _inventory = owner.playerComponents.inventory;
             inscriptions = owner.playerComponents.inventory.synergy.inscriptions;
-            _attackTypes = new();
-            _attackTypes[MotionType.Status] = true;
         }
 
         public override void OnAttach()
@@ -61,10 +57,6 @@ public class VolcanicShardAbility : Ability, ICloneable
         private bool AmplifyBurnDamage(ITarget target, ref Damage damage)
         {
             if (target == null || target.character == null || target.character.status == null)
-            {
-                return false;
-            }
-            if (!_attackTypes[damage.motionType])
             {
                 return false;
             }
