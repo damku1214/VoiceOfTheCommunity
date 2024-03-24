@@ -22,10 +22,11 @@ public class CustomItems
      * 
      * Add magic atk boost to Tainted Finger line - done
      * Change Volcanic Shard from amping burn to amping burning enemies - done
-     * Change name of Tainted Red Scarf in Thunderstore README
+     * Change name of Tainted Red Scarf in Thunderstore README - done
      * Change description of Heavy-Duty Carleon Helmet - done
      * Block Growing Potion spawning with Unstable Size Potion - done
-     * Fix Shrinking Potion not disappearing on evolution with full inventory
+     * Fix Shrinking Potion not disappearing on evolution with full inventory - done (probably)
+     * Change description of Blood-Soaked Javelin - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -725,13 +726,13 @@ public class CustomItems
             item.itemName = "Blood-Soaked Javelin";
 
             // EN: Increases Crit Damage by 20%.\n
-            // Critical hits have a 10% chance to apply Wound (Cooldown: 0.5 seconds).
+            // Critical hits have a 5% chance to apply Wound (Cooldown: 0.5 seconds).
 
             // KR: 치명타 데미지가 20% 증가합니다.\n
-            // 치명타 시 10% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).
+            // 치명타 시 5% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).
 
             item.itemDescription = "Increases Crit Damage by 20%.\n"
-                                 + "Critical hits have a 10% chance to apply Wound.";
+                                 + "Critical hits have a 5% chance to apply Wound (Cooldown: 0.5 seconds).";
 
             // EN: A javelin that always hits vital organs, and drains all the blood out of whichever one it hits
             // KR: 적의 심장을 정확히 노려 시체에 피 한방울 남기지 않는 투창

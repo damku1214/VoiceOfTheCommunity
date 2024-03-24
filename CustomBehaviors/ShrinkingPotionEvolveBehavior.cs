@@ -1,6 +1,7 @@
 ﻿using System;
 using Characters;
 using Characters.Gear.Items;
+using Characters.Player;
 using GameResources;
 using Services;
 using Singletons;
@@ -11,7 +12,11 @@ namespace VoiceOfTheCommunity.CustomBehaviors;
 [Serializable]
 public sealed class ShrinkingPotionEvolveBehavior : MonoBehaviour
 {
-    private Character player = Singleton<Service>.Instance.levelManager.player;
+    [SerializeField]
+    private Item _item = null;
+
+    public Character player = Singleton<Service>.Instance.levelManager.player;
+    public ItemInventory inventory = Singleton<Service>.Instance.levelManager.player.playerComponents.inventory.item;
 
     private void Awake()
     {
@@ -25,55 +30,33 @@ public sealed class ShrinkingPotionEvolveBehavior : MonoBehaviour
 
     private void CheckToUpgradeItem()
     {
-        var inventory = player.playerComponents.inventory.item;
-        ItemReference itemRef = null;
-        int positionofOriginialItem = 0;
-
+        bool hasGrowingPotion = false;
         for (int i = 0; i < inventory.items.Count; i++)
         {
-            try
+            var item = inventory.items[i];
+            if (item == null)
             {
-                var item = inventory.items[i];
-
-                if (item == null)
-                {
-                    continue;
-                }
-
-                if (item.name.Equals("Custom-ShrinkingPotion"))
-                {
-                    positionofOriginialItem = i;
-                    break;
-                }
+                continue;
             }
-            catch (Exception e)
+            if (item.name.Equals("Custom-GrowingPotion"))
             {
-                Debug.LogWarning("[VoiceOfCommunity - Shrinking Potion] There is no item at item index " + i);
-                Debug.LogWarning(e.Message);
+                hasGrowingPotion = true;
+                item.RemoveOnInventory();
             }
         }
-        for (int i = 0; i < inventory.items.Count; i++)
+        if (hasGrowingPotion)
         {
-            try
+            ItemReference itemRef;
+            if (GearResource.instance.TryGetItemReferenceByName("Custom-ShrinkingPotion_2", out itemRef))
             {
-                var item = inventory.items[i];
+                ItemRequest request = itemRef.LoadAsync();
+                request.WaitForCompletion();
 
-                if (item == null)
+                if (_item.state == Characters.Gear.Gear.State.Equipped)
                 {
-                    continue;
+                    Item newItem = Singleton<Service>.Instance.levelManager.DropItem(request, Vector3.zero);
+                    _item.ChangeOnInventory(newItem);
                 }
-
-                if (item.name.Equals("Custom-GrowingPotion"))
-                {
-                    ChangeItem("Custom-ShrinkingPotion_2", item, itemRef);
-                    inventory.items[positionofOriginialItem].RemoveOnInventory();
-                    break;
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.LogWarning("[VoiceOfCommunity - Shrinking Potion] There is no item at item index " + i);
-                Debug.LogWarning(e.Message);
             }
         }
     }
