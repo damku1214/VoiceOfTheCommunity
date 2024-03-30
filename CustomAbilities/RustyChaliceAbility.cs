@@ -100,6 +100,10 @@ public class RustyChaliceAbility : Ability, ICloneable
                         {
                             Item newItem = Singleton<Service>.Instance.levelManager.DropItem(request, Vector3.zero);
                             item.ChangeOnInventory(newItem);
+
+                            var spawner = Singleton<Service>.Instance.floatingTextSpawner;
+                            var titlePosition = new Vector3(owner.collider.bounds.center.x, owner.collider.bounds.max.y + 1.0f, 0);
+                            spawner.SpawnBuff("THE CHALICE GLEAMS WITH HOLY LIGHT", titlePosition, "#FFF51E");
                         }
                     }
                 }

@@ -6,11 +6,11 @@ using UnityEngine;
 namespace VoiceOfTheCommunity.CustomAbilities;
 
 [Serializable]
-public class TatteredPlushieAbility : Ability, ICloneable
+public class TatteredCatPlushieAbility : Ability, ICloneable
 {
-    public TatteredPlushieAbilityComponent component { get; set; }
+    public TatteredCatPlushieAbilityComponent component { get; set; }
 
-    public class Instance : AbilityInstance<TatteredPlushieAbility>
+    public class Instance : AbilityInstance<TatteredCatPlushieAbility>
     {
         private float _damageMultiplier = 1;
         private float _cooldownRemaining;
@@ -18,7 +18,7 @@ public class TatteredPlushieAbility : Ability, ICloneable
 
         public override int iconStacks => ability.component.currentActivateCount;
 
-        public Instance(Character owner, TatteredPlushieAbility ability) : base(owner, ability)
+        public Instance(Character owner, TatteredCatPlushieAbility ability) : base(owner, ability)
         {
         }
 
@@ -83,7 +83,7 @@ public class TatteredPlushieAbility : Ability, ICloneable
 
     public object Clone()
     {
-        return new TatteredPlushieAbility()
+        return new TatteredCatPlushieAbility()
         {
             _timeout = _timeout,
             _defaultIcon = _defaultIcon,

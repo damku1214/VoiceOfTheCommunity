@@ -1,6 +1,6 @@
 ﻿namespace VoiceOfTheCommunity.CustomAbilities;
 
-public sealed class TatteredPlushieAbilityComponent : AbilityComponentHack<TatteredPlushieAbility>, IStackable
+public sealed class TatteredCatPlushieAbilityComponent : AbilityComponentHack<TatteredCatPlushieAbility>, IStackable
 {
     public int currentActivateCount { get; set; }
 

@@ -13,20 +13,30 @@ public sealed class SmallTwigEvolveBehavior : MonoBehaviour
     [SerializeField]
     private Item _item = null;
 
+    private bool _hasEquipped = false;
+
     private Character player = Singleton<Service>.Instance.levelManager.player;
 
     private void Awake()
     {
+        _hasEquipped = false;
         player.playerComponents.inventory.weapon.onSwap += CheckEvolveCondition;
         player.playerComponents.inventory.weapon.onChanged += OnSkullChanged;
-        CheckEvolveCondition();
     }
 
     private void OnDestroy()
     {
         player.playerComponents.inventory.weapon.onSwap -= CheckEvolveCondition;
         player.playerComponents.inventory.weapon.onChanged -= OnSkullChanged;
-        CheckEvolveCondition();
+    }
+
+    private void Update()
+    {
+        if (_item.state == Characters.Gear.Gear.State.Equipped && !_hasEquipped)
+        {
+            CheckEvolveCondition();
+            _hasEquipped = true;
+        }
     }
 
     private void OnSkullChanged(Weapon old, Weapon @new)

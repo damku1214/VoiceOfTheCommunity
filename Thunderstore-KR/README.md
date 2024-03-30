@@ -1,0 +1,3 @@
+# Uh oh...
+Thunderstore does not support Korean in anything except the description.
+Basically, this page is useless. Have fun with the mod!

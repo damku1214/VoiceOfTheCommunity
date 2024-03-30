@@ -294,7 +294,7 @@
 - Arson
 
 
-**Tattered Plushie**
+**Tattered Cat Plushie**
 
 *Effect*: Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies. Upon killing an enemy, recovers 2% of your Max HP.
 

@@ -26,9 +26,26 @@ public class CustomItemReference : ItemReference
         }
     }
 
-    public string itemName;
-    public string itemDescription;
-    public string itemLore;
+    public string itemName_EN;
+    public string itemName_KR;
+    public string itemName
+    {
+        get { return itemName_EN; }
+    }
+
+    public string itemDescription_EN;
+    public string itemDescription_KR;
+    public string itemDescription
+    {
+        get { return itemDescription_EN; }
+    }
+
+    public string itemLore_EN;
+    public string itemLore_KR;
+    public string itemLore
+    {
+        get { return itemLore_EN; }
+    }
     public Stat.Values stats;
 
     public Ability[] abilities;
