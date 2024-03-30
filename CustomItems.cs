@@ -520,7 +520,7 @@ public class CustomItems
                                     + "Increases <color=#1787D8>Magic Attack</color> by 70%.\n"
                                     + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
 
-            item.itemDescription_EN = "적에게 스킬로 입히는 데미지가 45% 증폭됩니다.\n"
+            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 45% 증폭됩니다.\n"
                                     + "<color=#1787D8>마법공격력</color>이 70% 증가합니다.\n"
                                     + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
 
@@ -612,7 +612,7 @@ public class CustomItems
                                     + "<color=#1787D8>Magic damage</color> dealt to enemies under 40% HP is amplified by 25%.\n"
                                     + "<color=#1787D8>Magic Attack</color> increases by 8% each time an Omen or a Legendary item is destroyed.";
 
-            item.itemDescription_EN = "<color=#1787D8>마법공격력</color>이 50% 증가합니다.\n"
+            item.itemDescription_KR = "<color=#1787D8>마법공격력</color>이 50% 증가합니다.\n"
                                     + "현재 체력이 40% 이하인 적에게 입히는 <color=#1787D8>마법데미지</color>가 25% 증폭됩니다.\n"
                                     + "흉조 혹은 레전더리 등급을 가진 아이템을 파괴할 때마다 <color=#1787D8>마법공격력</color>이 8% 증가합니다.";
 
