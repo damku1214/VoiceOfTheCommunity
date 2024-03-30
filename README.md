@@ -2,6 +2,9 @@
 This is a mod that adds new custom items to the game, all from the ideas of the Official Skul Discord!
 
 ## PLEASE BE AWARE!!!
+
+DO NOT USE THE KOREAN AND ENGLISH VERSION TOGETHER; IT WILL MALFUNCTION!!!
+
 This project is a variation of MrBacanudo's [Custom Items mod](https://github.com/MrBacanudo/SkulHardModeMods/tree/main/CustomItems).
 None of the code belongs to me excluding content related to custom items.
 
