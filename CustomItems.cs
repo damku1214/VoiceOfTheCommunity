@@ -443,7 +443,7 @@ public class CustomItems
 
             item.itemDescription_EN = "For every Spoils inscription owned, increase <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 80%.";
 
-            item.itemDescription_KR = "보유하고 있는 '칼레온' 아이템 1개당 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 80% 증가합니다.";
+            item.itemDescription_KR = "보유하고 있는 전리품 각인 1개당 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 80% 증가합니다.";
 
             item.itemLore_EN = "Where's your god now?";
             item.itemLore_KR = "자, 이제 네 신은 어딨지?";
