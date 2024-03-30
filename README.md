@@ -10,8 +10,8 @@ None of the code belongs to me excluding content related to custom items.
 ## Content
 This mod contains:
 
-* 5 Commons
-* 9 Rares
+* 4 Commons
+* 10 Rares
 * 4 Uniques
 * 3 Omens
 * 5 Legendaries
