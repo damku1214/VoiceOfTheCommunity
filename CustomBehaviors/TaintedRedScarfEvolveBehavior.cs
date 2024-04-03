@@ -36,7 +36,7 @@ public sealed class TaintedRedScarfEvolveBehavior : MonoBehaviour
             {
                 continue;
             }
-            if (item.name.Equals("VoodooDoll_2"))
+            if (_item.state == Characters.Gear.Gear.State.Equipped && item.name.Equals("VoodooDoll_2"))
             {
                 hasVoodooDoll = true;
                 item.RemoveOnInventory();
@@ -45,7 +45,7 @@ public sealed class TaintedRedScarfEvolveBehavior : MonoBehaviour
         if (hasVoodooDoll)
         {
             ItemReference itemRef;
-            if (GearResource.instance.TryGetItemReferenceByName("Custom-TatteredPlushie", out itemRef))
+            if (GearResource.instance.TryGetItemReferenceByName("Custom-TatteredCatPlushie", out itemRef))
             {
                 ItemRequest request = itemRef.LoadAsync();
                 request.WaitForCompletion();

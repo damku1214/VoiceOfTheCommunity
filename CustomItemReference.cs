@@ -30,21 +30,21 @@ public class CustomItemReference : ItemReference
     public string itemName_KR;
     public string itemName
     {
-        get { return itemName_EN; }
+        get { return itemName_KR; }
     }
 
     public string itemDescription_EN;
     public string itemDescription_KR;
     public string itemDescription
     {
-        get { return itemDescription_EN; }
+        get { return itemDescription_KR; }
     }
 
     public string itemLore_EN;
     public string itemLore_KR;
     public string itemLore
     {
-        get { return itemLore_EN; }
+        get { return itemLore_KR; }
     }
     public Stat.Values stats;
 

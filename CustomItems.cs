@@ -20,21 +20,17 @@ public class CustomItems
     /**
      * TODO
      * 
-     * Change sprites of Mana Accelerator - done
-     * Make Small Twig activate when picked up and skull is 'Lil Bone - done
-     * Change Small Twig to all atk +35%, skill cd and casting spd +30%, atk spd +15%, and amp 10% when as 'Lil Bone - done
-     * When evolved Rusted Chalice, project text saying "THE CHALICE GLEAMS WITH HOLY LIGHT" - done
-     * Translate the mod into Korean - done
-     * Change Cross Necklace's lore - done
-     * Change Vase of The Fallen's description - done
-     * Change Broken Heart's description - done
-     * Change Tainted Finger line stats (base gods finger amp skill dmg by 35% and increase magic atk by 60%, masterpiece 5 gods finger amp skill dmg 45% and increase magic atk by 70%, gods hand amp skill dmg by 70% and increase magic atk by 110%) - done
-     * Change lore of Blood-Soaked Javelin - done
-     * Change description of Winged Spear line - done
-     * Change lore of Spiky Rapida - done
-     * Rename Tattered Plushie to Tattered Cat Plushie - done
-     * Change lore of Tatered Cat Plushie - done
-     * Change sprites of Tainted Finger line - done
+     * Fix Tainted Red Scarf from not evolving - done
+     * Enable Frozen Spear to proc with normal attacks as well - done
+     * Enable Spear of the Frozen Moon to proc with normal attacks as well and increase freeze chance to 20% - done
+     * Change crit dmg of Blood-Soaked Javelin from 5% to 15% - done
+     * Rotten Wings crit chance change to 12% - done
+     * Tainted Finger and Recovered Fingers skill amp to 25% and Recovered Fingers' magic atk to 60% - done
+     * Tainted Finger add increase damage taken by 40% - done
+     * Recovered Fingers add decrease damage taken by 10% - done
+     * Corrupted God's Hand skill amp is now 55%, magic atk is 90%, and now increase damage taken by 75% - done
+     * Change Korean description of Recovered Fingers to actually Korean - done
+     * Recovered Fingers now do not consume Grace of Leonia when evolving - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -472,13 +468,15 @@ public class CustomItems
             item.rarity = Rarity.Legendary;
 
             item.itemName_EN = "Tainted Finger";
-            item.itemName_KR = "침식된 손가락";
+            item.itemName_KR = "오염된 손가락";
 
-            item.itemDescription_EN = "Skill damage dealt to enemies is amplified by 35%.\n"
-                                    + "Increases <color=#1787D8>Magic Attack</color> by 60%.";
+            item.itemDescription_EN = "Skill damage dealt to enemies is amplified by 25%.\n"
+                                    + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
+                                    + "Increases incoming damage by 40%.";
 
-            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 35% 증폭됩니다.\n"
-                                    + "<color=#1787D8>마법공격력</color>이 60% 증가합니다.";
+            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 25% 증폭됩니다.\n"
+                                    + "<color=#1787D8>마법공격력</color>이 60% 증가합니다.\n"
+                                    + "받는 데미지가 40% 증가합니다.";
 
             item.itemLore_EN = "A finger from a god tainted by dark quartz";
             item.itemLore_KR = "검은 마석에 의해 침식된 신의 손가락";
@@ -489,6 +487,7 @@ public class CustomItems
             item.stats = new Stat.Values(
             [
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.6),
+                new(Stat.Category.Percent, Stat.Kind.TakingDamage, 1.4),
             ]);
 
             ModifyDamage amplifySkillDamage = new();
@@ -498,7 +497,7 @@ public class CustomItems
 
             amplifySkillDamage._damageTypes = new([true, true, true, true, true]);
 
-            amplifySkillDamage._damagePercent = 1.35f;
+            amplifySkillDamage._damagePercent = 1.25f;
 
             item.abilities = [
                 amplifySkillDamage,
@@ -516,13 +515,15 @@ public class CustomItems
             item.itemName_EN = "Recovered Fingers";
             item.itemName_KR = "복구된 손가락들";
 
-            item.itemDescription_EN = "Skill damage dealt to enemies is amplified by 45%.\n"
-                                    + "Increases <color=#1787D8>Magic Attack</color> by 70%.\n"
+            item.itemDescription_EN = "Skill damage dealt to enemies is amplified by 25%.\n"
+                                    + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
+                                    + "Decreases incoming damage by 10%.\n"
                                     + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
 
-            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 45% 증폭됩니다.\n"
-                                    + "<color=#1787D8>마법공격력</color>이 70% 증가합니다.\n"
-                                    + "If the item 'Grace of Leonia' is in your possession, this item turns into 'Corrupted God's Hand'.";
+            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 25% 증폭됩니다.\n"
+                                    + "<color=#1787D8>마법공격력</color>이 60% 증가합니다.\n"
+                                    + "받는 데미지가 10% 감소합니다.\n"
+                                    + "'레오니아의 은총'을 함께 보유하고 있을 시 이 아이템은 '침식된 신의 손'으로 변합니다.";
 
             item.itemLore_EN = "The fingers of a no longer corrupted god";
             item.itemLore_KR = "더 이상 침식되지 않은 신의 손가락들";
@@ -532,7 +533,8 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.7),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.6),
+                new(Stat.Category.Percent, Stat.Kind.TakingDamage, 0.9),
             ]);
 
             ModifyDamage amplifySkillDamage = new();
@@ -542,7 +544,7 @@ public class CustomItems
 
             amplifySkillDamage._damageTypes = new([true, true, true, true, true]);
 
-            amplifySkillDamage._damagePercent = 1.45f;
+            amplifySkillDamage._damagePercent = 1.25f;
 
             item.abilities = [
                 amplifySkillDamage,
@@ -566,11 +568,13 @@ public class CustomItems
             item.itemName_EN = "Corrupted God's Hand";
             item.itemName_KR = "침식된 신의 손";
 
-            item.itemDescription_EN = "Skill damage dealt to enemies is amplified by 70%.\n"
-                                    + "Increases <color=#1787D8>Magic Attack</color> by 110%.";
+            item.itemDescription_EN = "Skill damage dealt to enemies is amplified by 55%.\n"
+                                    + "Increases <color=#1787D8>Magic Attack</color> by 90%.\n"
+                                    + "Increases incoming damage by 75%.";
 
-            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 70% 증폭됩니다.\n"
-                                    + "<color=#1787D8>마법공격력</color>이 110% 증가합니다..";
+            item.itemDescription_KR = "적에게 스킬로 입히는 데미지가 55% 증폭됩니다.\n"
+                                    + "<color=#1787D8>마법공격력</color>이 90% 증가합니다.\n"
+                                    + "받는 데미지가 75% 증가합니다.";
 
             item.itemLore_EN = "A corrupt hand from Leonia's supposed god";
             item.itemLore_KR = "레오니아로 추정되는 신의 침식된 손";
@@ -580,7 +584,8 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1.1),
+                new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.9),
+                new(Stat.Category.Percent, Stat.Kind.TakingDamage, 1.75),
             ]);
 
             ModifyDamage amplifySkillDamage = new();
@@ -590,7 +595,7 @@ public class CustomItems
 
             amplifySkillDamage._damageTypes = new([true, true, true, true, true]);
 
-            amplifySkillDamage._damagePercent = 1.7f;
+            amplifySkillDamage._damagePercent = 1.55f;
 
             item.abilities = [
                 amplifySkillDamage,
@@ -649,11 +654,11 @@ public class CustomItems
             item.itemName_EN = "Blood-Soaked Javelin";
             item.itemName_KR = "피투성이 투창";
 
-            item.itemDescription_EN = "Increases Crit Damage by 20%.\n"
+            item.itemDescription_EN = "Increases Crit Damage1 by 20%.\n"
                                     + "Critical hits have a 5% chance to apply Wound (cooldown: 0.5 seconds).";
 
             item.itemDescription_KR = "치명타 데미지가 20% 증가합니다.\n"
-                                    + "치명타 시 5% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).";
+                                    + "치명타 시 15% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).";
 
             item.itemLore_EN = "A javelin that always hits vital organs, and drains all the blood out of whichever one it hits";
             item.itemLore_KR = "적의 심장을 정확히 노려 시체에 피 한방울 남기지 않는 투창";
@@ -680,11 +685,11 @@ public class CustomItems
             item.itemName_EN = "Frozen Spear";
             item.itemName_KR = "얼음의 창";
 
-            item.itemDescription_EN = "Skills have a 10% chance to inflict Freeze.\n"
+            item.itemDescription_EN = "Normal attacks and skills have a 10% chance to inflict Freeze.\n"
                                     + "Increases <color=#1787D8>Magic Attack</color> by 20%.\n"
                                     + "After applying freeze 250 times, this item turns into 'Spear of the Frozen Moon'.";
 
-            item.itemDescription_KR = "적에게 스킬로 공격시 10% 확률로 빙결을 부여합니다.\n"
+            item.itemDescription_KR = "적에게 기본공격 혹은 스킬로 공격시 10% 확률로 빙결을 부여합니다.\n"
                                     + "<color=#1787D8>마법공격력</color>가 20% 증가합니다.\n"
                                     + "적에게 빙결을 250번 부여할 시 해당 아이템은 '얼어붙은 달의 창'으로 변합니다.";
 
@@ -705,6 +710,7 @@ public class CustomItems
             applyStatus._chance = 10;
             applyStatus._attackTypes = new();
             applyStatus._attackTypes[MotionType.Skill] = true;
+            applyStatus._attackTypes[MotionType.Basic] = true;
 
             applyStatus._types = new();
             applyStatus._types[AttackType.Melee] = true;
@@ -730,12 +736,12 @@ public class CustomItems
             item.itemName_EN = "Spear of the Frozen Moon";
             item.itemName_KR = "얼어붙은 달의 창";
 
-            item.itemDescription_EN = "Skills have a 15% chance to inflict Freeze.\n"
+            item.itemDescription_EN = "Normal attacks and skills have a 20% chance to inflict Freeze.\n"
                                     + "Increases <color=#1787D8>Magic Attack</color> by 60%.\n"
                                     + "Attacking frozen enemies increases the number of hits to remove Freeze by 1.\n"
                                     + "Amplifies damage dealt to frozen enemies by 25%.";
 
-            item.itemDescription_KR = "적에게 스킬로 공격시 15% 확률로 빙결을 부여합니다.\n"
+            item.itemDescription_KR = "적에게 기본공격 혹은 스킬로 공격시 20% 확률로 빙결을 부여합니다.\n"
                                     + "<color=#1787D8>마법공격력</color>가 60% 증가합니다.\n"
                                     + "빙결 상태의 적 공격 시 빙결이 해제되는데 필요한 타수가 1 증가합니다.\n"
                                     + "빙결 상태의 적에게 입히는 데미지가 25% 증가합니다.";
@@ -754,9 +760,10 @@ public class CustomItems
             var applyStatus = new ApplyStatusOnGaveDamage();
             var status = Kind.Freeze;
             applyStatus._cooldownTime = 0.1f;
-            applyStatus._chance = 15;
+            applyStatus._chance = 20;
             applyStatus._attackTypes = new();
             applyStatus._attackTypes[MotionType.Skill] = true;
+            applyStatus._attackTypes[MotionType.Basic] = true;
 
             applyStatus._types = new();
             applyStatus._types[AttackType.Melee] = true;
@@ -805,10 +812,10 @@ public class CustomItems
             item.itemName_EN = "Rotten Wings";
             item.itemName_KR = "썩은 날개";
 
-            item.itemDescription_EN = "Crit Rate increases by 15% while in midair.\n"
+            item.itemDescription_EN = "Crit Rate increases by 12% while in midair.\n"
                                     + "Your normal attacks have a 15% chance to inflict Poison.";
 
-            item.itemDescription_KR = "공중에 있을 시 치명타 확률이 15% 증가합니다.\n"
+            item.itemDescription_KR = "공중에 있을 시 치명타 확률이 12% 증가합니다.\n"
                                     + "적에게 기본공격 시 15% 확률로 중독을 부여합니다.";
 
             item.itemLore_EN = "Wings of a zombie wyvern";
@@ -822,7 +829,7 @@ public class CustomItems
             bonus._timeToMaxStat = 0.01f;
             bonus._remainTimeOnGround = 0.0f;
             bonus._maxStat = new Stat.Values(new Stat.Value[] {
-                new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.15),
+                new Stat.Value(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.12),
             });
 
             var applyStatus = new ApplyStatusOnGaveDamage();

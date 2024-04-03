@@ -38,7 +38,7 @@ public sealed class ShrinkingPotionEvolveBehavior : MonoBehaviour
             {
                 continue;
             }
-            if (item.name.Equals("Custom-GrowingPotion"))
+            if (_item.state == Characters.Gear.Gear.State.Equipped && item.name.Equals("Custom-GrowingPotion"))
             {
                 hasGrowingPotion = true;
                 item.RemoveOnInventory();

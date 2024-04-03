@@ -48,7 +48,7 @@ public class BloodSoakedJavelinAbility : Ability, ICloneable
             }
             System.Random random = new System.Random();
             int randomNumber = random.Next(0, 20);
-            if (randomNumber != 0)
+            if (randomNumber > 2)
             {
                 return;
             }

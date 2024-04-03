@@ -39,7 +39,6 @@ public sealed class TaintedFingerEvolveBehavior : MonoBehaviour
             if (item.name.Equals("GraceOfLeonia"))
             {
                 hasGraceOfLeonia = true;
-                item.RemoveOnInventory();
             }
         }
         if (hasGraceOfLeonia)
