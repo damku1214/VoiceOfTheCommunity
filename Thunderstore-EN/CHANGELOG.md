@@ -6,5 +6,5 @@ Changes:
 - Changed the description of 'Blood-Soaked Javelin'
 
 There seems to be not much feedback anymore, so it might be time to say farewell.
-Y'know, wouldn;t it be super anti-climatic if there was a critical bug and I need to update the mod again?
+Y'know, wouldn't it be super anti-climatic if there was a critical bug and I need to update the mod again?
 ... Please no.
