@@ -20,17 +20,9 @@ public class CustomItems
     /**
      * TODO
      * 
-     * Fix Tainted Red Scarf from not evolving - done
-     * Enable Frozen Spear to proc with normal attacks as well - done
-     * Enable Spear of the Frozen Moon to proc with normal attacks as well and increase freeze chance to 20% - done
-     * Change crit dmg of Blood-Soaked Javelin from 5% to 15% - done
-     * Rotten Wings crit chance change to 12% - done
-     * Tainted Finger and Recovered Fingers skill amp to 25% and Recovered Fingers' magic atk to 60% - done
-     * Tainted Finger add increase damage taken by 40% - done
-     * Recovered Fingers add decrease damage taken by 10% - done
-     * Corrupted God's Hand skill amp is now 55%, magic atk is 90%, and now increase damage taken by 75% - done
-     * Change Korean description of Recovered Fingers to actually Korean - done
-     * Recovered Fingers now do not consume Grace of Leonia when evolving - done
+     * Change inscription of Mana Accelerator: Artifact to Mana Cycle - done
+     * Nerf Flask of Botulism to reducing 0.01 sec tick rate - done
+     * Fix description of Blood-Soaked Javelin - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -421,7 +413,7 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.Constant, Stat.Kind.PoisonTickFrequency, 0.1),
+                new(Stat.Category.Constant, Stat.Kind.PoisonTickFrequency, 0.01),
             ]);
 
             items.Add(item);
@@ -654,8 +646,8 @@ public class CustomItems
             item.itemName_EN = "Blood-Soaked Javelin";
             item.itemName_KR = "피투성이 투창";
 
-            item.itemDescription_EN = "Increases Crit Damage1 by 20%.\n"
-                                    + "Critical hits have a 5% chance to apply Wound (cooldown: 0.5 seconds).";
+            item.itemDescription_EN = "Increases Crit Damage by 20%.\n"
+                                    + "Critical hits have a 15% chance to apply Wound (cooldown: 0.5 seconds).";
 
             item.itemDescription_KR = "치명타 데미지가 20% 증가합니다.\n"
                                     + "치명타 시 15% 확률로 적에게 상처를 부여합니다 (쿨타임: 0.5초).";
@@ -982,7 +974,7 @@ public class CustomItems
             item.itemLore_KR = "마나를 극한까지 끌어올리는 마법사들의 최후의 수단.\n너무 강한 과부하는 사용자를 불구로 만들 수 있으니 조심해야 한다.";
 
             item.prefabKeyword1 = Inscription.Key.Manatech;
-            item.prefabKeyword2 = Inscription.Key.Artifact;
+            item.prefabKeyword2 = Inscription.Key.ManaCycle;
 
             ManaAcceleratorAbility ability = new()
             {
