@@ -13,6 +13,9 @@ namespace VoiceOfTheCommunity.CustomBehaviors;
 [Serializable]
 public sealed class WingedSpearEvolveBehavior : MonoBehaviour
 {
+    [SerializeField]
+    private Item _item = null;
+
     private Character player = Singleton<Service>.Instance.levelManager.player;
 
     private void Awake()

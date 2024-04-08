@@ -20,9 +20,8 @@ public class CustomItems
     /**
      * TODO
      * 
-     * Change inscription of Mana Accelerator: Artifact to Mana Cycle - done
-     * Nerf Flask of Botulism to reducing 0.01 sec tick rate - done
-     * Fix description of Blood-Soaked Javelin - done
+     * Make Attack Speed actual Attack Speed - done
+     * Add _item variable for Winged Spear - done
      */
 
     private static List<CustomItemReference> InitializeItems()
@@ -192,7 +191,7 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.35),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.3),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillAttackSpeed, 0.3),
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.15),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.15),
             ]);
 
             item.extraComponents = [
@@ -233,7 +232,7 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.7),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.6),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillAttackSpeed, 0.6),
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.3),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.3),
             ]);
 
             ModifyDamage amplifyDamage = new();
@@ -1058,7 +1057,7 @@ public class CustomItems
             [
                 new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.15),
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.15),
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.15),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.15),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.15),
                 new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.15),
             ]);
@@ -1096,7 +1095,7 @@ public class CustomItems
             item.stats = new Stat.Values(
             [
                 new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.55),
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.25),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.25),
                 new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.25),
             ]);
 
@@ -1181,7 +1180,7 @@ public class CustomItems
             [
                 new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.75),
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.75),
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.45),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.45),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.45),
                 new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.45),
             ]);
@@ -1226,7 +1225,7 @@ public class CustomItems
             [
                 new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 1.1),
                 new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 1.1),
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.65),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.65),
                 new(Stat.Category.PercentPoint, Stat.Kind.SkillCooldownSpeed, 0.65),
                 new(Stat.Category.PercentPoint, Stat.Kind.SwapCooldownSpeed, 0.65),
             ]);
@@ -1308,7 +1307,7 @@ public class CustomItems
 
             item.stats = new Stat.Values(
             [
-                new(Stat.Category.PercentPoint, Stat.Kind.BasicAttackSpeed, 0.2),
+                new(Stat.Category.PercentPoint, Stat.Kind.AttackSpeed, 0.2),
             ]);
 
             item.abilities = [
