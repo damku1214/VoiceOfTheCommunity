@@ -17,10 +17,24 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
     private Item _item = null;
 
     private Character player = Singleton<Service>.Instance.levelManager.player;
+    private EnumArray<Inscription.Key, Inscription> inscriptions;
+
+    public int SunAndMoonInscriptionCount()
+    {
+        foreach (var inscription in inscriptions)
+        {
+            if (inscription.key == Inscription.Key.SunAndMoon)
+            {
+                return inscription.count;
+            }
+        }
+        return 0;
+    }
 
     private void Awake()
     {
         player.playerComponents.inventory.onUpdatedKeywordCounts += CheckToUpgradeItem;
+        inscriptions = player.playerComponents.inventory.synergy.inscriptions;
     }
 
     private void OnDestroy()
@@ -107,6 +121,10 @@ public sealed class WingedSpearEvolveBehavior : MonoBehaviour
                 Debug.LogWarning("[VoiceOfCommunity - Winged Spear] There is no item at item index " + i);
                 Debug.LogWarning(e.Message);
             }
+        }
+        if (hasWingedSpear && SunAndMoonInscriptionCount() >= 2)
+        {
+            ChangeItem("Custom-WingedSpear_4", inventory.items[positionofOriginialItem], itemRef, false);
         }
     }
 

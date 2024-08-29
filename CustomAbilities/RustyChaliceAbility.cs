@@ -103,7 +103,9 @@ public class RustyChaliceAbility : Ability, ICloneable
 
                             var spawner = Singleton<Service>.Instance.floatingTextSpawner;
                             var titlePosition = new Vector3(owner.collider.bounds.center.x, owner.collider.bounds.max.y + 1.0f, 0);
-                            spawner.SpawnBuff("THE CHALICE GLEAMS WITH HOLY LIGHT", titlePosition, "#FFF51E");
+                            if (new CustomItemReference().lang == "kr") spawner.SpawnBuff("성배가 신성한 빛을 냅니다", titlePosition, "#FFF51E");
+                            else spawner.SpawnBuff("THE CHALICE GLEAMS WITH HOLY LIGHT", titlePosition, "#FFF51E");
+                            break;
                         }
                     }
                 }

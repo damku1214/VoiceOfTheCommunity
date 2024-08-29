@@ -21,19 +21,14 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
         public bool _canRevenge = false;
         public bool _isCooldown = false;
         int _lostStacks;
-        public override int iconStacks
-        {
-            get
-            {
-                return ability.component.currentKillCount;
-            }
-        }
+
+        public override int iconStacks => ability.component.currentKillCount;
 
         public override Sprite icon
         {
             get
             {
-                VaseOfTheFallenAbilityComponent component = this.ability.component;
+                VaseOfTheFallenAbilityComponent component = ability.component;
                 int currentKillCount = component.currentKillCount;
                 if (currentKillCount == 0)
                 {
@@ -53,7 +48,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
             owner.stat.AttachValues(_stats);
             RefreshStacks();
             owner.onKilled += OnKilledEnemy;
-            owner.health.onTakeDamage.Add(-1000, new TakeDamageDelegate(this.OnTakeDamage));
+            owner.health.onTakeDamage.Add(-1000, new TakeDamageDelegate(OnTakeDamage));
 
         }
 
@@ -61,7 +56,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
         {
             owner.onKilled -= OnKilledEnemy;
             owner.stat.DetachValues(_stats);
-            owner.health.onTakeDamage.Remove(new TakeDamageDelegate(this.OnTakeDamage));
+            owner.health.onTakeDamage.Remove(new TakeDamageDelegate(OnTakeDamage));
         }
 
         private void OnKilledEnemy(ITarget target, ref Damage damage)
@@ -70,7 +65,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
             {
                 return;
             }
-            VaseOfTheFallenAbilityComponent component = this.ability.component;
+            VaseOfTheFallenAbilityComponent component = ability.component;
             int currentKillCount = component.currentKillCount;
             component.currentKillCount = Math.Min(currentKillCount + 1, ability._maxStack);
             RefreshStacks();
@@ -95,7 +90,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
                 return false;
             }
             
-            VaseOfTheFallenAbilityComponent component = this.ability.component;
+            VaseOfTheFallenAbilityComponent component = ability.component;
             int currentKillCount = component.currentKillCount;
 
             _lostStacks = currentKillCount / 2;
@@ -104,7 +99,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
 
             _canRevenge = true;
             _revengeTimeRemaining = ability._revengeTimeout;
-            owner.onGiveDamage.Add(int.MaxValue, new GiveDamageDelegate(this.OnRevenge));
+            owner.onGiveDamage.Add(int.MaxValue, new GiveDamageDelegate(OnRevenge));
 
             return false;
         }
@@ -121,12 +116,12 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
             }
             _canRevenge = false;
             _revengeTimeRemaining = ability._revengeTimeout;
-            owner.onGiveDamage.Remove(new GiveDamageDelegate(this.OnRevenge));
+            owner.onGiveDamage.Remove(new GiveDamageDelegate(OnRevenge));
             if (_isCooldown)
             {
                 return false;
             }
-            VaseOfTheFallenAbilityComponent component = this.ability.component;
+            VaseOfTheFallenAbilityComponent component = ability.component;
             component.currentKillCount += _lostStacks / 2;
             _isCooldown = true;
             _currentRevengeCooldown = 0;
@@ -145,7 +140,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
             if (_revengeTimeRemaining < 0f) {
                 _revengeTimeRemaining = ability._revengeTimeout;
                 _canRevenge = false;
-                owner.onGiveDamage.Remove(new GiveDamageDelegate(this.OnRevenge));
+                owner.onGiveDamage.Remove(new GiveDamageDelegate(OnRevenge));
             }
 
             if (_isCooldown)
@@ -162,7 +157,7 @@ public class VaseOfTheFallenAbility : Ability, ICloneable
 
         private void RefreshStacks()
         {
-            VaseOfTheFallenAbilityComponent component = this.ability.component;
+            VaseOfTheFallenAbilityComponent component = ability.component;
             int currentKillCount = component.currentKillCount;
             for (int i = 0; i < _stats.values.Length; i++)
             {

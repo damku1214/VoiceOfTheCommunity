@@ -69,7 +69,7 @@ public class TatteredCatPlushieAbility : Ability, ICloneable
 
         private void OnKilledEnemy(ITarget target, ref Damage damage)
         {
-            owner.health.Heal(owner.health.maximumHealth * 0.02);
+            owner.health.Heal(owner.health.maximumHealth * 0.04);
         }
     }
 

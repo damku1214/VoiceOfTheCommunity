@@ -23,8 +23,14 @@ public class CustomItemsPatch
 
     public delegate void InventoryUpdateDelegate(Inventory inventory);
     public static event InventoryUpdateDelegate OnInventoryUpdate;
+    public static event InventoryUpdateDelegate AfterInventoryUpdate;
 
     private static Dictionary<string, string> ItemStrings = new();
+
+    // This should allow other mods to translate the items contained here.
+    // If you want to provide one, ensure this runs after InjectCustomItems.
+    // A guaranteed way should be postfixing the method we prefix with it.
+    public static readonly Dictionary<string, string> ItemStringsOverride = new();
 
     // Inject our custom items to the game's list of items.
     // This only runs once, at the beginning of the game. So loading a save should also work.
@@ -70,6 +76,33 @@ public class CustomItemsPatch
 
         // Copy the custom items to the tail of the array
         customItems.CopyTo(self._enhancementMaps, oldLength);
+    }
+
+    // Inject our custom upgradable Bone items to the Bone map
+    private static bool _initializedBone = false;
+
+    [HarmonyPrefix]
+    [HarmonyPatch(typeof(Bone.SuperAbility), "CreateInstance")]
+    static void InjectUpgradedBones(ref Bone.SuperAbility __instance)
+    {
+        if (_initializedBone)
+        {
+            return;
+        }
+
+        ref var self = ref __instance;
+
+        // Custom items
+        var customItems = CustomItems.ListUpgradableBones().ToArray();
+
+        // Extend the items array to fit our custom items
+        var oldLength = self._enhancementMaps.Length;
+        Array.Resize(ref self._enhancementMaps, oldLength + customItems.Length);
+
+        // Copy the custom items to the tail of the array
+        customItems.CopyTo(self._enhancementMaps, oldLength);
+
+        _initializedBone = true;
     }
 
     // Register a custom item into this class, so we remember it's actually a custom item when dropping the placeholder.
@@ -137,6 +170,12 @@ public class CustomItemsPatch
     [HarmonyPatch(typeof(Localization), "GetLocalizedString", new Type[] { typeof(string) })]
     static bool InjectCustomStrings(string key, ref string __result)
     {
+        if (ItemStringsOverride.ContainsKey(key))
+        {
+            __result = ItemStringsOverride[key];
+            return false;
+        }
+
         if (!ItemStrings.ContainsKey(key))
         {
             return true;
@@ -158,5 +197,12 @@ public class CustomItemsPatch
     static void InventoryUpdateHook(ref Inventory __instance)
     {
         OnInventoryUpdate?.Invoke(__instance);
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPatch(typeof(Inventory), "UpdateSynergy")]
+    static void PostInventoryUpdateHook(ref Inventory __instance)
+    {
+        AfterInventoryUpdate?.Invoke(__instance);
     }
 }

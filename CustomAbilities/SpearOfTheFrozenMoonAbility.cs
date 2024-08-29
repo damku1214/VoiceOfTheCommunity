@@ -14,6 +14,14 @@ public class SpearOfTheFrozenMoonAbility : Ability, ICloneable
     {
         private EnumArray<Inscription.Key, Inscription> inscriptions;
 
+        public override Sprite icon
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         public int AbsoluteZeroInscriptionCount()
         {
             foreach (var inscription in inscriptions)

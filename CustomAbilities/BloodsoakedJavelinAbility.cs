@@ -14,6 +14,14 @@ public class BloodSoakedJavelinAbility : Ability, ICloneable
         private float _cooldownRemaining;
         public override float iconFillAmount => _isReady ? 0 : _cooldownRemaining / ability._timeout;
 
+        public override Sprite icon
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         public Instance(Character owner, BloodSoakedJavelinAbility ability) : base(owner, ability)
         {
         }

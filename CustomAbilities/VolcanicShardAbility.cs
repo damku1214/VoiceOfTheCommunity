@@ -3,7 +3,9 @@ using Characters;
 using Characters.Abilities;
 using Characters.Gear.Synergy.Inscriptions;
 using Characters.Player;
-using static Characters.Damage;
+using Services;
+using Singletons;
+using UnityEngine;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
@@ -15,9 +17,9 @@ public class VolcanicShardAbility : Ability, ICloneable
         private EnumArray<Inscription.Key, Inscription> inscriptions;
         private Inventory _inventory;
 
-        public override int iconStacks => BurnInscriptionCount();
+        public override int iconStacks => ArsonInscriptionCount();
 
-        public int BurnInscriptionCount()
+        public int ArsonInscriptionCount()
         {
             foreach (var inscription in inscriptions)
             {
@@ -38,6 +40,7 @@ public class VolcanicShardAbility : Ability, ICloneable
         public override void OnAttach()
         {
             RefreshArsonInscriptionCount();
+            owner.status.durationMultiplier[CharacterStatus.Kind.Burn].AddOrUpdate(this, -0.2f);
             _inventory.onUpdatedKeywordCounts += RefreshArsonInscriptionCount;
             owner.onGiveDamage.Add(0, new GiveDamageDelegate(AmplifyBurnDamage));
         }
@@ -51,7 +54,6 @@ public class VolcanicShardAbility : Ability, ICloneable
 
         private void RefreshArsonInscriptionCount()
         {
-            owner.status.durationMultiplier[CharacterStatus.Kind.Burn].AddOrUpdate(this, BurnInscriptionCount() * 0.05f * -1);
         }
 
         private bool AmplifyBurnDamage(ITarget target, ref Damage damage)
@@ -60,11 +62,8 @@ public class VolcanicShardAbility : Ability, ICloneable
             {
                 return false;
             }
-            if (!target.character.status.IsApplying(CharacterStatus.Kind.Burn))
-            {
-                return false;
-            }
-            damage.percentMultiplier *= 1.25;
+            if (damage.key == "burn") damage.percentMultiplier += 0.2;
+            if (target.character.status.IsApplying(CharacterStatus.Kind.Burn)) damage.percentMultiplier *= 1 + 0.05 * ArsonInscriptionCount();
             return false;
         }
     }

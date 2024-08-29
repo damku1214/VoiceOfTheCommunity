@@ -5,7 +5,7 @@ using UnityEngine;
 namespace VoiceOfTheCommunity.CustomAbilities;
 
 public abstract class AbilityComponentHack<T> : AbilityComponent<T>, ISerializationCallbackReceiver
-    where T : Ability, ICloneable
+    where T : Characters.Abilities.Ability, ICloneable
 {
     [SerializeReference]
     private T _abilityReference;

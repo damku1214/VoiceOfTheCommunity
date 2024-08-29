@@ -13,6 +13,7 @@ namespace VoiceOfTheCommunity;
 [Serializable]
 public class CustomItemReference : ItemReference
 {
+    public string lang = "en";
     private string _originalName;
     public new string name
     {
@@ -30,21 +31,42 @@ public class CustomItemReference : ItemReference
     public string itemName_KR;
     public string itemName
     {
-        get { return itemName_EN; }
+        get
+        {
+            if (lang == "kr")
+            {
+                return itemName_KR;
+            }
+            return itemName_EN;
+        }
     }
 
     public string itemDescription_EN;
     public string itemDescription_KR;
     public string itemDescription
     {
-        get { return itemDescription_EN; }
+        get
+        {
+            if (lang == "kr")
+            {
+                return itemDescription_KR;
+            }
+            return itemDescription_EN;
+        }
     }
 
     public string itemLore_EN;
     public string itemLore_KR;
     public string itemLore
     {
-        get { return itemLore_EN; }
+        get
+        {
+            if (lang == "kr")
+            {
+                return itemLore_KR;
+            }
+            return itemLore_EN;
+        }
     }
     public Stat.Values stats;
 

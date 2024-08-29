@@ -1,7 +1,6 @@
 ﻿using System;
 using Characters;
 using Characters.Abilities;
-using Characters.Abilities.Triggers;
 using UnityEngine;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
@@ -12,22 +11,12 @@ public class WeirdHerbsAbility : Ability, ICloneable
     public class Instance : AbilityInstance<WeirdHerbsAbility>
     {
         private Stat.Values _stats;
-        private float _bonusTimeRemaining;
-        public override float iconFillAmount => 1.0f - _bonusTimeRemaining / ability._timeout;
+        private float _timeRemaining;
+        public override float iconFillAmount => 1.0f - _timeRemaining / ability._timeout;
 
         private bool _isActive = false;
 
-        public override Sprite icon
-        {
-            get
-            {
-                if (!_isActive)
-                {
-                    return null;
-                }
-                return ability._defaultIcon;
-            }
-        }
+        public override Sprite icon => _isActive ? ability._defaultIcon : null;
 
         public Instance(Character owner, WeirdHerbsAbility ability) : base(owner, ability)
         {
@@ -57,9 +46,9 @@ public class WeirdHerbsAbility : Ability, ICloneable
                 return;
             }
 
-            _bonusTimeRemaining -= deltaTime;
+            _timeRemaining -= deltaTime;
 
-            if (_bonusTimeRemaining < 0f)
+            if (_timeRemaining < 0f)
             {
                 _isActive = false;
                 RefreshStats();
@@ -69,7 +58,7 @@ public class WeirdHerbsAbility : Ability, ICloneable
         private void OnSwap()
         {
             _isActive = true;
-            _bonusTimeRemaining = ability._timeout;
+            _timeRemaining = ability._timeout;
             RefreshStats();
         }
 

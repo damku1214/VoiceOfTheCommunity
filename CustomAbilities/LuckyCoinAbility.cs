@@ -2,6 +2,7 @@
 using Characters;
 using Characters.Abilities;
 using Data;
+using UnityEngine;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
@@ -10,6 +11,13 @@ public class LuckyCoinAbility : Ability, ICloneable
 {
     public class Instance : AbilityInstance<LuckyCoinAbility>
     {
+        public override Sprite icon
+        {
+            get
+            {
+                return null;
+            }
+        }
 
         public Instance(Character owner, LuckyCoinAbility ability) : base(owner, ability)
         {

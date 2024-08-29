@@ -1,6 +1,7 @@
 ﻿using System;
 using Characters;
 using Characters.Abilities;
+using UnityEngine;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
@@ -9,6 +10,14 @@ public class FoniasAbility : Ability, ICloneable
 {
     public class Instance : AbilityInstance<FoniasAbility>
     {
+        public override Sprite icon
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         public Instance(Character owner, FoniasAbility ability) : base(owner, ability)
         {
         }

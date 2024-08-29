@@ -4,7 +4,7 @@
 		<TargetFramework>net462</TargetFramework>
 		<AssemblyName>VoiceOfTheCommunity</AssemblyName>
 		<Description>From the community, for the community!</Description>
-		<Version>1.0.9</Version>
+		<Version>1.1.0</Version>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>latest</LangVersion>
 		<RestoreAdditionalProjectSources>
@@ -56,6 +56,10 @@
 		</Reference>
 		<Reference Include="Plugins.Common" Publicize="true">
 			<HintPath>$(SkulRoot)/Skul_Data/Managed/Plugins.Common.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Plugins.ObjectPool" Publicize="true">
+			<HintPath>$(SkulRoot)/Skul_Data/Managed/Plugins.ObjectPool.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="Unity.Addressables" Publicize="true">

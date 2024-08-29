@@ -60,19 +60,4 @@ public sealed class ShrinkingPotionEvolveBehavior : MonoBehaviour
             }
         }
     }
-
-    private void ChangeItem(string name, Item item, ItemReference itemRef)
-    {
-        if (GearResource.instance.TryGetItemReferenceByName(name, out itemRef))
-        {
-            ItemRequest request = itemRef.LoadAsync();
-            request.WaitForCompletion();
-
-            if (item.state == Characters.Gear.Gear.State.Equipped)
-            {
-                Item newItem = Singleton<Service>.Instance.levelManager.DropItem(request, Vector3.zero);
-                item.ChangeOnInventory(newItem);
-            }
-        }
-    }
 }

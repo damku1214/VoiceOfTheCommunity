@@ -4,6 +4,7 @@ using Characters.Abilities;
 using Level;
 using Services;
 using Singletons;
+using UnityEngine;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
@@ -13,6 +14,8 @@ public class CrossNecklaceAbility : Ability, ICloneable
     public class Instance : AbilityInstance<CrossNecklaceAbility>
     {
         private LevelManager _levelManager;
+
+        public override Sprite icon => null;
 
         public Instance(Character owner, CrossNecklaceAbility ability) : base(owner, ability)
         {
