@@ -64,6 +64,7 @@ Changes:
 - Changed the lore of 'Omen: Accursed Sabre'
 - Crit dmg of 'Blood-Soaked Javelin' is decreased from 25% to 20%
 - 'Tattered Cat Plushie' now heals 4% of max HP when killing an enemy
+- Reworked 'Volcanic Shard'
 - Attack speed now increases both normal attack and skill casting speed
 - Removed unnecessary ability icons
 - Hovering text now have Korean translations
