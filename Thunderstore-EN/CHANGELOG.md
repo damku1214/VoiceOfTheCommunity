@@ -1,7 +1,7 @@
 1.1.0 IS HERE BABYYYYYYYYYYYYYYYY
 LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
-This releases adds 54 items:
+This release adds 54 items:
 - Disorientation Device (Rare)
 - Soul Flame Scythe (Legendary)
 - Carleon Commander's Bihänder (Legendary)
