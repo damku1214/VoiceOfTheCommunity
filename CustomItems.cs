@@ -1254,15 +1254,11 @@ public class CustomItems
             item.itemName_EN = "Fonias";
             item.itemName_KR = "포니아스";
 
-            item.itemDescription_EN = "Increases Crit Chance by 5%.\n"
-                                    + "Increases Crit Damage by 25%.\n"
-                                    + "Amplifies damage dealt to enemies by 10%.\n"
-                                    + "Amplfies damage dealt to an adventurer or a boss by 5%.";
+            item.itemDescription_EN = "Amplifies damage dealt to a boss by 15%.\n"
+                                    + "Killing a boss further increases this amplification by 2.5%.";
 
-            item.itemDescription_KR = "치명타 확률이 5% 증가합니다.\n"
-                                    + "치명타 피해가 25% 증가합니다.\n"
-                                    + "적에게 입히는 데미지가 10% 증폭됩니다.\n"
-                                    + "모험가 혹은 보스에게 입히는 데미지가 5% 증폭됩니다.";
+            item.itemDescription_KR = "보스에게 입히는 데미지가 15% 증폭됩니다.\n"
+                                    + "보스 처치 시 이 아이템의 데미지 증폭량이 2.5% 증가합니다.";
 
             item.itemLore_EN = "An ancient scythe imbued with cursed power.\nIt was once wielded by a former demon king.";
             item.itemLore_KR = "전대 마왕중 한명이 사용했다는 저주의 기운을 뿜어내는 고대의 낫";
@@ -1276,19 +1272,8 @@ public class CustomItems
                 new(Stat.Category.PercentPoint, Stat.Kind.CriticalDamage, 0.25),
             ]);
 
-            ModifyDamage amplifyDamage = new();
-
-            amplifyDamage._attackTypes = new([true, true, true, true, true, true, true, true, true]);
-
-            amplifyDamage._damageTypes = new([true, true, true, true, true]);
-
-            amplifyDamage._damagePercent = 1.1f;
-
-            amplifyDamage._defaultIcon = null;
-
             item.abilities = [
-                new FoniasAbility(),
-                amplifyDamage,
+                new FoniasAbility()
             ];
 
             items.Add(item);
@@ -2433,9 +2418,9 @@ public class CustomItems
             item.itemName_EN = "Blooming Eden";
             item.itemName_KR = "만개하는 낙원";
             
-            item.itemDescription_EN = "Critical hits increase Attack Speed by 10% for 4 seconds (maximum 30%).";
+            item.itemDescription_EN = "Critical hits increase Attack Speed by 10% for 4 seconds (maximum 50%).";
 
-            item.itemDescription_KR = "치명타 시 4초 동안 공격속도가 10% 증가합니다 (최대 30%).";
+            item.itemDescription_KR = "치명타 시 4초 동안 공격속도가 10% 증가합니다 (최대 50%).";
 
             item.itemLore_EN = "By my rapier, I shall protect the buds of Eden until the very last one has bloomed!";
             item.itemLore_KR = "이 레이피어로, 낙원의 마지막 꽃이 필 때까지 이 꽃봉우리들을 보호하겠어!";
@@ -2875,10 +2860,10 @@ public class CustomItems
             item.itemName_EN = "Helix Brooch";
             item.itemName_KR = "나선형 브로치";
 
-            item.itemDescription_EN = "Hitting enemies have a 1.618% chance to gain a Helix.\n"
+            item.itemDescription_EN = "Hitting enemies have a 1.618% chance to gain a Helix for 8 seconds (infinitely stackable).\n"
                                     + "Upon dealing damage to an enemy, deal 5 true damage for each Helix you have.";
 
-            item.itemDescription_KR = "적에게 데미지를 입힐 시 1.618% 확률로 나선을 하나 획득합니다.\n"
+            item.itemDescription_KR = "적에게 데미지를 입힐 시 1.618% 확률로 8초 동안 나선을 하나 획득합니다 (무한으로 중첩 가능).\n"
                                     + "적에게 데미지를 입힐 시 보유중인 나선 하나당 5의 고정 데미지를 추가로 입힙니다.";
 
             item.itemLore_EN = "A mysterious golden brooch that spirals into infinity";

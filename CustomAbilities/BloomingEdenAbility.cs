@@ -20,7 +20,7 @@ public class BloomingEdenAbility : Ability, ICloneable
         private float _timeRemaining;
 
         private int _stacks;
-        private int _maxStacks = 3;
+        private int _maxStacks = 5;
 
         private bool _isActive;
 

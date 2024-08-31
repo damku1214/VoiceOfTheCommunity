@@ -16,4 +16,9 @@ Changes:
 - 'Ginga Pachinko' now evolves properly
 - 'Kabuto' and 'Mask of Sogeking' now revert into their pre-evolutions when not together
 - 'Tattered Cat Plushie' now depletes 15 HP if your max HP is lower than 150
+- 'Blooming Eden' now has a maximum Attack Speed increase of 50%
+- 'Fonias' now only amplifies damage dealt to bosses by 15% and adds 2.5% amplification to bosses each time a boss is killed
 - A few items' Korean lore now do not have letters missing
+- Re-sprited 'Mask of Sogeking'
+- Re-sprited 'Bottled Faeling'
+- Re-sprited 'Rusty Shovel'
