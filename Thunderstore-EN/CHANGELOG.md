@@ -1,5 +1,5 @@
 1.1.1 with some modest changes.
-Thank you so much Bac for helping me with Ginga Pachiko <3
+Thank you so much Bac for helping me with Ginga Pachinko <3
 
 Changes:
 - 'Omen: The Secret of the King' now gains a proper second inscription
