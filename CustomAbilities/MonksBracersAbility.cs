@@ -48,6 +48,7 @@ public class MonksBracersAbility : Ability, ICloneable
         public override void UpdateTime(float deltaTime)
         {
             base.UpdateTime(deltaTime);
+            EnableTurboAttack(ability._isEvolved ? 0 : 1);
 
             if (_isActive)
             {
