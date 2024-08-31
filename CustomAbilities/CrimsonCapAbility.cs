@@ -27,7 +27,7 @@ public class CrimsonCapAbility : Ability, ICloneable
         private int HazardousItemCount()
         {
             int count = 0;
-            string[] hazardousItemNames = ["VeiledMask", "ContaminatedCore", "Custom-CursedSword", "Custom-TaintedFinger",
+            string[] hazardousItemNames = ["Custom-CrimsonCap", "VeiledMask", "ContaminatedCore", "Custom-CursedSword", "Custom-TaintedFinger",
                 "Custom-TaintedFinger_2", "Custom-TaintedFinger_3", "Custom-ShrinkingPotion", "Custom-GrowingPotion" , "Custom-ShrinkingPotion_2",
                 "Custom-CursedHourglass", "Custom-TaintedRedScarf", "Custom-TatteredCatPlushie", "Custom-Becchi", "Custom-DiaryOfAnOldMaster",
                 "Custom-BrokenWatch", "Custom-Tetronimo", "Custom-Tetronimo_BoneUpgrade"];

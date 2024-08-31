@@ -49,7 +49,8 @@ public class TatteredCatPlushieAbility : Ability, ICloneable
 
         private void Activate()
         {
-            owner.health.TakeHealth(owner.health.maximumHealth * 0.1);
+            if (owner.health.maximumHealth >= 150) owner.health.TakeHealth(owner.health.maximumHealth * 0.1);
+            else owner.health.TakeHealth(15);
             ability.component.currentActivateCount++;
 
             _damageMultiplier = 1 + ability.component.currentActivateCount * 0.05f;

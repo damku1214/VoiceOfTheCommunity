@@ -1,7 +1,6 @@
 ﻿using System;
 using Characters;
 using Characters.Abilities;
-using Characters.Abilities.Triggers;
 using Characters.Gear.Synergy.Inscriptions;
 using Characters.Player;
 using Services;
@@ -59,7 +58,6 @@ public class TetronimoAbility : Ability, ICloneable
         {
             _stats = _stat.Clone();
             owner.stat.AttachValues(_stats);
-            RefreshStats();
             owner.playerComponents.inventory.onUpdatedKeywordCounts += Activate;
             owner.playerComponents.inventory.weapon.onSwap += OnSwap;
         }
@@ -74,6 +72,7 @@ public class TetronimoAbility : Ability, ICloneable
         public override void UpdateTime(float deltaTime)
         {
             base.UpdateTime(deltaTime);
+            RefreshStats();
 
             if (!_isActive)
             {
@@ -85,7 +84,6 @@ public class TetronimoAbility : Ability, ICloneable
             if (_timeRemaining < 0f)
             {
                 _isActive = false;
-                RefreshStats();
             }
         }
 
@@ -102,7 +100,6 @@ public class TetronimoAbility : Ability, ICloneable
                     {
                         item.DiscardOnInventory();
                         ability.component.currentCount++;
-                        RefreshStats();
                         i--;
                     }
                 }
@@ -114,7 +111,6 @@ public class TetronimoAbility : Ability, ICloneable
             if (!ability._isEvolved || !BoneBuffReady()) return;
             _isActive = true;
             _timeRemaining = _timeout;
-            RefreshStats();
         }
 
         private void RefreshStats()

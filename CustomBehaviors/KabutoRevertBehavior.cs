@@ -11,7 +11,7 @@ using UnityEngine;
 namespace VoiceOfTheCommunity.CustomBehaviors;
 
 [Serializable]
-public sealed class GingaPachinkoEvolveBehavior : MonoBehaviour
+public sealed class KabutoRevertBehavior : MonoBehaviour
 {
     [SerializeField]
     private Item _item = null;
@@ -45,20 +45,21 @@ public sealed class GingaPachinkoEvolveBehavior : MonoBehaviour
             {
                 continue;
             }
+            if (item.name.Equals("Custom-MaskOfSogeking"))
+            {
+                hasMask = true;
+            }
             if (item.name.Equals("VeiledMask"))
             {
                 hasMask = true;
                 ChangeItem("Custom-MaskOfSogeking", item);
             }
-            if (item.name.Equals("Custom-MaskOfSogeking"))
-            {
-                hasMask = true;
-            }
         }
-        if (hasMask)
+        if (!hasMask)
         {
-            ChangeItem("Custom-GingaPachinko_2", _item);
-        } else
+            ChangeItem("Custom-GingaPachinko", _item);
+        }
+        else
         {
             Awake();
         }

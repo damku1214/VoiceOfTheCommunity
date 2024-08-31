@@ -62,6 +62,12 @@ public class BrokenWatchAbility : Ability, ICloneable
                 _stacks = 0;
                 RefreshStats();
             }
+
+            if (owner.stat._values[4, 22] < 0.19)
+            {
+                _stacks--;
+                RefreshStats();
+            }
         }
 
         private void OnStartMotion(Characters.Actions.Motion motion, float runSpeed)

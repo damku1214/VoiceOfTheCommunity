@@ -10,6 +10,7 @@ public sealed class TheSecretOfTheKingRandomInscriptionBehavior : KeywordRandomi
     {
         base.Awake();
         _item.keyword1 = Characters.Gear.Synergy.Inscriptions.Inscription.Key.Omen;
+        InscriptionsRandomizer();
     }
 
     private void InscriptionsRandomizer()

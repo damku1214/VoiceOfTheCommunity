@@ -1,6 +1,8 @@
 ﻿using Characters;
 using Characters.Operations.Movement;
 using HarmonyLib;
+using Services;
+using Singletons;
 
 namespace VoiceOfTheCommunity.CustomPatches;
 
@@ -11,6 +13,7 @@ public class JumpHeightPatch
     [HarmonyPatch(typeof(Jump), "Run", [typeof(Character)])]
     static bool ModifyJumpHeight(ref Jump __instance, Character owner)
     {
+        if (owner != Singleton<Service>.Instance.levelManager.player) return true;
         ref var self = ref __instance;
         var inventory = owner.playerComponents.inventory.item;
         int gryphonsFeatherCount = 0;
