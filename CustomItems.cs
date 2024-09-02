@@ -1540,11 +1540,11 @@ public class CustomItems
             item.itemName_KR = "해진 고양이 인형";
 
             item.itemDescription_EN = "Every 5 seconds, depletes 10% of your Max HP and permanently grants you 5% amplification on damage dealt to enemies.\n"
-                                    + "If your Max HP is lower than 150, deplete 15 HP instead."
+                                    + "If your Max HP is lower than 150, deplete 15 HP instead.\n"
                                     + "Upon killing an enemy, recovers 4% of your Max HP.";
 
             item.itemDescription_KR = "5초마다 최대 체력의 10%에 달하는 피해를 입고 영구적으로 적들에게 입히는 데미지가 5% 증폭됩니다.\n"
-                                    + "만약 최대 체력이 150 미만일 경우, 대신 15의 피해를 입습니다."
+                                    + "만약 최대 체력이 150 미만일 경우, 대신 15의 피해를 입습니다.\n"
                                     + "적을 처치할 때마다 최대 체력의 4%를 회복합니다.";
 
             item.itemLore_EN = "bEsT FrIenDs fOrEveR... rIGht..?";
