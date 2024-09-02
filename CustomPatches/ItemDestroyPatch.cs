@@ -1,7 +1,4 @@
-﻿using System;
-using Characters.Gear.Items;
-using Characters.Player;
-using GameResources;
+﻿using Characters.Player;
 using HarmonyLib;
 using Level;
 using Services;

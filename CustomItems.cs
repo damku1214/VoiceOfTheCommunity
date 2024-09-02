@@ -1356,10 +1356,10 @@ public class CustomItems
             item.itemName_KR = "흉조: 저주받은 단도";
 
             item.itemDescription_EN = "Basic attacks and skills have a 10% chance to apply Wound.\n"
-                                    + "Every 2nd Bleed inflicts Bleed twice.";
+                                    + "Every 3rd Bleed inflicts Bleed twice.";
 
             item.itemDescription_KR = "적 공격 시 10% 확률로 상처를 부여합니다.\n"
-                                    + "2회 째 출혈마다 출혈을 한번 더 부여합니다.";
+                                    + "3회 째 출혈마다 출혈을 한번 더 부여합니다.";
 
             item.itemLore_EN = "Sabre of the great duelist Sly who left his final memento in the form of never-ending anarchy and bloodshed";
             item.itemLore_KR = "끝없는 반역과 학살을 낳았던 세계 제일의 결투가 슬라이의 단도";
@@ -1716,11 +1716,11 @@ public class CustomItems
             item.itemName_EN = "Crimson Cap";
             item.itemName_KR = "진홍빛 모자";
 
-            item.itemDescription_EN = "Upon entering a room, sets the amount of Crimson Essences you have to 1 and gains a Crimson Essence for every piece of hazardous equipment in your inventory.\n"
+            item.itemDescription_EN = "Upon entering a room, sets the amount of Crimson Essences you have to 1 and gains a Crimson Essence for every curse and equipment with a debuff in your inventory.\n"
                                     + "For every Crimson Essence in possession, increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 40%.\n"
                                     + "Upon being hit, consume a Crimson Essence and negates that hit (This effect occurs before Mercury Heart does).";
 
-            item.itemDescription_KR = "방 입장 시 가지고 있던 진홍빛 정수를 1로 만든 뒤 인벤토리에 있는 위험한 장비만큼 진홍빛 정수를 획득합니다."
+            item.itemDescription_KR = "방 입장 시 가지고 있던 진홍빛 정수를 1로 만든 뒤 인벤토리에 있는 저주와 디버프가 있는 장비만큼 진홍빛 정수를 획득합니다."
                                     + "가지고 있는 진홍빛 정수만큼 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 40% 증가합니다.\n"
                                     + "피격 시 진홍빛 정수를 한개 소모하고 해당 피격을 무효화합니다 (해당 효과는 수은 심장이 발동하기 전에 발동합니다).";
 
@@ -1855,8 +1855,8 @@ public class CustomItems
             item.itemName_EN = "Shield of the Unrelenting";
             item.itemName_KR = "용서하지 않는 자의 방패";
 
-            item.itemDescription_EN = "Gain 5 Shields every 5 seconds (Up to 40).\n"
-                                    + "Increases <color=#F25D1C>Physical Attack</color> by 5% for every 5 Shields (Maximum 40%).";
+            item.itemDescription_EN = "Gain 5 Shields every 5 seconds (up to 40).\n"
+                                    + "Increases <color=#F25D1C>Physical Attack</color> by 5% for every 5 Shields (maximum 40%).";
 
             item.itemDescription_KR = "5초마다 5의 방어막을 얻습니다 (최대 40).\n"
                                     + "보유한 방어막 5당 <color=#F25D1C>물리공격력</color>이 5% 증가합니다 (최대 40% 증가).";
@@ -2860,11 +2860,11 @@ public class CustomItems
             item.itemName_EN = "Helix Brooch";
             item.itemName_KR = "나선형 브로치";
 
-            item.itemDescription_EN = "Hitting enemies have a 1.618% chance to gain a Helix for 8 seconds (infinitely stackable).\n"
-                                    + "Upon dealing damage to an enemy, deal 5 true damage for each Helix you have.";
+            item.itemDescription_EN = "Hitting enemies have a 1.618% chance to gain a Helix (infinitely stackable).\n"
+                                    + "Upon dealing damage to an enemy, deal 1 true damage for each Helix you have.";
 
-            item.itemDescription_KR = "적에게 데미지를 입힐 시 1.618% 확률로 8초 동안 나선을 하나 획득합니다 (무한으로 중첩 가능).\n"
-                                    + "적에게 데미지를 입힐 시 보유중인 나선 하나당 5의 고정 데미지를 추가로 입힙니다.";
+            item.itemDescription_KR = "적에게 데미지를 입힐 시 1.618% 확률로 나선을 하나 획득합니다 (무한으로 중첩 가능).\n"
+                                    + "적에게 데미지를 입힐 시 보유중인 나선 하나당 1의 고정 데미지를 추가로 입힙니다.";
 
             item.itemLore_EN = "A mysterious golden brooch that spirals into infinity";
             item.itemLore_KR = "무한을 향해 영원히 돌아가는 금색 브로치";
@@ -2942,11 +2942,11 @@ public class CustomItems
 
             item.itemDescription_EN = "This item randomly gains 2 inscriptions.\n"
                                     + "Upon having 4 items in your inventory with the same inscription, any item in your inventory with that inscription are immediately destroyed (other than Tetronimo).\n"
-                                    + "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30% for every item destroyed via this item.";
+                                    + "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15~75% for every item destroyed via this item depending on the destroyed item's rarity.";
 
             item.itemDescription_KR = "이 아이템은 임의의 각인들을 갖습니다.\n"
                                     + "현재 인벤토리 내에 같은 각인을 보유한 아이템이 4개 이상 있을 시, 해당 각인을 보유한 아이템들이 모두 파괴됩니다 (테트로니모 제외).\n"
-                                    + "이 아이템으로 파괴된 아이템 하나당 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 30% 증가합니다.";
+                                    + "이 아이템으로 파괴된 아이템 하나당 파괴된 아이템의 등급에 따라 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 15~75% 증가합니다.";
 
             item.itemLore_EN = "Where is that line piece when you need it?";
             item.itemLore_KR = "작대기 블록이 어디갔지?";
@@ -2978,13 +2978,13 @@ public class CustomItems
 
             item.itemDescription_EN = "This item's second inscription is randomly chosen.\n"
                                     + "Upon having 4 items in your inventory with the same inscription, any item in your inventory with that inscription are immediately destroyed (other than Tetronimo).\n"
-                                    + "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 30% for every item destroyed via this item.\n"
-                                    + "Activating a Bone insctipion effect will additionally increase <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15% for every item destroyed via this item. for 15 seconds.";
+                                    + "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 15~75% for every item destroyed via this item depending on the destroyed item's rarity.\n"
+                                    + "Activating a Bone insctipion effect will amplify the stats gained by this item by 40% for 15 seconds.";
 
             item.itemDescription_KR = "이 아이템은 임의의 두번째 각인을 갖습니다.\n"
                                     + "현재 인벤토리 내에 같은 각인을 보유한 아이템이 4개 이상 있을 시, 해당 각인을 보유한 아이템들이 모두 파괴됩니다 (테트로니모 제외).\n"
-                                    + "이 아이템으로 파괴된 아이템 하나당 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 30% 증가합니다.\n"
-                                    + "뼈 각인 효과 발동 시 15초간 이 아이템으로 파괴된 아이템 하나당 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 추가로 15% 증가합니다.";
+                                    + "이 아이템으로 파괴된 아이템 하나당 파괴된 아이템의 등급에 따라 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 15~75% 증가합니다.\n"
+                                    + "뼈 각인 효과 발동 시 15초간 이 아이템으로 증가한 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 40% 증폭됩니다.";
 
             item.itemLore_EN = "Time for a T-Spin";
             item.itemLore_KR = "T-스핀 할 시간이야";

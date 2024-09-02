@@ -4,7 +4,7 @@
 		<TargetFramework>net462</TargetFramework>
 		<AssemblyName>VoiceOfTheCommunity</AssemblyName>
 		<Description>From the community, for the community!</Description>
-		<Version>1.1.2</Version>
+		<Version>1.1.3</Version>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>latest</LangVersion>
 		<RestoreAdditionalProjectSources>

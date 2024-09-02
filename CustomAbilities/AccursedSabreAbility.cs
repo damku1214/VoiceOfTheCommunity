@@ -49,7 +49,7 @@ public class AccursedSabreAbility : Ability, ICloneable
     }
 
     [SerializeField]
-    private float _bleedCount = 2f;
+    private float _bleedCount = 3;
 
     public override IAbilityInstance CreateInstance(Character owner)
     {

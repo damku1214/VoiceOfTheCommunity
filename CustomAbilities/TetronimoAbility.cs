@@ -6,6 +6,8 @@ using Characters.Player;
 using Services;
 using Singletons;
 using UnityEngine;
+using VoiceOfTheCommunity.CustomPatches;
+using VoiceOfTheCommunity.Other;
 
 namespace VoiceOfTheCommunity.CustomAbilities;
 
@@ -19,8 +21,8 @@ public class TetronimoAbility : Ability, ICloneable
         private Stat.Values _stats;
         private Stat.Values _stat = new(
         [
-            new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.15),
-            new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.15)
+            new(Stat.Category.PercentPoint, Stat.Kind.PhysicalAttackDamage, 0.01),
+            new(Stat.Category.PercentPoint, Stat.Kind.MagicAttackDamage, 0.01)
         ]);
 
         private float _timeRemaining;
@@ -30,6 +32,25 @@ public class TetronimoAbility : Ability, ICloneable
 
         private EnumArray<Inscription.Key, Inscription> _inscriptions = Singleton<Service>.Instance._levelManager.player.playerComponents.inventory.synergy.inscriptions;
         public ItemInventory _inventory = Singleton<Service>.Instance.levelManager.player.playerComponents.inventory.item;
+
+        private int TetronimoCount()
+        {
+            int count = 0;
+            ItemInventory inventory = Singleton<Service>.Instance.levelManager.player.playerComponents.inventory.item;
+            for (int i = 0; i < inventory.items.Count; i++)
+            {
+                var item = inventory.items[i];
+                if (item == null || item.state != Characters.Gear.Gear.State.Equipped)
+                {
+                    continue;
+                }
+                if (item.name.Equals("Custom-Tetronimo") || item.name.Equals("Custom-Tetronimo_BoneUpgrade"))
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
 
         private bool BoneBuffReady()
         {
@@ -60,6 +81,10 @@ public class TetronimoAbility : Ability, ICloneable
             owner.stat.AttachValues(_stats);
             owner.playerComponents.inventory.onUpdatedKeywordCounts += Activate;
             owner.playerComponents.inventory.weapon.onSwap += OnSwap;
+            if (TetronimoStorage._stacks > ability.component.currentCount && TetronimoCount() < 2 && !ability._isEvolved)
+            {
+                TetronimoStorage._stacks = ability.component.currentCount;
+            }
         }
 
         public override void OnDetach()
@@ -72,6 +97,15 @@ public class TetronimoAbility : Ability, ICloneable
         public override void UpdateTime(float deltaTime)
         {
             base.UpdateTime(deltaTime);
+            if (TetronimoStorage._stacks > ability.component.currentCount)
+            {
+                ability.component.currentCount = TetronimoStorage._stacks;
+            }
+
+            if (TetronimoStorage._stacks < ability.component.currentCount)
+            {
+                TetronimoStorage._stacks = ability.component.currentCount;
+            }
             RefreshStats();
 
             if (!_isActive)
@@ -95,11 +129,21 @@ public class TetronimoAbility : Ability, ICloneable
                 for (int i = 0; i < _inventory.items.Count; i++)
                 {
                     var item = _inventory.items[i];
-                    if (item == null || item.name.StartsWith("Custom-Tetronimo")) continue;
+                    if (item == null || item.name.StartsWith("Custom-Tetronimo") || item.name.StartsWith("Custom-Tetronimo_BoneUpgrade")) continue;
                     if (item.keyword1 == inscription.key || item.keyword2 == inscription.key)
                     {
+                        int stackAmount = 0;
+                        switch (item.rarity)
+                        {
+                            case Rarity.Common: stackAmount = 15; break;
+                            case Rarity.Rare: stackAmount = 30; break;
+                            case Rarity.Unique: stackAmount = 45; break;
+                            case Rarity.Legendary: stackAmount = 60; break;
+                        }
+                        if (item.gearTag == Characters.Gear.Gear.Tag.Omen) stackAmount = 75;
                         item.DiscardOnInventory();
-                        ability.component.currentCount++;
+                        ability.component.currentCount += stackAmount;
+                        TetronimoStorage._stacks += stackAmount;
                         i--;
                     }
                 }
@@ -117,7 +161,7 @@ public class TetronimoAbility : Ability, ICloneable
         {
             for (int i = 0; i < _stats.values.Length; i++)
             {
-                _stats.values[i].value = _stat.values[i].GetStackedValue(ability.component.currentCount * 2 + (_isActive ? ability.component.currentCount : 0));
+                _stats.values[i].value = _stat.values[i].GetStackedValue(ability.component.currentCount * (_isActive ? 1.4 : 1));
             }
             owner.stat.SetNeedUpdate();
         }
