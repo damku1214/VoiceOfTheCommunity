@@ -1266,12 +1266,6 @@ public class CustomItems
             item.prefabKeyword1 = Inscription.Key.Execution;
             item.prefabKeyword2 = Inscription.Key.Strike;
 
-            item.stats = new Stat.Values(
-            [
-                new(Stat.Category.PercentPoint, Stat.Kind.CriticalChance, 0.05),
-                new(Stat.Category.PercentPoint, Stat.Kind.CriticalDamage, 0.25),
-            ]);
-
             item.abilities = [
                 new FoniasAbility()
             ];
@@ -1605,13 +1599,15 @@ public class CustomItems
 
             item.itemDescription_EN = "Increases <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 50%.\n"
                                     + "Increases Attack Speed and skill cooldown speed by 20%.\n"
-                                    + "When an enemy is killed, there is a 45% chance to increase <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 1% (Stacks up to 300%)."; ;
+                                    + "When an enemy is killed, there is a 45% chance for their Soul Fire to be consumed, increasing <color=#F25D1C>Physical Attack</color> and <color=#1787D8>Magic Attack</color> by 1% (Stacks up to 300%).\n"
+                                    + "When the Heirloom inscription effect is active, increases the chance to gain a Soul Fire by 25%.";
 
             item.itemDescription_KR = "<color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 50% 증가합니다.\n"
                                     + "공격속도 및 스킬 쿨다운 속도가 20% 증가합니다.\n"
-                                    + "적 처치 시 45% 확률로 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 1% 증가합니다 (최대 300% 증가).";
+                                    + "적 처치 시 45% 확률로 해당 적의 영혼이 흡수되어 <color=#F25D1C>물리공격력</color> 및 <color=#1787D8>마법공격력</color>이 1% 증가합니다 (최대 300% 증가).\n"
+                                    + "가보 각인의 효과가 발동중일 시 적의 영혼이 흡수될 확률이 25% 증가합니다.";
 
-            item.itemLore_EN = "Once the soul mage Bear attempted to harness the powers of the god of the netherworld, but what remains is his scythe...";
+            item.itemLore_EN = "Once the Soul-mage Bear attempted to harness the powers of the god of the netherworld, but what remains is his scythe...";
             item.itemLore_KR = "한 때 영혼술사 베어가 마신의 힘을 흡수하려고 했으나, 남겨져 있는 것은 그의 낫 뿐이다...";
 
             item.prefabKeyword1 = Inscription.Key.Execution;
@@ -1692,9 +1688,9 @@ public class CustomItems
             item.itemName_EN = "Rusty Shovel";
             item.itemName_KR = "녹슨 삽";
 
-            item.itemDescription_EN = "Damaging 50% of an enemy's Max HP (10% for adventurers and bosses) amplifies the damage of your next <color=#F25D1C>physical attack</color> by 50%.";
+            item.itemDescription_EN = "Damaging 50% of an enemy's Max HP (10% for adventurers and bosses) amplifies the damage of your <color=#F25D1C>physical attacks</color> by 50% for 1 second.";
 
-            item.itemDescription_KR = "적 최대체력의 50% (모험가 및 보스의 경우 10%) 이상의 데미지를 입힐 시 다음 <color=#F25D1C>물리공격</color>의 데미지가 50% 증폭됩니다.";
+            item.itemDescription_KR = "적 최대체력의 50% (모험가 및 보스의 경우 10%) 이상의 데미지를 입힐 시 1초 동안 <color=#F25D1C>물리공격</color>의 데미지가 50% 증폭됩니다.";
 
             item.itemLore_EN = "Anything can be lethal if wielded with enough conviction";
             item.itemLore_KR = "투지만 있다면 무엇이든 무기가 될 수 있다";
@@ -3045,7 +3041,7 @@ public class CustomItems
                                     + "금화 획득량이 25% 증가합니다.";
 
             item.itemLore_EN = "We're scrappy and resiliant, we're happy and we're diligent. But that's just if you're listening to marketing transmissions.";
-            item.itemLore_KR = "저희 회사는 다인의 의사와 행동을 존중합니다. 명령만 잘 따른다면 말이죠.";
+            item.itemLore_KR = "저희 회사는 당신의 의사와 행동을 존중합니다. 명령만 잘 따른다면 말이죠.";
 
             item.prefabKeyword1 = Inscription.Key.Treasure;
             item.prefabKeyword2 = Inscription.Key.Misfortune;
@@ -3306,11 +3302,13 @@ public class CustomItems
             item.itemName_EN = "Omen: The Secret of the King";
             item.itemName_KR = "흉조: 왕의 비밀";
 
-            item.itemDescription_EN = "For 1 second after swapping a skull, attacks have a 10% chance to apply a random status effect.\n"
+            item.itemDescription_EN = "Increases Crit Damage by 35%.\n"
+                                    + "For 3 seconds after swapping a skull, attacks have a 10% chance to apply a random status effect.\n"
                                     + "Statuses can now deal critical hits.\n"
                                     + "This item's second inscription is randomly chosen between Poisoning, Excessive Bleeding, Dizziness, Abosulte Zero, and Arson.";
 
-            item.itemDescription_KR = "교대 시 1초 동안 적 공격 시 10% 확률로 임의의 상태이상을 부여합니다.\n"
+            item.itemDescription_KR = "치명타 데미지가 35% 증가합니다.\n"
+                                    + "교대 시 3초 동안 적 공격 시 10% 확률로 임의의 상태이상을 부여합니다.\n"
                                     + "상태이상으로 입힌 데미지가 치명타로 가해질 수 있습니다.\n"
                                     + "이 아이템의 두번째 각인은 독살, 과다출혈, 현기증, 절대영도, 그리고 방화 중에서 임의로 정해집니다.";
 
@@ -3319,6 +3317,10 @@ public class CustomItems
 
             item.prefabKeyword1 = Inscription.Key.Omen;
             item.prefabKeyword2 = Inscription.Key.None;
+
+            item.stats = new([
+                new(Stat.Category.PercentPoint, Stat.Kind.CriticalDamage, 0.35)
+            ]);
 
             item.abilities = [
                 new TheSecretOfTheKingAbility()

@@ -10,7 +10,7 @@ public class TheSecretOfTheKingAbility : Ability, ICloneable
 {
     public class Instance : AbilityInstance<TheSecretOfTheKingAbility>
     {
-        private float _timeout = 1;
+        private float _timeout = 3;
         private float _timeRemaining;
 
         private bool _isActive;

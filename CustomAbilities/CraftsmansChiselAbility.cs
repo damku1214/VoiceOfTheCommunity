@@ -86,6 +86,11 @@ public class CraftsmansChiselAbility : Ability, ICloneable
 
         private bool OnTakeDamage(ref Damage damage)
         {
+            if (owner.invulnerable.value) return false;
+            if (damage.attackType.Equals(Damage.AttackType.None)) return false;
+            if (damage.@null) return false;
+            if (damage.amount < 1.0) return false;
+
             if (Southpaw.Random.NextInt(0, 99) < 35) ability.component.currentCount = Math.Min(ability.component.currentCount + 1, ability._isEvolved ? 25 : 15);
             if (IsMaxed() && ability._isEvolved)
             {

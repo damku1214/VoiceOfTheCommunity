@@ -1,6 +1,6 @@
 {
     "name": "VoiceOfTheCommunity__KR",
-    "version_number": "1.1.4",
+    "version_number": "1.1.5",
     "website_url": "https://github.com/damku1214/VoiceOfTheCommunity",
     "description": "커뮤니티의 아이디어를 바탕으로 스컬: 더 히어로 슬레이어에 아이템을 추가합니다!",
     "dependencies": [

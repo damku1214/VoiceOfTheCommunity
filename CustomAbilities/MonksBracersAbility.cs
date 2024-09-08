@@ -34,21 +34,18 @@ public class MonksBracersAbility : Ability, ICloneable
         public override void OnAttach()
         {
             owner.onGiveDamage.Add(0, new GiveDamageDelegate(OnGiveDamage));
-            owner.playerComponents.inventory.weapon.onChanged += OnChangeWeapon;
-            EnableTurboAttack(ability._isEvolved ? 0 : 1);
         }
 
         public override void OnDetach()
         {
             owner.onGiveDamage.Remove(new GiveDamageDelegate(OnGiveDamage));
-            owner.playerComponents.inventory.weapon.onChanged -= OnChangeWeapon;
             EnableTurboAttack(1);
         }
 
         public override void UpdateTime(float deltaTime)
         {
             base.UpdateTime(deltaTime);
-            EnableTurboAttack(ability._isEvolved ? 0 : 1);
+            if (ability._isEvolved) EnableTurboAttack(ability._isEvolved ? 0 : 1);
 
             if (_isActive)
             {
@@ -60,11 +57,6 @@ public class MonksBracersAbility : Ability, ICloneable
                 _isActive = false;
                 _stacks = 0;
             }
-        }
-
-        private void OnChangeWeapon(Weapon old, Weapon @new)
-        {
-            EnableTurboAttack(ability._isEvolved ? 0 : 1);
         }
 
         private bool OnGiveDamage(ITarget target, ref Damage damage)

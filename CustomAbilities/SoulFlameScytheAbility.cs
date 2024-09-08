@@ -13,7 +13,20 @@ public class SoulFlameScytheAbility : Ability, ICloneable
     public class Instance : AbilityInstance<SoulFlameScytheAbility>
     {
         private Stat.Values _stats;
+
+        private bool hasMirage()
+        {
+            for (int i = 0; i < owner.ability._abilities.Count; i++)
+            {
+                if (owner.ability._abilities[i].GetType() == GetType()) continue;
+                if (owner.ability._abilities[i].icon != null && owner.ability._abilities[i].icon.name.Equals("Heirloom"))
+                    return owner.ability._abilities[i].iconFillAmount == 0;
+            }
+            return false;
+        }
+
         public override int iconStacks => ability.component.currentKillCount;
+        public override float iconFillAmount => hasMirage() ? 0 : 1;
 
         public Instance(Character owner, SoulFlameScytheAbility ability) : base(owner, ability)
         {
@@ -38,7 +51,7 @@ public class SoulFlameScytheAbility : Ability, ICloneable
         {
             System.Random random = new System.Random();
             int randomNumber = random.Next(0, 100);
-            if (randomNumber > 45)
+            if (randomNumber > 45 + (hasMirage() ? 25 : 0))
             {
                 return;
             }

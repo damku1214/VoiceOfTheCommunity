@@ -10,19 +10,13 @@ public class RustyShovelAbility : Ability, ICloneable
 {
     public class Instance : AbilityInstance<RustyShovelAbility>
     {
-        private bool isActive = false;
+        private bool _isActive = false;
 
-        public override Sprite icon
-        {
-            get
-            {
-                if (isActive)
-                {
-                    return ability._defaultIcon;
-                }
-                return null;
-            }
-        }
+        private float _timeout = 1;
+        private float _timeRemaining;
+
+        public override float iconFillAmount => 1.0f - _timeRemaining / _timeout;
+        public override Sprite icon => _isActive ? ability._defaultIcon : null;
 
         public Instance(Character owner, RustyShovelAbility ability) : base(owner, ability)
         {
@@ -38,26 +32,41 @@ public class RustyShovelAbility : Ability, ICloneable
             owner.onGiveDamage.Remove(new GiveDamageDelegate(AmplifyDamage));
         }
 
+        public override void UpdateTime(float deltaTime)
+        {
+            base.UpdateTime(deltaTime);
+
+            if (_isActive)
+            {
+                _timeRemaining -= deltaTime;
+            }
+
+            if (_timeRemaining < 0f)
+            {
+                _timeRemaining = _timeout;
+                _isActive = false;
+            }
+        }
+
         private bool AmplifyDamage(ITarget target, ref Damage damage)
         {
             if (target == null || target.character == null)
             {
                 return false;
             }
-            if (isActive && damage.attribute.Equals(Damage.Attribute.Physical))
+            if (_isActive && damage.attribute.Equals(Damage.Attribute.Physical))
             {
                 damage.percentMultiplier *= 1.5;
-                isActive = false;
             }
             if (damage.amount >= target.character.health.maximumHealth * 0.5)
             {
-                isActive = true;
+                _isActive = true;
                 return false;
             } else if (target.character.type.Equals(Character.Type.Boss) || target.character.type.Equals(Character.Type.Adventurer))
             {
                 if (damage.amount >= target.character.health.maximumHealth * 0.1)
                 {
-                    isActive = true;
+                    _isActive = true;
                     return false;
                 }
             }

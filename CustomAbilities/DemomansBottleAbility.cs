@@ -27,14 +27,14 @@ public class DemomansBottleAbility : Ability, ICloneable
 
         private bool OnGiveDamage(ITarget target, ref Damage damage)
         {
-            if (target == null || target.character == null) return false;
+            if (target == null || target.character == null || target.character.status == null) return false;
             if (damage.motionType == Damage.MotionType.Skill || damage.motionType == Damage.MotionType.Basic)
             {
                 if (Southpaw.Random.NextInt(0, 99) < owner.health.shield.amount / 5 * 2)
                 {
                     target.character.status.ApplyPoison(owner);
                 }
-            };
+            }
             return false;
         }
     }
